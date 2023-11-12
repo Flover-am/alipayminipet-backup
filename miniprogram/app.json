@@ -1,0 +1,34 @@
+{
+  "pages": [
+    "pages/index/index",
+    "pages/records/records",
+    "pages/todo/todo",
+    "pages/person/person"
+  ],
+  "window": {
+    "defaultTitle": "Pet"
+  },
+  "tabBar": {
+    "textColor": "#dddddd",
+    "selectedColor": "#49a9ee",
+    "backgroundColor": "#ffffff",
+    "items": [
+      {
+        "pagePath": "pages/index/index",
+        "name": "社区"
+      },
+      {
+        "pagePath": "pages/records/records",
+        "name": "记录"
+      },
+      {
+        "pagePath": "pages/todo/todo",
+        "name": "提醒"
+      },
+      {
+        "pagePath": "pages/person/person",
+        "name": "我的"
+      }
+    ]
+  }
+}

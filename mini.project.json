@@ -1,0 +1,7 @@
+{
+  "miniprogramRoot": "./miniprogram",
+  "cloudbaseRoot": "cloud",
+  "enableAppxNg": true,
+  "component2": true,
+  "enableNodeModuleBabelTransform":true
+}

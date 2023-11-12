@@ -1,0 +1,7 @@
+<view class="page">
+  <view class="page-section">
+      <view>
+         {{data}} 
+      </view>
+  </view>
+</view>
