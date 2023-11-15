@@ -55,9 +55,8 @@ page {
 
 .unit{
   display: flex;
-  flex-wrap: wrap;
-  align-content: flex-start;
-  writing-mode: horizontal-tb;
+  flex-direction: column;
+  align-items: center;
   width: auto;
   margin: 5%;
 }
@@ -73,5 +72,32 @@ page {
 }
 
 .item{
+  margin: 5%;
+}
+
+.bar3{
+  display: flex;
+  flex-wrap: wrap;
+  align-content: flex-start;
+  width: 90%;
+  border-radius: 20rpx;
+  background-color: white;
+  justify-content: center;
+  margin: 5%;
+}
+
+.bar4{
+  display: flex;
+  flex-wrap: wrap;
+  flex-direction: column;
+  align-content: flex-start;
+  width: 90%;
+  border-radius: 20rpx;
+  background-color: white;
+  justify-content: center;
+  margin: 5%;
+}
+
+.item4{
   margin: 5%;
 }
