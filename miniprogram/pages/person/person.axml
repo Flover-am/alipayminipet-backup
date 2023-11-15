@@ -13,7 +13,7 @@
     <text>{{todoNum}}</text>
     <text>待办</text>
   </view>
-  <view class="unit">
+  <view class="unit" onTap="toMyPets">
     <text>{{petNum}}</text>
     <text>宠物</text>
   </view>
