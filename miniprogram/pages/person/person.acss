@@ -1,0 +1,77 @@
+page {
+  flex: 1;
+  display: flex;
+  flex-direction: column;
+  background: whitesmoke;
+  padding: 32rpx;
+  align-items: center;
+}
+
+.avatar {
+  background: #d8d8d8;
+  width: 168rpx;
+  height: 168rpx;
+  border-radius: 50%;
+}
+
+.infoCol{
+  width: 100%;
+  float:left;
+  display: flex;
+  flex-flow: row wrap;
+  justify-content:baseline; 
+}
+
+.userInfoCol{
+  display: flex;
+  justify-content: space-between;
+}
+
+.nickname{
+  display: flex;
+  margin-top: 20rpx;
+  margin-bottom: 30rpx;
+  margin-right: 10rpx;
+}
+
+.login-status-area {
+  line-height: 36rpx;
+  font-size: 25rpx;
+  color: #8f8f8f;
+  margin-top: 20rpx;
+  margin-bottom: 30rpx;
+}
+
+.bar{
+  display: flex;
+  flex-wrap: wrap;
+  align-content: flex-start;
+  width: 90%;
+  border-radius: 20rpx;
+  background-color: white;
+  justify-content: space-between;
+  margin: 5%;
+}
+
+.unit{
+  display: flex;
+  flex-wrap: wrap;
+  align-content: flex-start;
+  writing-mode: horizontal-tb;
+  width: auto;
+  margin: 5%;
+}
+
+.bar2{
+  display: flex;
+  flex-wrap: wrap;
+  align-content: flex-start;
+  width: 90%;
+  border-radius: 20rpx;
+  background-color: white;
+  justify-content: space-between;
+}
+
+.item{
+  margin: 5%;
+}
