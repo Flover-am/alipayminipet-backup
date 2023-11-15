@@ -20,6 +20,7 @@ Page({
    *  调用OPENAPI
    *
    */
+  
   async onOpenAPIHandler() {
     this.setData({
       isLoginLoading: true
@@ -142,4 +143,11 @@ Page({
   onLoad() {
     this.onOpenAPIHandler();
   },
+  toMyPets(){
+    console.log("router to mypets")
+    this.pageRouter.navigateTo({
+      url:"/pages/mypets/mypets"
+    })
+  }
+  
 });

@@ -1,9 +1,11 @@
 {
   "pages": [
+    "pages/mypets/mypets",
     "pages/index/index",
     "pages/records/records",
     "pages/todo/todo",
     "pages/person/person"
+    
   ],
   "window": {
     "defaultTitle": "Pet"
