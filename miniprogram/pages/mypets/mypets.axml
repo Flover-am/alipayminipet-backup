@@ -23,7 +23,7 @@
         <view class="name">
           {{pet.name}}
         </view>
-        <view class="edit">
+        <view class="edit" onTap="editPet">
           修改信息
         </view>
         <view class="detail">
@@ -63,7 +63,7 @@
         <view class="like">
           ♡ 114
         </view>
-        <view class="pic">
+        <view class="pic" onTap="toPetPic">
           宠物相册
         </view>
       </view>

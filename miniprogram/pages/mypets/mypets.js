@@ -39,5 +39,27 @@ Page({
         });
       }
     });
+  },
+  addNewPet(){
+    my.showToast({
+      type:'none',
+      duration:1000,
+      content:"添加//TODO"
+    })
+  },
+  editPet(){
+    my.showToast({
+      type:'none',
+      duration:1000,
+      content:"修改宠物//TODO"
+    })
+  },
+  toPetPic(){
+    my.showToast({
+      type:'none',
+      duration:1000,
+      content:"跳转到宠物相册//TODO"
+    })
   }
+
 });
