@@ -1,0 +1,32 @@
+.li{
+  background: #ffffff;
+  border-radius: 10rpx;
+}
+.content {
+  display: flex;
+  flex-direction: row;
+  margin: 20rpx;
+  overflow: hidden;
+}
+.left {
+  width: 345rpx;
+}
+.right{
+  width: 345rpx;
+  margin-left: 20rpx;
+}
+.pic {
+  border-radius: 10rpx 10rpx 0rpx 0rpx;
+  width: 345rpx;
+}
+.bottom{
+  display: flex;
+  justify-content: space-between;
+  padding: 0 20rpx;
+  align-items: center;
+}
+.love-num{
+  color: #333;
+  display: flex;
+  align-items: center;
+}

@@ -1,3 +1,4 @@
+@import "../../templates/tuijian/tuijian.acss";
 .banner {
   height: 455rpx;
   width: 100%;
@@ -7,7 +8,9 @@
   position: relative;
   z-index: 2;
 }
-
+.find {
+  position: relative;
+}
 .logo {
   width: 105rpx;
   height: 117rpx;
@@ -21,7 +24,14 @@
   width: 100%;
   height: 100%;
 }
+.topBar scroll-view{
+  white-space: nowrap;
+  margin: 50rpx 20rpx 35rpx;
+  position: absolute;
+  top: 55rpx;
+  background-color: #fff;
 
+}
 .title {
   font-size: 46rpx;
   color: #fff;
@@ -31,7 +41,16 @@
   font-weight: bold;
   transform: translate(-50%);
 }
-
+input{
+  background: #E8E8E8;
+  display: block;
+  width: calc(90% - 100rpx);
+  height: 75rpx;
+  line-height: 75rpx;
+  margin: 0 auto;
+  border-radius: 37.5rpx;
+  padding-left: 100rpx;
+}
 .sub-title {
   color: rgba(255, 255, 255, 0.48);
   font-size: 24rpx;
@@ -71,47 +90,16 @@
   box-sizing: border-box;
 }
 
-.tabs {
-  height: 92rpx;
-  position: sticky;
-  background-color: #fff;
-  z-index: 1;
-}
 
+.topBar-name{
+  display: inline-block;
+  width: 130rpx;
+  font-size: 32rpx;
+
+  padding: 22rpx;
+}
 .tabs.shadow {
   box-shadow: rgba(153, 153, 153, 0.24) 0 2px 7px;
-}
-
-.tabs-bar {
-  padding: 0 64rpx;
-  display: flex;
-  height: 100%;
-}
-
-.tabs-bar-tab {
-  bottom: 0;
-  flex: 1;
-  display: flex;
-  justify-content: center;
-}
-
-.tabs-bar-tab {
-  font-size: 32rpx;
-}
-
-.tabs-bar-tab-title {
-  color: #999;
-  padding: 16rpx 0;
-  display: flex;
-  align-items: center;
-  border-bottom: 3px solid transparent;
-  box-sizing: border-box;
-}
-
-.tabs-bar-tab-title.active {
-  font-weight: bold;
-  color: #1371F7;
-  border-bottom: 3px solid #1371F7;
 }
 
 .component-name {

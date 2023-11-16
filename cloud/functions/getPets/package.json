@@ -1,0 +1,12 @@
+{
+  "name": "getPets",
+  "version": "1.0.0",
+  "description": "",
+  "main": "index.js",
+  "scripts": {},
+  "author": "LiDongsheng",
+  "license": "ISC",
+  "dependencies": {
+    "@alipay/faas-server-sdk": "^1.0.0"
+  }
+}

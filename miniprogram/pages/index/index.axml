@@ -1,7 +1,35 @@
-<view class="page">
-  <view class="page-section">
-      <view>
-         {{data}} 
+<!--pages/homepage/homepage.wxml-->
+<import src="../../templates/tuijian/tuijian" />
+
+<view class="boxsizing">
+	<view class="Top">
+		<view class="find">
+			<form>
+				<input placeholder="大家都在搜索什么"></input>
+				<image src="cloud://kira-lianxi01-h8t95.6b69-kira-lianxi01-h8t95-1302708397/XiaoHongShu/homepage/find.png"></image>
+			</form>
+		</view>
+		<view class="topBar">
+			<scroll-view scroll-x>
+				<view a:for="{{topBar}}" a:key="index" class="topBar-name">
+					<text data-id="{{index}}" onTap="change">{{item}}</text>
+				</view>
+			</scroll-view>
+		</view>
+	</view>
+
+	<!-- 瀑布流大概的思路就是，直接定义两列等宽的view，然后两列都加载相同的数据
+  wx:if="{{index%2==1}}" 这里，用if来辨别是奇数还是偶数，两边加载相反的 -->
+	<view class="content">
+      <view class="left">
+        <block a:for="{{noramalData.result.tuijian}}" a:key="index" a:for-item="tuijain">
+          <template is="{{msg}}" data="{{tuijain}}" a:if="{{index%2==0}}"></template>
+        </block>
       </view>
-  </view>
+      <view class="right">
+        <block a:for="{{noramalData.result.tuijian}}" a:key="index" a:for-item="tuijain">
+          <template is="{{msg}}" data="{{tuijain}}" a:if="{{index%2==1}}"></template>
+        </block>
+      </view>
+    </view>
 </view>
