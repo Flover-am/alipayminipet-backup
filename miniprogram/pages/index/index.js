@@ -8,7 +8,17 @@ Page({
     normalData:[],
     passageNum: null
   },
-  async onLoad(){
+  onLoad(){
+    this.getTitle();
+    console.log(this.normalData);
+  },
+  async change(e) {
+    var id=e.currentTarget.dataset.id + 1;
+    this.setData({msg:id})
+    // console.log(e);
+    console.log(id);
+  },
+  async getTitle() {
     var self = this;
     var context = await my.getCloudContext();
     my.showLoading({
@@ -18,12 +28,14 @@ Page({
     var temp = 0;
     context.callFunction({
       name:'recommend',
+      
       success:function(res) {
         my.hideLoading();
         console.log(res);
-        console.log(res.result.data);
+        console.log(res.result);
+        
         self.setData({
-          normalData:res.result.data,
+          normalData:res.result,
           // normalData:res.result,
           passageNum:res.result.length
         })
@@ -36,12 +48,6 @@ Page({
     })
 
     // console.log(normalData.tuijian);
-  },
-  async change(e) {
-    var id=e.currentTarget.dataset.id + 1;
-    this.setData({msg:id})
-    // console.log(e);
-    console.log(id);
   }
 
 })

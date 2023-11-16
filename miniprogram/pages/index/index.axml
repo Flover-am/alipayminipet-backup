@@ -22,16 +22,51 @@
   wx:if="{{index%2==1}}" 这里，用if来辨别是奇数还是偶数，两边加载相反的 -->
 	<view class="content">
       <view class="left">
-        <block a:for="{{normalData}}" a:key={{tuijian.id}} a:for-item="tuijian">
-          <!-- {{normalData}} -->
-          <!-- {{normalDta.tuijian.id}} -->
-          {{normalData}}
-          <template is="{{msg}}" data="{{tuijian}}" a:if="{{tuijian.id%2==0}}"></template>
-        </block>
+        <view a:for="{{normalData}}" a:key={{tuijian.id}} a:for-item="tuijian">
+          <!-- <view class="item">
+            <view class="li">
+              <image class="pic" src="{{tuijian.tuijian.Cover}}" mode="widthFix"></image>
+                  <view class="title-wrap">
+                    <navigator url="url" class="title">{{tuijian.tuijian.title}}</navigator>
+                  </view>
+                  <view class="bottom">
+                    <view class="toux-name">
+                      <image class="toux" src="{{tuijian.tuijian.title}}"></image>
+                      <text class="name">{{tuijian.tuijian.title}}</text>
+                    </view>
+                    <view class="love-num">
+                      <text class="love">{{tuijian.tuijian.love}}</text>
+                      <text class="num">{{tuijian.tuijian.num}}</text>
+                    </view>
+                  </view>
+            </view>
+          </view> -->
+
+          <template is="{{msg}}" data="{{tuijian}}" a:if="{{tuijian.tuijian.id%2==1}}"></template>
+        </view>
       </view>
       <view class="right">
         <block a:for="{{normalData}}" a:key={{tuijian.id}} a:for-item="tuijian">
-          <template is="{{msg}}" data="{{tuijian}}" a:if="{{tuijian.id%2==1}}"></template>
+          <!-- <view class="item">
+            <view class="li">
+              <image class="pic" src="{{tuijian.tuijian.Cover}}" mode="widthFix"></image>
+                  <view class="title-wrap">
+                    <navigator url="url" class="title">{{tuijian.tuijian.title}}</navigator>
+                  </view>
+                  <view class="bottom">
+                    <view class="toux-name">
+                      <image class="toux" src="{{tuijian.tuijian.title}}"></image>
+                      <text class="name">{{tuijian.tuijian.title}}</text>
+                    </view>
+                    <view class="love-num">
+                      <text class="love">{{tuijian.tuijian.love}}</text>
+                      <text class="num">{{tuijian.tuijian.num}}</text>
+                    </view>
+                  </view>
+            </view>
+          </view> -->
+
+          <template is="{{msg}}" data="{{tuijian}}" a:if="{{tuijian.tuijian.id%2==1}}"></template>
         </block>
       </view>
   </view>

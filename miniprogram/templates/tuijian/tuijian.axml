@@ -1,18 +1,18 @@
 <template name="1">
   <view class="item">
     <view class="li">
-      <image class="pic" src="{{tuijian.Cover}}" mode="widthFix"></image>
+      <image class="pic" src="{{tuijian.tuijian.Cover}}" mode="widthFix"></image>
 					<view class="title-wrap">
-						<navigator url="url" class="title">{{tuijian.title}}</navigator>
+						<navigator url="url" class="title">{{tuijian.tuijian.title}}</navigator>
 					</view>
 					<view class="bottom">
 						<view class="toux-name">
-							<image class="toux" src="{{tuijian.title}}"></image>
-							<text class="name">{{tuijian.title}}</text>
+							<image class="toux" src="{{tuijian.tuijian.title}}"></image>
+							<text class="name">{{tuijian.tuijian.title}}</text>
 						</view>
 						<view class="love-num">
-							<text class="love">{{tuijian.love}}</text>
-							<text class="num">{{tuijian.num}}</text>
+							<text class="love">{{tuijian.tuijian.love}}</text>
+							<text class="num">{{tuijian.tuijian.num}}</text>
 						</view>
 					</view>
     </view>
