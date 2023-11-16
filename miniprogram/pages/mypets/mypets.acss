@@ -5,6 +5,7 @@ page {
   background: whitesmoke;
   align-items: center;
 }
+/* TODO : 滑动不合理 */
 .page {
   display: flex;
   width: 90%;
@@ -32,9 +33,12 @@ page {
   border-radius: 5%;
 }
 
+
 .userInfoCol{
-  display: flex;
-  justify-content: space-between;
+  x-flow: row wrap;
+  justify-content:flex-start;
+  background-color: white;
+  border-radius: 5%;
 }
 
 .nickname{
