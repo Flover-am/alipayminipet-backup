@@ -1,0 +1,73 @@
+<view class="page">
+  <view class="infoCol">
+    <image class="avatar" src="{{avatar}}" />
+    <view class="userInfoCol">
+      <text class="nickname">{{nickname}}</text>
+      <view class="login-status-area">
+        <text>登录状态：</text>
+        <text>{{isLogin ? "已登录" : "未登录"}}</text>
+      </view>
+    </view>
+  </view>
+  <view class="transparent-bar">
+    <text class="text_mypets">我的宠物</text>
+    <view onTap="addNewPet">
+      <text>+ 添加</text>
+    </view>
+  
+  </view>
+  <scroll-view class="pets-scroll" scroll-y="{{true}}" >
+    <view class="pet" a:for="{{pets}}" a:for-item="pet" a:key="*this">
+      <image mode="scaleToFill" src="" class="pet-avatar" />
+      <view class="pet-info">
+        <view class="name">
+          {{pet.name}}
+        </view>
+        <view class="edit" onTap="editPet">
+          修改信息
+        </view>
+        <view class="detail">
+          <view class="age">
+            <view class="item">
+              年龄:
+            </view>
+            <view class="number">
+              {{pet.age}}
+            </view>
+          </view>
+          <view class="birthday">
+            <view class="item">
+              生日:
+            </view>
+            <view class="number">
+              {{pet.birthday}}
+            </view>
+          </view>
+          <view class="gender">
+            <view class="item">
+              性别:
+            </view>
+            <view class="number">
+              {{pet.gender}}
+            </view>
+          </view>
+          <view class="weight">
+            <view class="item">
+              体重:
+            </view>
+            <view class="number">
+              {{pet.weight}}
+            </view>
+          </view>
+        </view>
+        <view class="like">
+          ♡ 114
+        </view>
+        <view class="pic" onTap="toPetPic">
+          宠物相册
+        </view>
+      </view>
+    </view>
+
+  </scroll-view>
+</view>

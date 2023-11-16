@@ -22,14 +22,18 @@
   wx:if="{{index%2==1}}" 这里，用if来辨别是奇数还是偶数，两边加载相反的 -->
 	<view class="content">
       <view class="left">
-        <block a:for="{{noramalData.result.tuijian}}" a:key="index" a:for-item="tuijain">
-          <template is="{{msg}}" data="{{tuijain}}" a:if="{{index%2==0}}"></template>
+        <block a:for="{{normalData}}" a:key={{tuijian.id}} a:for-item="tuijian">
+          <!-- {{normalData}} -->
+          <!-- {{normalDta.tuijian.id}} -->
+          {{normalData}}
+          <template is="{{msg}}" data="{{tuijian}}" a:if="{{tuijian.id%2==0}}"></template>
         </block>
       </view>
       <view class="right">
-        <block a:for="{{noramalData.result.tuijian}}" a:key="index" a:for-item="tuijain">
-          <template is="{{msg}}" data="{{tuijain}}" a:if="{{index%2==1}}"></template>
+        <block a:for="{{normalData}}" a:key={{tuijian.id}} a:for-item="tuijian">
+          <template is="{{msg}}" data="{{tuijian}}" a:if="{{tuijian.id%2==1}}"></template>
         </block>
       </view>
-    </view>
-</view>
+  </view>
+<view>
+  

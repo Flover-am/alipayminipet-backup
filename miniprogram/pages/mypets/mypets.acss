@@ -1,0 +1,217 @@
+page {
+  flex: 1;
+  display: flex;
+  flex-direction: column;
+  background: whitesmoke;
+  align-items: center;
+}
+.page {
+  display: flex;
+  width: 90%;
+  flex-direction: column;
+  font-family: -apple-system-font,Helvetica Neue,Helvetica,sans-serif;
+  font-size: 24rpx;
+  padding: 32rpx;
+  flex: 1;
+}
+.avatar {
+  background: #d8d8d8;
+  width: 168rpx;
+  height: 168rpx;
+  border-radius: 50%;
+}
+
+.infoCol{
+  padding: 5%;
+  width: 90%;
+  float:left;
+  display: flex;
+  flex-flow: row wrap;
+  justify-content:flex-start;
+  background-color: white;
+  border-radius: 5%;
+}
+
+.userInfoCol{
+  display: flex;
+  justify-content: space-between;
+}
+
+.nickname{
+  display: flex;
+  font-size:large;
+  font-weight: bold;
+  margin-top: 20rpx;
+  margin-bottom: 30rpx;
+  margin-right: 10rpx;
+}
+
+.login-status-area {
+  line-height: 36rpx;
+  font-size: 25rpx;
+  color: #8f8f8f;
+  margin-top: 20rpx;
+  margin-bottom: 30rpx;
+}
+
+.bar{
+  display: flex;
+  flex-wrap: wrap;
+  align-content: flex-start;
+  width: 90%;
+  border-radius: 20rpx;
+  background-color: white;
+  justify-content: space-between;
+  margin: 5%;
+}
+
+.unit{
+  display: flex;
+  flex-wrap: wrap;
+  align-content: flex-start;
+  writing-mode: horizontal-tb;
+  width: auto;
+  margin: 5%;
+}
+
+.bar2{
+  display: flex;
+  flex-wrap: wrap;
+  align-content: flex-start;
+  width: 90%;
+  border-radius: 20rpx;
+  background-color: white;
+  justify-content: space-between;
+}
+.transparent-bar{
+
+  margin : 3%;
+  display: flex;
+  flex-wrap: wrap;
+  align-content: flex-start;
+  width: 90%;
+  border-radius: 20rpx;
+  justify-content: space-between;
+
+}
+.item{
+  margin: 5%;
+}
+.fullrow{
+  width: 100%;
+  text-align: left;
+}
+.text_mypets{
+  
+  float: left;
+  text-align: left;
+  font-weight: bold;
+  font-size: larger;
+}
+
+.pets-scroll{
+  width: 100%;
+  margin-top: 0;
+  flex: 1;
+  height: 55%;
+
+}
+.pet{
+  margin-top: 1%;
+  padding: 4%;
+  display: flex;
+  flex-direction: row;
+  flex:1;
+  align-items: stretch;
+  background-color: white;
+  border-radius: 20rpx;
+}
+.pet-avatar {
+  background: #d8d8d8;
+  width: 168rpx;
+  height: 168rpx;
+  border-radius: 5%;
+}
+.pet-info{
+
+  flex:1;
+  display: grid;
+  grid-template-columns: 1fr 2fr 1fr;
+  grid-template-rows:40rpx 80rpx 30rpx;
+  grid-column-gap: 0px;
+  grid-row-gap: 5px;
+}
+.pet-info .name{
+  grid-area: 1 / 1 / 2 / 2;
+  width: fit-content;
+  height: fit-content;
+  margin-left: 15rpx;
+  font-weight: bold;
+  font-size: medium;
+
+}
+.pet-info .edit{
+  width: fit-content;
+  height: fit-content;
+  grid-area: 1/3/2/4;
+  color: gray;
+
+}
+.pet-info .detail{
+  margin-left: 23rpx;
+  grid-area: 2/1/3/4;
+  display: grid;
+  grid-template-columns: 150rpx 200rpx;
+  grid-template-rows: 25rpx 25rpx;
+  grid-column-gap: 5px;
+  grid-row-gap: 5px;
+}
+.pet-info .detail .age{
+  grid-area: 1/1/2/2;
+  display: grid;
+  grid-template-columns: 1fr,1fr;
+  align-items:baseline;
+}
+
+.number{
+  grid-area: 1/2/2/3;  
+  font-size: small;
+
+}
+.item{
+  grid-area: 1/1/2/2;
+  font-size: small;
+}
+.pet-info .detail .birthday{
+  grid-area: 1/2/2/3;
+  display: grid;
+  grid-template-columns: 1fr,1fr;
+  align-items:baseline;
+
+}
+.pet-info .detail .gender{
+  grid-area: 2/1/3/2;
+  display: grid;
+  grid-template-columns: 1fr,1fr;
+  align-items:baseline;
+}
+.pet-info .detail .weight{
+  grid-area: 2/2/3/3;
+  display: grid;
+  grid-template-columns: 1fr,1fr;
+  align-items:baseline;
+}
+.pet-info .like{
+  grid-area: 3 / 1 / 4 / 2;
+  width: fit-content;
+  height: fit-content;
+  margin-left: 15rpx;
+  color: red;
+  font-size: medium;
+}
+.pet-info .pic{
+  grid-area: 3 / 3 / 4 / 4;
+  color: blue;
+  width: fit-content;
+  height: fit-content;
+}

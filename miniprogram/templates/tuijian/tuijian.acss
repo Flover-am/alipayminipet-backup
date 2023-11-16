@@ -11,9 +11,21 @@
 .left {
   width: 345rpx;
 }
+.title-wrap{
+  padding: 5rpx 20rpx 0rpx 20rpx;
+  font-size: 30rpx;
+  font-weight: 600;
+  color: #333;
+}
+/* .title {
+  padding: 5rpx 20rpx 0rpx 20rpx;
+  font-size: 30rpx;
+  font-weight: 600;
+  color: #333;
+} */
 .right{
   width: 345rpx;
-  margin-left: 20rpx;
+  margin-left: 10rpx;
 }
 .pic {
   border-radius: 10rpx 10rpx 0rpx 0rpx;
@@ -29,4 +41,20 @@
   color: #333;
   display: flex;
   align-items: center;
+}
+.toux-name {
+  display: flex;
+  align-items: center;
+  margin: 20rpx 0rpx;
+}
+.name{
+  font-size: 25rpx;
+  color: #333;
+  font-weight: 300;
+  margin-left: 20rpx;
+}
+.toux{
+  width: 60rpx;
+  height: 60rpx;
+  border-radius: 30rpx;
 }

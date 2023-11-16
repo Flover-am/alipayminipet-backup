@@ -1,3 +1,59 @@
-<view>
-  我的
+<view class="infoCol">
+  <image class="avatar" src="{{avatar}}" />
+  <view class="userInfoCol">
+    <text class="nickname">{{nickname}}</text>
+    <view class="login-status-area">
+      <text>登录状态：</text>
+      <text>{{isLogin ? "已登录" : "未登录"}}</text>
+    </view>
+  </view>
+</view>
+<view class="bar">
+  <view class="unit">
+    <text>{{todoNum}}</text>
+    <text>待办</text>
+  </view>
+  <view class="unit" onTap="toMyPets">
+    <text>{{petNum}}</text>
+    <text>宠物</text>
+  </view>
+  <view class="unit">
+    <text>{{postNum}}</text>
+    <text>发帖</text>
+  </view>
+</view>
+<view class="bar2">
+  <view class="item">
+    <text>发布</text>
+  </view>
+  <view class="item">
+    <text>喜欢</text>
+  </view>
+  <view class="item">
+    <text>历史</text>
+  </view>
+  <view class="item">
+    <text>消息</text>
+  </view>
+</view>
+
+<view class="bar3">
+  <view>
+    <image src="" alt="快乐宠友星球 立即入群"/>
+  </view>
+</view>
+
+<view class="bar4">
+  <view class="item4">
+    设置
+  </view>
+  <view class="item4">
+    反馈
+  </view>
+  <view class="item4">
+    帮助
+  </view>
+  <view class="item4">
+    关于
+  </view>
 </view>
