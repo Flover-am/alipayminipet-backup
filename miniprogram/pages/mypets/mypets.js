@@ -7,88 +7,37 @@ Page({
     isAvatar: false, //是否获取头像
     isAvatarLoading: false, //获取头像loading
     isLoginLoading: false ,//
-    pets: [{
-      name:"昵称1",
-      age:"5岁",
-      birthday:"2023/1/2",
-      gender:"公",
-      weight:"10kg"
-    },{
-      name:"昵称2",
-      age:"5岁",
-      birthday:"2023/1/2",
-      gender:"公",
-      weight:"10kg"
-    },{
-      name:"昵称3",
-      age:"5岁",
-      birthday:"2023/1/2",
-      gender:"公",
-      weight:"10kg"
-    },{
-      name:"昵称4",
-      age:"5岁",
-      birthday:"2023/1/2",
-      gender:"公",
-      weight:"10kg"
-    },{
-      name:"昵称5",
-      age:"5岁",
-      birthday:"2023/1/2",
-      gender:"公",
-      weight:"10kg"
-    },{
-      name:"昵称6",
-      age:"5岁",
-      birthday:"2023/1/2",
-      gender:"公",
-      weight:"10kg"
-    },{
-      name:"昵称7",
-      age:"5岁",
-      birthday:"2023/1/2",
-      gender:"公",
-      weight:"10kg"
-    },{
-      name:"昵称8",
-      age:"5岁",
-      birthday:"2023/1/2",
-      gender:"公",
-      weight:"10kg"
-    },{
-      name:"昵称8",
-      age:"5岁",
-      birthday:"2023/1/2",
-      gender:"公",
-      weight:"10kg"
-    },{
-      name:"昵称8",
-      age:"5岁",
-      birthday:"2023/1/2",
-      gender:"公",
-      weight:"10kg"
-    },{
-      name:"昵称8",
-      age:"5岁",
-      birthday:"2023/1/2",
-      gender:"公",
-      weight:"10kg"
-    },{
-      name:"昵称8",
-      age:"5岁",
-      birthday:"2023/1/2",
-      gender:"公",
-      weight:"10kg"
-    },{
-      name:"昵称8",
-      age:"5岁",
-      birthday:"2023/1/2",
-      gender:"公",
-      weight:"10kg"
-    },]
+    pets: []
   },
   onLoad() {
-    this.router.data
-    
+    this.getPetsData();
   },
+  async getPetsData(){
+    var self = this;
+    var context = await my.getCloudContext();
+    my.showLoading({ 
+      content: '加载中...',
+      delay: '100',
+    }); 
+    context.callFunction({
+      name:'getPets',
+      data:{"userid":0},
+      success:function(res){
+         my.hideLoading();
+         console.log(res);
+         console.log("success getPets")
+         self.setData({
+           pets:res.result.data
+         });
+      },
+      fail:function(erro){
+        my.hideLoading();
+        console.log("error getPets")
+        console.log(erro);
+        self.setData({
+          data:null
+        });
+      }
+    });
+  }
 });

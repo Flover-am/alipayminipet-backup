@@ -1,7 +1,7 @@
 {
   "pages": [
-    "pages/mypets/mypets",
     "pages/index/index",
+    "pages/mypets/mypets",
     "pages/records/records",
     "pages/todo/todo",
     "pages/person/person"
