@@ -148,6 +148,73 @@ Page({
     this.pageRouter.navigateTo({
       url:"/pages/mypets/mypets"
     })
+  },
+  onTabTODO(event){
+    console.log(event);
+    my.switchTab({
+      url:"/pages/todo/todo"
+    })
+  },
+  onTabPost(event){
+    console.log(event);
+    my.switchTab({
+      url:"/pages/records/records"
+    })
+  },
+  onTabPostIcon(event){
+    console.log(event);
+    my.showToast({
+      content: 'TODO：跳转发布页',
+      duration: 2000
+    });
+  },
+  onTabLikeIcon(event){
+    console.log(event);
+    my.showToast({
+      content: 'TODO：跳转喜欢页',
+      duration: 2000
+    });
+  },
+  onTabHistoryIcon(event){
+    console.log(event);
+    my.showToast({
+      content: 'TODO：跳转历史页',
+      duration: 2000
+    });
+  },
+  onTabMessageIcon(event){
+    console.log(event);
+    my.showToast({
+      content: 'TODO：跳转消息页',
+      duration: 2000
+    });
+  },
+  onTabSettings(event){
+    console.log(event);
+    my.showToast({
+      content: 'TODO：跳转设置页',
+      duration: 2000
+    });
+  },
+  onTabFeedback(event){
+    console.log(event);
+    my.showToast({
+      content: 'TODO：跳转反馈页',
+      duration: 2000
+    });
+  },
+  onTabHelp(event){
+    console.log(event);
+    my.showToast({
+      content: 'TODO：跳转帮助页',
+      duration: 2000
+    });
+  },
+  onTabAbout(event){
+    console.log(event);
+    my.showToast({
+      content: 'TODO：跳转关于页',
+      duration: 2000
+    });
   }
-  
 });
