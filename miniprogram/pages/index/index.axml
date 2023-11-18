@@ -6,7 +6,6 @@
 		<view class="find">
 			<form>
 				<input placeholder="大家都在搜索什么"></input>
-				<image src="cloud://kira-lianxi01-h8t95.6b69-kira-lianxi01-h8t95-1302708397/XiaoHongShu/homepage/find.png"></image>
 			</form>
 		</view>
 		<view class="topBar">
@@ -22,7 +21,7 @@
   wx:if="{{index%2==1}}" 这里，用if来辨别是奇数还是偶数，两边加载相反的 -->
 	<view class="content">
       <view class="left">
-        <view a:for="{{normalData}}" a:key={{tuijian.id}} a:for-item="tuijian">
+        <view a:for="{{firstData}}" a:key={{tuijian.id}} a:for-item="tuijian">
           <!-- <view class="item">
             <view class="li">
               <image class="pic" src="{{tuijian.tuijian.Cover}}" mode="widthFix"></image>
@@ -46,7 +45,7 @@
         </view>
       </view>
       <view class="right">
-        <block a:for="{{normalData}}" a:key={{tuijian.id}} a:for-item="tuijian">
+        <block a:for="{{firstData}}" a:key={{tuijian.id}} a:for-item="tuijian">
           <!-- <view class="item">
             <view class="li">
               <image class="pic" src="{{tuijian.tuijian.Cover}}" mode="widthFix"></image>

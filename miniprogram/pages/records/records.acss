@@ -1,0 +1,19 @@
+.infoCol{
+  width: 100%;
+  float:left;
+  display: flex;
+  flex-flow: row wrap;
+  justify-content:baseline; 
+}
+.avatar {
+  background: #d8d8d8;
+  width: 168rpx;
+  height: 168rpx;
+  border-radius: 50%;
+}
+.nickname{
+  display: flex;
+  margin-top: 20rpx;
+  margin-bottom: 30rpx;
+  margin-right: 10rpx;
+}

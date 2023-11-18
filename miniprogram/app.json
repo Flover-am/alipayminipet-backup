@@ -8,7 +8,8 @@
     
   ],
   "window": {
-    "defaultTitle": "Pet"
+    "defaultTitle": "Pet",
+    "pullRefresh": true
   },
   "tabBar": {
     "textColor": "#dddddd",

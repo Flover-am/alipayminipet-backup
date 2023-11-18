@@ -1,3 +1,9 @@
+
 <view>
-  New Page
+  <view class="infoCol">
+    <image class="avatar" src="https://s2.loli.net/2023/11/16/ceQubgZ5BlWwO8K.png"/>
+  </view>
+  <view a:for="{{petsData}}" a:for-item="pet">
+    
+  </view>
 </view>

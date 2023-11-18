@@ -6,7 +6,13 @@ Page({
     topBar:['交流分享','领养送养  ','护理技巧  ','新手教学'],
     msg:'1',
     normalData:[],
-    passageNum: null
+    passageNum: null,
+    reachBottom: false,
+    currentPage: 1,
+    currentMaxPage: 1,
+    pageSize: 8,
+    pageHeight: 0,
+    firstData: []
   },
   onLoad(){
     this.getTitle();
@@ -37,7 +43,8 @@ Page({
         self.setData({
           normalData:res.result,
           // normalData:res.result,
-          passageNum:res.result.length
+          passageNum:res.result.length,
+          firstData: res.result.slice(0, self.data.pageSize)
         })
         console.log(res.result.length);
         // console.log(res.result[0]);
@@ -48,6 +55,79 @@ Page({
     })
 
     // console.log(normalData.tuijian);
-  }
+  },
+  onPullDownRefresh(){
+    console.log("进入刷新");
+    setTimeout(() => {
+      let newDta = this.data.normalData;
+      this.setData({
+        normalData:newDta
+      });
+      my.stopPullDownRefresh();
+    }, 1000);
+  },
 
+
+  onPageScroll(e) {
+    var self = this;
+    my.createSelectorQuery().selectViewport().scrollOffset(function (res) {
+      let totalPageNum = Math.ceil(self.data.passageNum / self.data.pageSize);
+      console.log(e);
+      let windowHeight = my.getSystemInfoSync().windowHeight;
+      let distanceToBottom = res.scrollHeight - (res.scrollTop + my.getSystemInfoSync().windowHeight);
+      console.log(distanceToBottom);
+      console.log(totalPageNum);
+      var pageIndex = Math.ceil(res.scrollTop/ windowHeight);
+      // console.log("scrollHeight: ", res.scrollHeight);
+      console.log("scrollTop / windowHeight = ", res.scrollTop/windowHeight);
+      console.log(pageIndex);
+      self.setData({
+        currentPage: pageIndex
+      })
+      if (distanceToBottom < 2 && !self.data.reachBottom && self.data.currentMaxPage < totalPageNum) {
+        console.log("加载新数据");
+        self.setData({
+          reachBottom: true,
+          currentMaxPage: self.data.currentMaxPage + 1,
+          currentPage: self.data.currentPage + 1
+        });
+        self.loadMoreData();
+      }
+
+      if ( distanceToBottom > 1 && distanceToBottom < windowHeight) {
+        self.setData({
+          reachBottom: false       
+        });
+      } else if (distanceToBottom < 1 && self.data.currentMaxPage == totalPageNum) {
+        self.setData({
+          reachBottom: true
+        })
+      }
+    }).exec();
+  },
+  async loadMoreData() {
+
+    // 模拟异步加载更多数据
+    console.log("加载数据");
+    setTimeout(() => {
+
+      let startIndex = (this.data.currentPage - 1) * this.data.pageSize;
+      console.log("startIndex: ",startIndex);
+      
+      
+      let endIndex = (startIndex + this.data.pageSize) > this.data.passageNum? this.data.passageNum: startIndex + this.data.pageSize;
+      
+      console.log("endIndex: ", endIndex);
+      let newData = this.data.normalData.slice(startIndex, endIndex);
+
+      // 将新数据追加到已有数据中
+      let currentData = this.data.firstData;
+      currentData = currentData.concat(newData);
+
+      this.setData({
+        firstData: currentData,
+        reachBottom: false
+      });
+    }, 1000);
+  }
 })

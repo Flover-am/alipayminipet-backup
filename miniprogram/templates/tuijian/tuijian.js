@@ -7,5 +7,8 @@ Page({
   },
   async onLoad(){
 
+  },
+  async passageDetails(e) {
+    
   }
 })

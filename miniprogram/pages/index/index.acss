@@ -11,6 +11,9 @@
 .find {
   position: relative;
 }
+.content {
+  display: flex;
+}
 .logo {
   width: 105rpx;
   height: 117rpx;

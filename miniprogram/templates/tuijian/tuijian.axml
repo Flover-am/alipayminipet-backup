@@ -1,10 +1,10 @@
 <template name="1">
-  <view class="item">
+  <view class="item" onTap="">
     <view class="li">
       <image class="pic" src="{{tuijian.tuijian.Cover}}" mode="widthFix"></image>
-					<view class="title-wrap">
+					<!-- <view class="title-wrap">
 						<navigator url="url" class="title">{{tuijian.tuijian.title}}</navigator>
-					</view>
+					</view> -->
 					<view class="bottom">
 						<view class="toux-name">
 							<image class="toux" src="{{tuijian.tuijian.title}}"></image>

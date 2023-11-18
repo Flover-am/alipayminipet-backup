@@ -7,15 +7,17 @@
   flex-direction: row;
   margin: 20rpx;
   overflow: hidden;
+  position: absolute;
+  top :200rpx;
 }
 .left {
   width: 345rpx;
 }
 .title-wrap{
-  padding: 5rpx 20rpx 0rpx 20rpx;
+  padding: 10rpx 20rpx 0rpx 20rpx;
   font-size: 30rpx;
   font-weight: 600;
-  color: #333;
+  color: #ffffff;
 }
 /* .title {
   padding: 5rpx 20rpx 0rpx 20rpx;
