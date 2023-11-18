@@ -9,30 +9,34 @@
   </view>
 </view>
 <view class="bar">
-  <view class="unit">
-    <text>{{todoNum}}</text>
+  <view class="unit" id="todo" onTap="onTabTODO">
+    <text class="num">{{todoNum}}</text>
     <text>待办</text>
   </view>
-  <view class="unit" onTap="toMyPets">
-    <text>{{petNum}}</text>
+  <view class="unit" id="pet" onTap="toMyPets">
+    <text class="num">{{petNum}}</text>
     <text>宠物</text>
   </view>
-  <view class="unit">
-    <text>{{postNum}}</text>
+  <view class="unit" id="post" onTap="onTabPost">
+    <text class="num">{{postNum}}</text>
     <text>发帖</text>
   </view>
 </view>
 <view class="bar2">
-  <view class="item">
+  <view class="item" onTap="onTabPostIcon">
+    <image class="icon" mode="scaleToFill" src="/image/post.png" />
     <text>发布</text>
   </view>
-  <view class="item">
+  <view class="item" onTap="onTabLikeIcon">
+    <image class="icon" mode="scaleToFill" src="/image/like.png" />
     <text>喜欢</text>
   </view>
-  <view class="item">
+  <view class="item" onTap="onTabHistoryIcon">
+    <image class="icon" mode="scaleToFill" src="/image/history.png" />
     <text>历史</text>
   </view>
-  <view class="item">
+  <view class="item" onTap="onTabMessageIcon">
+    <image class="icon" mode="scaleToFill" src="/image/chat.png" />
     <text>消息</text>
   </view>
 </view>
@@ -44,16 +48,16 @@
 </view>
 
 <view class="bar4">
-  <view class="item4">
-    设置
+  <view class="item4" onTap="onTabSettings">
+    <text>设置</text>
   </view>
-  <view class="item4">
-    反馈
+  <view class="item4" onTap="onTabFeedback">
+    <text>反馈</text>
   </view>
-  <view class="item4">
-    帮助
+  <view class="item4" onTap="onTabHelp">
+    <text>帮助</text>
   </view>
-  <view class="item4">
-    关于
+  <view class="item4" onTap="onTabAbout">
+    <text>关于</text>
   </view>
 </view>
