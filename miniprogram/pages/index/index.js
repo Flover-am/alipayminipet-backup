@@ -12,7 +12,8 @@ Page({
     currentMaxPage: 1,
     pageSize: 8,
     pageHeight: 0,
-    firstData: []
+    firstData: [],
+    position: null
   },
   onLoad(){
     this.getTitle();
@@ -108,9 +109,10 @@ Page({
   async loadMoreData() {
 
     // 模拟异步加载更多数据
+    my.showNavigationBarLoading();
     console.log("加载数据");
     setTimeout(() => {
-
+      my.hideLoading();
       let startIndex = (this.data.currentPage - 1) * this.data.pageSize;
       console.log("startIndex: ",startIndex);
       
@@ -123,11 +125,12 @@ Page({
       // 将新数据追加到已有数据中
       let currentData = this.data.firstData;
       currentData = currentData.concat(newData);
-
-      this.setData({
+      my.showNavigationBarLoading(this.setData({
         firstData: currentData,
         reachBottom: false
-      });
+      }))
+      my.hideNavigationBarLoading();
+
     }, 1000);
   }
 })
