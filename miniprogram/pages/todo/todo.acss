@@ -1,12 +1,16 @@
 .addbutton {
   position: fixed;
-  bottom: 20px;
-  right: 20px;
+  bottom: 15px;
+  right: 30px;
 }
 
 .icon {
-  width: 80px;
-  height: 80px;
+  width: 70px;
+  height: 70px;
+}
+
+.list {
+  margin-bottom: 100px;
 }
 
 .todo-info{
@@ -25,14 +29,14 @@
   font: 600;
   font-size: larger;
   word-wrap: break-word;
+  word-break: break-all;
   white-space: normal;
-
+  margin: 5%;
 }
 
 .finish {
-  width: 70px;
-  height: 10px;
+  width: 80px;
   position: relative;
-  left: 250px;
+  left: 230px;
   font-size: larger;
 }

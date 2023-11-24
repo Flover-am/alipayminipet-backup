@@ -35,10 +35,12 @@ Page({
       success: result => {
         if (result.ok) {
           if (result.inputValue != '') {
+            let newList = this.data.list
             item.todo = result.inputValue;
-            this.data.list.push(item),
+            newList.push(item)
             this.setData({
-              num: this.data.list.length
+              list: newList,
+              num: newList.length
             })
             my.showToast({
               content: '添加成功',
@@ -56,10 +58,18 @@ Page({
         }
       }
     });
+    this.setData
   },
 
-  finish(index){
-    this.data.list[index].isDone = true
+  finish(e){
+    let index = e.target.dataset.index
+    let newList = this.data.list
+    newList[index].isDone = true
+    this.setData({
+      list: newList
+    })
+    console.log(index)
+    console.log(this.data.list[index])
     my.showToast({
       content: '已完成',
       type: 'success',

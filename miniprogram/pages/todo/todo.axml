@@ -3,15 +3,21 @@
 </view>
 
 <view class="list">
-  <view a:for="{{ list }}" a:key="index" class="todo-info">
+  <view a:for="{{ list }}" class="todo-info"  a:if="{{ !item.isDone }}">
     <view class="todo">
       <text >{{item.todo}}</text>
     </view>
 
     <view class="finish">
-      <button size="default" type="ghost" onTap="finish">
+      <button size="default" type="ghost" data-index="{{index}}" onTap="finish">
         完成
       </button>
+    </view>
+  </view>
+
+  <view a:for="{{ list }}" class="done-info"  a:if="{{ item.isDone }}">
+    <view class="todo">
+      <text >{{item.todo}}</text>
     </view>
   </view>
 </view>
