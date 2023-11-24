@@ -1,3 +1,22 @@
-<view>
-  待办
+<view class="none">
+  <text>{{num == 0 ? "当前没有代办事项" : ""}}</text>
 </view>
+
+<view class="list">
+  <view a:for="{{ list }}" a:key="index" class="todo-info">
+    <view class="todo">
+      <text >{{item.todo}}</text>
+    </view>
+
+    <view class="finish">
+      <button size="default" type="ghost" onTap="finish">
+        完成
+      </button>
+    </view>
+  </view>
+</view>
+
+<view class="addbutton" onTap="addItem">
+  <image class="icon" mode="scaleToFill" src="/image/addTODO.png"/>
+</view>
+

@@ -1,0 +1,38 @@
+.addbutton {
+  position: fixed;
+  bottom: 20px;
+  right: 20px;
+}
+
+.icon {
+  width: 80px;
+  height: 80px;
+}
+
+.todo-info{
+  display: flex;
+  flex-wrap: wrap;
+  flex-direction: column;
+  align-content: flex-start;
+  border-radius: 20rpx;
+  background-color: white;
+  justify-content: center;
+  margin: 5%;
+}
+
+.todo {
+  direction: ltr;
+  font: 600;
+  font-size: larger;
+  word-wrap: break-word;
+  white-space: normal;
+
+}
+
+.finish {
+  width: 70px;
+  height: 10px;
+  position: relative;
+  left: 250px;
+  font-size: larger;
+}
