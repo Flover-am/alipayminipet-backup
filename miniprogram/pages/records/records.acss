@@ -1,19 +1,59 @@
-.infoCol{
-  width: 100%;
-  float:left;
+page{
+  flex:1;
+  padding: 5%;
+  background-color: whitesmoke;
   display: flex;
-  flex-flow: row wrap;
-  justify-content:baseline; 
+  flex-direction: column;
+  justify-content: flex-start;
 }
-.avatar {
+.petCard{
+  padding: 5%;
+  display: flex;
+  flex-flow: column;
+  justify-content:flex-start;
+  background-color: white;
+  border-radius: 20rpx;
+}
+.recordCard{
+  width: 90%;
+  margin: auto;
+
+}
+
+
+.imgeavatar{
   background: #d8d8d8;
   width: 168rpx;
   height: 168rpx;
   border-radius: 50%;
 }
-.nickname{
+
+.petCard .detail{
   display: flex;
-  margin-top: 20rpx;
-  margin-bottom: 30rpx;
-  margin-right: 10rpx;
+  flex-flow: row;
+  align-items: center;
+  align-self: flex-start;
 }
+.petCard .detail .avatar{
+  margin-right: 30rpx;
+}
+.petCard .buttons{
+  display: flex;
+  flex-flow: row;
+  justify-content: space-around ;
+  align-self: stretch;
+  
+}
+
+.grid4 {
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  grid-template-rows: repeat(2, 1fr);
+  grid-column-gap: 20px;
+  grid-row-gap: 0px;
+}
+
+.div1 { grid-area: 1 / 1 / 2 / 2; }
+.div2 { grid-area: 1 / 2 / 2 / 3; }
+.div3 { grid-area: 2 / 1 / 3 / 2; }
+.div4 { grid-area: 2 / 2 / 3 / 3; }
