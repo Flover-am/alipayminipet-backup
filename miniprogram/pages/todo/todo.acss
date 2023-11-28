@@ -40,3 +40,9 @@
   left: 230px;
   font-size: larger;
 }
+
+.expand {
+  width: 30px;
+  height: 30px;
+  vertical-align: middle;
+}

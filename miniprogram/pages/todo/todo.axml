@@ -1,9 +1,9 @@
-<view class="none">
-  <text>{{num == 0 ? "当前没有代办事项" : ""}}</text>
-</view>
-
 <view class="list">
-  <view a:for="{{ list }}" class="todo-info"  a:if="{{ !item.isDone }}">
+  <view class="unfinished">
+    <text>{{"未完成 " + unfinished}}</text>
+  </view>
+
+  <view a:for="{{ list }}" class="todo-info"  a:if="{{ !item.isDone }}" onLongTap="edit" data-index="{{index}}">
     <view class="todo">
       <text >{{item.todo}}</text>
     </view>
@@ -15,11 +15,20 @@
     </view>
   </view>
 
-  <view a:for="{{ list }}" class="done-info"  a:if="{{ item.isDone }}">
-    <view class="todo">
-      <text >{{item.todo}}</text>
+
+  <view class="finished">
+    <image class="expand" mode="aspectFit" src="{{folded? '/image/expand_arrow.png':'/image/fold_arrow.png'}}" onTap="shiftFold"/>
+    <text>{{"已完成 " + finished}}</text>
+  </view>
+
+  <view a:if="{{ !folded }}">
+    <view a:for="{{ list }}" class="done-info"  a:if="{{ item.isDone }}">
+      <view class="todo">
+        <text >{{item.todo}}</text>
+      </view>
     </view>
   </view>
+  
 </view>
 
 <view class="addbutton" onTap="addItem">
