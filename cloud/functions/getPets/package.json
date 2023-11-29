@@ -1,10 +1,6 @@
 {
   "name": "getPets",
-<<<<<<< HEAD
   "version": "1.0.2",
-=======
-  "version": "1.0.0",
->>>>>>> f2604b2f30442b2bcebae8e31910d04940487ec7
   "description": "",
   "main": "index.js",
   "scripts": {},
