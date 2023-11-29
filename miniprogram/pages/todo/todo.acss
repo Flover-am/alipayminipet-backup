@@ -1,0 +1,48 @@
+.addbutton {
+  position: fixed;
+  bottom: 15px;
+  right: 30px;
+}
+
+.icon {
+  width: 70px;
+  height: 70px;
+}
+
+.list {
+  margin-bottom: 100px;
+}
+
+.todo-info{
+  display: flex;
+  flex-wrap: wrap;
+  flex-direction: column;
+  align-content: flex-start;
+  border-radius: 20rpx;
+  background-color: white;
+  justify-content: center;
+  margin: 5%;
+}
+
+.todo {
+  direction: ltr;
+  font: 600;
+  font-size: larger;
+  word-wrap: break-word;
+  word-break: break-all;
+  white-space: normal;
+  margin: 5%;
+}
+
+.finish {
+  width: 80px;
+  position: relative;
+  left: 230px;
+  font-size: larger;
+}
+
+.expand {
+  width: 30px;
+  height: 30px;
+  vertical-align: middle;
+}

@@ -1,3 +1,37 @@
-<view>
-  待办
+<view class="list">
+  <view class="unfinished">
+    <text>{{"未完成 " + unfinished}}</text>
+  </view>
+
+  <view a:for="{{ list }}" class="todo-info"  a:if="{{ !item.isDone }}" onLongTap="edit" data-index="{{index}}">
+    <view class="todo">
+      <text >{{item.todo}}</text>
+    </view>
+
+    <view class="finish">
+      <button size="default" type="ghost" data-index="{{index}}" onTap="finish">
+        完成
+      </button>
+    </view>
+  </view>
+
+
+  <view class="finished">
+    <image class="expand" mode="aspectFit" src="{{folded? '/image/expand_arrow.png':'/image/fold_arrow.png'}}" onTap="shiftFold"/>
+    <text>{{"已完成 " + finished}}</text>
+  </view>
+
+  <view a:if="{{ !folded }}">
+    <view a:for="{{ list }}" class="done-info"  a:if="{{ item.isDone }}">
+      <view class="todo">
+        <text >{{item.todo}}</text>
+      </view>
+    </view>
+  </view>
+  
 </view>
+
+<view class="addbutton" onTap="addItem">
+  <image class="icon" mode="scaleToFill" src="/image/addTODO.png"/>
+</view>
+
