@@ -20,6 +20,8 @@ Page({
     console.log(this.normalData);
   },
   async change(e) {
+
+    console.log(e);
     var id=e.currentTarget.dataset.id + 1;
     this.setData({msg:id})
     // console.log(e);
@@ -132,5 +134,18 @@ Page({
       my.hideNavigationBarLoading();
 
     }, 1000);
+  },
+  async passageDetails(e) {
+    var postId = e.currentTarget.dataset.id;
+    var detail = this.data.firstData[postId]
+    console.log(e)
+    my.navigateTo({
+      url: "/pages/passageDetails/passageDetails",
+      success: function(res) {
+        res.eventChannel.emit('PageMain_Data',{
+          data: detail
+        })
+      }
+    })
   }
 })

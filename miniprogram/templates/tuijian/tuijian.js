@@ -6,9 +6,6 @@ Page({
   data: {
   },
   async onLoad(){
-
-  },
-  async passageDetails(e) {
     
   }
 })

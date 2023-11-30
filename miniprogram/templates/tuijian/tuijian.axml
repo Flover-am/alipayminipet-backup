@@ -1,7 +1,7 @@
 <template name="1">
-  <view class="item" onTap="">
+  <view class="item" onTap="getpassageDetails">
     <view class="li">
-      <image class="pic" src="{{tuijian.tuijian.Cover}}" mode="widthFix"></image>
+      <image  class="pic" src="{{tuijian.tuijian.Cover}}"  mode="widthFix" data-id="{{tuijian.id}}"></image>
 					<!-- <view class="title-wrap">
 						<navigator url="url" class="title">{{tuijian.tuijian.title}}</navigator>
 					</view> -->

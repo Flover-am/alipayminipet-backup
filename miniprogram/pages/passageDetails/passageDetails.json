@@ -1,0 +1,7 @@
+{
+  "usingComponents": {
+    "container": "antd-mini/es/Container/index",
+    "divider": "antd-mini/es/Divider/index"
+  },
+  "styleIsolation": "apply-shared"
+}
