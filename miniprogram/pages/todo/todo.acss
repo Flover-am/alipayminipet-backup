@@ -22,6 +22,7 @@
   background-color: white;
   justify-content: center;
   margin: 5%;
+  position: relative;
 }
 
 .done-info{
@@ -62,4 +63,16 @@
   width: 30px;
   height: 30px;
   vertical-align: middle;
+}
+
+.delete {
+  position: absolute;
+  right: 20px;
+  top: 5px;
+}
+
+.finishEdit{
+  position: absolute;
+  right: 20px;
+  bottom: 5px;
 }
