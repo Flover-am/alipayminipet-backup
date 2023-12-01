@@ -5,7 +5,13 @@
 
   <view a:for="{{ list }}" class="todo-info"  a:if="{{ !item.isDone }}" onLongTap="edit" data-index="{{index}}">
     <view class="todo">
-      <text >{{item.todo}}</text>
+      <text>{{item.todo}}</text>
+      <image class="edit" a:if="{{ item.inEdit }}" mode="aspectFit" src="/image/expand_arrow.png" />
+    </view>
+
+    <view class="time">
+      <text>{{item.time}}</text>
+      <image class="edit" a:if="{{ item.inEdit }}" mode="aspectFit" src="/image/expand_arrow.png" />
     </view>
 
     <view class="finish">
@@ -24,7 +30,11 @@
   <view a:if="{{ !folded }}">
     <view a:for="{{ list }}" class="done-info"  a:if="{{ item.isDone }}">
       <view class="todo">
-        <text >{{item.todo}}</text>
+        <text>{{item.todo}}</text>
+      </view>
+  
+      <view class="time">
+        <text>{{item.time}}</text>
       </view>
     </view>
   </view>

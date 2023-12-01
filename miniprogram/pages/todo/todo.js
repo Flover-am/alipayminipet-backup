@@ -9,10 +9,12 @@ Page({
   
   onLoad() {
     this.update()
+    this.cancleEdit()
   },
 
   onShow(){
     this.update()
+    this.cancleEdit()
   },
 
   update(){
@@ -47,20 +49,26 @@ Page({
       message: '请输入代办事项：',
       align: 'left',
       success: result => {
-        if (result.ok) {
-          if (result.inputValue != '') {
-            let newList = this.data.list
-            item.todo = result.inputValue;
-            newList.push(item)
-            this.setData({
-              list: newList,
-              num: newList.length
-            })
-            this.update()
-            my.showToast({
-              content: '添加成功',
-              type: 'success',
-              duration: 1000
+        if (result.ok) { // 点击“确定”
+          if (result.inputValue != '') { // 输入不为空
+            my.datePicker({
+              format: 'yyyy-MM-dd HH:mm',
+              success: (res) => {
+                let newList = this.data.list
+                item.time = res.date
+                item.todo = result.inputValue;
+                newList.push(item)
+                this.setData({
+                  list: newList,
+                  num: newList.length
+                })
+                this.update()
+                my.showToast({
+                  content: '添加成功',
+                  type: 'success',
+                  duration: 1000
+                })
+              }
             })
           }
           else {
@@ -107,7 +115,6 @@ Page({
   },
 
   editTodo(){
-    console.log(111)
   },
 
   editPet(){
@@ -116,5 +123,15 @@ Page({
 
   editTime(){
 
+  },
+
+  cancleEdit(){
+    let newList = this.data.list
+    for (let index = 0; index < newList.length; index++) {
+      newList[index].inEdit = false
+    }
+    this.setData({
+      list: newList
+    })
   }
 });
