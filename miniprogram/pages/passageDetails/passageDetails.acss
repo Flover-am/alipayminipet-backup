@@ -46,3 +46,28 @@
   padding: 32rpx;
   margin-left: 8px;
 }
+
+.input {
+  position: relative;
+  height: 80rpx;
+  top:500rpx;
+  width: 470rpx;
+  background-color: #ffffff;
+  /* margin-left: 0%; */
+  display: flex;
+  
+}
+
+.submit {
+
+  position: relative;
+  top: 388rpx;
+  bottom: 100rpx;
+  width: 220rpx;
+  margin-right: 10rpx;
+  left: 500rpx;
+  display: flex;
+  text-align: center;
+  justify-content: center;
+
+}

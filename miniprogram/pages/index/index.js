@@ -138,7 +138,10 @@ Page({
   async passageDetails(e) {
     var postId = e.currentTarget.dataset.id;
     var detail = this.data.firstData[postId]
-    console.log(e)
+    var talkList = [];
+
+    console.log(e);
+    console.log(talkList);
     my.navigateTo({
       url: "/pages/passageDetails/passageDetails",
       success: function(res) {
