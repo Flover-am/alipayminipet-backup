@@ -24,6 +24,17 @@
   margin: 5%;
 }
 
+.done-info{
+  display: flex;
+  flex-wrap: wrap;
+  flex-direction: column;
+  align-content: flex-start;
+  border-radius: 20rpx;
+  background-color: white;
+  justify-content: center;
+  margin: 5%;
+}
+
 .todo {
   direction: ltr;
   font: 600;
@@ -42,6 +53,12 @@
 }
 
 .expand {
+  width: 30px;
+  height: 30px;
+  vertical-align: middle;
+}
+
+.edit {
   width: 30px;
   height: 30px;
   vertical-align: middle;
