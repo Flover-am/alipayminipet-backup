@@ -45,9 +45,9 @@ left: 0;" title={{passage.data.tuijian.title}}>
 
   <text>评论</text>
   <view class="left">
-    <view a:for="{{passage.data.tuijian.talk}}" a:key={{passage.data.tuijian.talk.id}} a:for-item="talkItem">
+    <view a:for="{{talkList}}" a:key={{talkList.passageId}} a:for-item="talkItem">
       <view class="item">
-        {{talkItem}}
+        {{talkItem.talkcontent}}
       </view>
     </view>
   </view>

@@ -56,6 +56,7 @@ Page({
     var date = new Date(time).toDateString();
     
     var passageId = self.data.passage.data.tuijian.id;
+    var tempTalk = self.data.talk;
     console.log(date);
     context.callFunction({
       name: "talk",
@@ -64,10 +65,16 @@ Page({
         console.log(res);
         console.log("成功评论");
         self.setData({
-          
+          talk: ""
         })
 
       }
+    })
+    var tempList = self.data.talkList;
+    tempList.push({
+      time: date,
+      passageId: passageId,
+      talkcontent: tempTalk
     })
   }
 
