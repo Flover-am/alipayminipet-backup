@@ -9,6 +9,7 @@
 
 <!-- 头像及用户名 -->
 <view style="box-sizing: border-box; padding: 24rpx; display: flex; flex-direction: row; align-items: center;">
+  <!-- TODO: 用户头像 -->
   <avatar size='x-small' style="margin-right: 24rpx;"/>
   <text>{{passage.data.tuijian.author}}</text>
 </view>
@@ -33,16 +34,16 @@
 
 <!-- 评论区 -->
 <view style="box-sizing: border-box; padding: 24rpx; display: flex; flex-direction: column">
-  <!-- TODO: 数据对象添加评论字段 -->
-  <view style="margin-bottom: 32rpx; display: flex; flex-direction: row; align-items: flex-start" key="comment-item-{{index}}"  a:for="{{ [{'avatar': 'https://s2.loli.net/2023/11/16/ceQubgZ5BlWwO8K.png', 'name': 'name1', 'content': 'content1', 'date': '2023-11-3'}, {'avatar': 'https://s2.loli.net/2023/11/16/ceQubgZ5BlWwO8K.png', 'name': 'name2', 'content': 'content2', 'date': '2023-11-4'}] }}">
-    <avatar size='x-small' src="{{item.avatar}}"  />
+  <view style="margin-bottom: 32rpx; display: flex; flex-direction: row; align-items: flex-start" a:for="{{talkList}}" a:key={{talkList.passageId}} a:for-item="talkItem">
+    <!-- TODO: 用户头像 -->
+    <avatar size='x-small' />
     <view style="width: 16rpx" />
     <view style="display: flex; flex-direction: column; box-sizing: border-box; padding: 16rpx; background-color: white; border-radius: 4px; flex-grow: 2">
-      <text style="font-size: 12; color: #BBBBBB;">{{item.name}}</text>
+      <text style="font-size: 12; color: #BBBBBB;">用户{{talkItem.passageId}}</text>
       <view style="height: 8rpx" />
-      <text style="font-size: 14;">{{item.content}}</text>
+      <text style="font-size: 14;">{{talkItem.talkcontent}}</text>
       <view style="height: 8rpx" />
-      <text style="font-size: 12; color: #BBBBBB;">{{item.date}}</text>
+      <text style="font-size: 12; color: #BBBBBB;">{{talkItem.time}}</text>
     </view>
   </view>
   <divider text="没有更多了~" />
@@ -50,8 +51,22 @@
 </view>
 
 <!-- 底部工具栏 -->
-<view style="box-sizing: border-box; padding: 16rpx 48rpx; position: fixed; bottom: 0; height: 108rpx; width: 100%; background-color: white; display: flex; flex-direction: row; align-items: center; justify-content: space-between">
-  <ant-input style="height: 76rpx; width: 70%" placeholder="说点什么..."></ant-input>
-  <ant-button type="primary" inline size="small" style="background-color: #FFAE2E; border-radius: 38rpx; box-shadow: inset 0 0 0 0px">发送</ant-button>
+<view style="box-sizing: border-box; padding: 16rpx 48rpx; position: fixed; bottom: 0; height: 120rpx; width: 100%; background-color: white; display: flex; flex-direction: row; align-items: center; justify-content: space-between">
+  <input style="height: 88rpx; width: 70%" placeholder="说点什么..." confirm-type="send" type="text" onInput="talkInput" value="{{talk}}" />
+  <ant-button type="primary" onTap="submit" inline size="small" style="background-color: #FFAE2E; border-radius: 38rpx; box-shadow: inset 0 0 0 0px">发送</ant-button>
 </view>
+
+
+
+  <!-- <text>评论</text>
+  <view class="left">
+    <view a:for="{{talkList}}" a:key={{talkList.passageId}} a:for-item="talkItem">
+      <view class="item">
+        {{talkItem.talkcontent}}
+      </view>
+    </view>
+  </view> -->
+  
+  <!-- <input class="input" placeholder="快来发表评论吧" confirm-type="send" type="text" onInput="talkInput" value="{{talk}}" />    
+  <button  class="submit" type="primary" onTap="submit" >确定</button> -->
 

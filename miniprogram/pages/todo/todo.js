@@ -4,7 +4,8 @@ Page({
     num: 0,
     unfinished: 0,
     finished: 0,
-    folded: false
+    folded: false,
+    inEdit: false
   },
   
   onLoad() {
@@ -36,6 +37,14 @@ Page({
   },
 
   addItem(){
+    if (this.data.inEdit) {
+      my.showToast({
+        content: '请先完成编辑！',
+        type: 'none',
+        duration: 1000
+      })
+      return
+    }
     var item = {
       isDone: false,
       time: null,
@@ -84,6 +93,14 @@ Page({
   },
 
   finish(e){
+    if (this.data.inEdit) {
+      my.showToast({
+        content: '请先完成编辑！',
+        type: 'none',
+        duration: 1000
+      })
+      return
+    }
     let index = e.target.dataset.index
     let newList = this.data.list
     newList[index].isDone = true
@@ -106,23 +123,86 @@ Page({
   },
 
   edit(e){
+    if (this.data.inEdit) {
+      return
+    }
     let index = e.target.dataset.index
     let newList = this.data.list
     newList[index].inEdit = true
     this.setData({
-      list: newList
+      list: newList,
+      inEdit: true
     })
   },
 
-  editTodo(){
+  editTodo(e){
+    let index = e.target.dataset.index
+    let newList = this.data.list
+    let defaltText = newList[index].todo
+    my.prompt({
+      title: '修改代办事项',
+      message: '请修改代办事项：',
+      align: 'left',
+      inputValue: defaltText,
+      success: result => {
+        if (result.ok) {
+          newList[index].todo = result.inputValue
+          this.setData({
+            list: newList
+          })
+        }
+      }
+    })
+  },
+
+  editTime(e){
+    let index = e.target.dataset.index
+    let newList = this.data.list
+    let defaltTime = newList[index].time
+    my.datePicker({
+      format: 'yyyy-MM-dd HH:mm',
+      currentDate: defaltTime,
+      success: result => {
+        newList[index].time = result.date
+        this.setData({
+          list: newList
+        })
+      }
+    })
   },
 
   editPet(){
 
   },
 
-  editTime(){
+  delete(e){
+    my.confirm({
+      content: '确认要删除吗？',
+      confirmButtonText: '删除',
+      confirmColor: '#B22222',
+      success: result => {
+        if (result.confirm) {
+          let index = e.target.dataset.index
+          let newList = this.data.list
+          newList.splice(index, 1)
+          this.setData({
+            list: newList,
+            inEdit: false
+          })
+          this.update()
+        }
+      }
+    })
+  },
 
+  finishEdit(e){
+    let index = e.target.dataset.index
+    let newList = this.data.list
+    newList[index].inEdit = false
+    this.setData({
+      list: newList,
+      inEdit: false
+    })
   },
 
   cancleEdit(){
@@ -131,7 +211,8 @@ Page({
       newList[index].inEdit = false
     }
     this.setData({
-      list: newList
+      list: newList,
+      inEdit: false
     })
   }
 });
