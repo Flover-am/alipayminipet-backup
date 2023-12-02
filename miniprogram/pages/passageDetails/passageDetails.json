@@ -1,7 +1,10 @@
 {
   "usingComponents": {
+    "avatar": "antd-mini/es/Avatar/index",
     "container": "antd-mini/es/Container/index",
-    "divider": "antd-mini/es/Divider/index"
+    "divider": "antd-mini/es/Divider/index",
+    "ant-input": "antd-mini/es/Input/index",
+    "ant-button": "antd-mini/es/Button/index"
   },
   "styleIsolation": "apply-shared"
 }

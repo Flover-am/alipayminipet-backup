@@ -1,11 +1,6 @@
 Page({
   data: {
     passage: [],
-    autoplay: true,
-    vertical: false,
-    interval: 1000,
-    circular: false,
-    duration: 1500
   },
   onLoad() {
     const eventChannel = this.getOpenerEventChannel();

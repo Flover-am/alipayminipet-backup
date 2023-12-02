@@ -1,3 +1,8 @@
+:root{
+  --color-primay: #FFAE2E;
+  --color-secondary: #BBBBBB;
+}
+
 
 .boxsizing{
   box-sizing: border-box;
