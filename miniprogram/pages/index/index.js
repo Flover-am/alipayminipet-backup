@@ -147,7 +147,21 @@ Page({
       success: function(res) {
         res.eventChannel.emit('PageMain_Data',{
           data: detail
+        }),
+        console.log(res);
+      }
+    })
+  },
+  async releasePassage(e) {
+    console.log(e);
+    var self = this;
+    my.navigateTo({
+      url: "/pages/release/release",
+      success:function(res) {
+        res.eventChannel.emit('PageMain_DataA', {
+          data: self.data.normalData
         })
+        console.log(res);
       }
     })
   }

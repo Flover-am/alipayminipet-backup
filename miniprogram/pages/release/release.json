@@ -7,8 +7,7 @@
     "container": "antd-mini/es/Container/index",
     "divider": "antd-mini/es/Divider/index",
     "ant-button": "antd-mini/es/Button/index",
-    "uploader": "antd-mini/es/ImageUpload/index"
-
+    "uploader": "antd-mini/es/ImageUpload/index",
+    "ant-input": "antd-mini/es/Input/index"
   }
-  
 }

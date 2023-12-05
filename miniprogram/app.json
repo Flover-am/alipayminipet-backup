@@ -5,7 +5,8 @@
     "pages/records/records",
     "pages/todo/todo",
     "pages/person/person",
-    "pages/passageDetails/passageDetails"
+    "pages/passageDetails/passageDetails",
+    "pages/release/release"
   ],
   "window": {
     "defaultTitle": "Pet",

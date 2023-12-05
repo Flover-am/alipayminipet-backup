@@ -1,0 +1,16 @@
+<input style="height: 88rpx; width: 100%" 
+placeholder="标题" confirm-type="send" 
+type="text" onInput="titleInput" value="{{title}}" />
+
+<input style="height: 188rpx; width: 100%" 
+placeholder="正文" confirm-type="send" 
+type="text" onInput="contentInput" value="{{content}}" />
+<ant-button type="primary" onTap="submit" inline size="small" style="background-color: #FFAE2E; border-radius: 38rpx; box-shadow: inset 0 0 0 0px">提交</ant-button>
+
+<container>
+  <uploader
+    onRemove="onRemove"
+    onChange="onChange"
+    onUpload="onUpload" />
+</container>
+

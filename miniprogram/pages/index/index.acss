@@ -13,6 +13,7 @@
 }
 .content {
   display: flex;
+  
 }
 .logo {
   width: 105rpx;
