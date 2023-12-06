@@ -7,7 +7,10 @@ Page({
     CoverList: [],
     author: "",
     loveNum: 0,
-    all: []
+    all: [],
+    // TODO: 获取话题选项数据
+    topic: "",
+    topicList: ['交流分享', '领养送养', '护理技巧', '新手教学'],
   },
   async onLoad() {
     var self = this;
@@ -31,17 +34,17 @@ Page({
     })
     console.log(talkuserName); 
   },
-  async titleInput(event) {
+  async titleInput(text, event) {
     console.log(event);
-    var text = event.detail.value;
+    //var text = event.detail.value;
     var self = this;
     self.setData({
       title: text
     })
 
   },
-  async contentInput(event) {
-    var text = event.detail.value;
+  async contentInput(text, event) {
+   // var text = event.detail.value;
     var self = this;
     self.setData({
       content: text
@@ -82,6 +85,12 @@ Page({
         })
       }
     })
-  }
-
+  },
+  // TODO: 选择话题
+  handleOk(value, column) {
+    console.log('value', value, 'column', column);
+    this.setData({
+      topic: value
+    })
+  },
 })

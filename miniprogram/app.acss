@@ -1,9 +1,3 @@
-:root{
-  --color-primay: #FFAE2E;
-  --color-secondary: #BBBBBB;
-}
-
-
 .boxsizing{
   box-sizing: border-box;
 
@@ -12,6 +6,8 @@
 page {
   background-color: #F7F7F7;
   box-sizing: border-box;
+  --color-primary: #FFAE2E;
+  --color-secondary: #BBBBBB;
 }
 
 .page {

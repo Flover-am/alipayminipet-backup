@@ -63,8 +63,9 @@
         </block>
       </view>
   </view>
-  <view style="box-sizing: border-box; padding: 16rpx 48rpx; position: fixed; bottom: 0; height: 120rpx; width: 100%; background-color: white; display: flex; flex-direction: row; align-items: center; justify-content: space-between">
-    <ant-button type="primary" onTap="releasePassage" inline size="small" style="right: 0rpx;background-color: #FFAE2E; border-radius: 50%; box-shadow: inset 0 0 0 0px">+</ant-button>   
+
+  <!-- 右下角浮动按钮 -->
+  <view onTap="releasePassage" class="floating-button">
+    <icon type="EditSOutline" style="font-size: 48rpx; color: white"/>
   </view>
 <view>
-  

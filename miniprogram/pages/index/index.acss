@@ -176,3 +176,17 @@ input{
   width: 109rpx;
   height: 121rpx;
 }
+
+.floating-button{
+  height: 96rpx; 
+  width: 96rpx; 
+  position: fixed; 
+  right: 32rpx; 
+  bottom: 32rpx; 
+  background-color: var(--color-primary); 
+  box-shadow: 2px 2px 2px rgba(0, 0, 0, 0.05); 
+  border-radius: 48rpx; 
+  display: flex; 
+  justify-content: center; 
+  align-items: center;
+}

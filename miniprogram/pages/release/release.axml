@@ -1,16 +1,35 @@
-<input style="height: 88rpx; width: 100%" 
-placeholder="标题" confirm-type="send" 
-type="text" onInput="titleInput" value="{{title}}" />
-
-<input style="height: 188rpx; width: 100%" 
-placeholder="正文" confirm-type="send" 
-type="text" onInput="contentInput" value="{{content}}" />
-<ant-button type="primary" onTap="submit" inline size="small" style="background-color: #FFAE2E; border-radius: 38rpx; box-shadow: inset 0 0 0 0px">提交</ant-button>
-
-<container>
+<!-- 图片区域 -->
+<view class="image-container">
   <uploader
     onRemove="onRemove"
     onChange="onChange"
-    onUpload="onUpload" />
-</container>
+    onUpload="onUpload"
+    style="padding: 12rpx;" />
+</view>
 
+<!-- 文字区域 -->
+<view class="content-container">
+  <ant-input style="width: 100%; font-weight: bold;" 
+  placeholder="标题" confirm-type="send" 
+  type="text" onChange="titleInput" value="{{title}}" allowClear />
+  <divider style="margin: 16rpx 0"/>
+  <ant-textarea style="width: 100%;" 
+  placeholder="正文" confirm-type="send" 
+  type="text" onChange="contentInput" value="{{content}}" autoHeight />
+</view>
+
+<!-- 选择话题 -->
+<!-- TODO: 选择话题功能 -->
+<list >
+  <list-item arrow="right" style="color: var(--color-secondary)">
+    话题
+    <picker slot="extra" onOk="handleOk" placeholder="请选择" title="选择话题" options="{{topicList}}">
+    </picker>
+  </list-item>
+</list>
+
+<!-- 发布按钮 -->
+<!-- TODO: 发布功能 -->
+<ant-button type="primary" style="margin: 0 24rpx; background-color: var(--color-primary); border-radius: 48rpx; box-shadow: inset 0 0 0 0px; position: fixed; bottom: 24rpx; left: 0; right: 0;">
+  发布
+</ant-button>

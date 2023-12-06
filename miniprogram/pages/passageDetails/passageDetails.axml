@@ -6,7 +6,6 @@
     {{passage.data.tuijian.num}}
   </view>
 </view> -->
-
 <!-- 头像及用户名 -->
 <view style="box-sizing: border-box; padding: 24rpx; display: flex; flex-direction: row; align-items: center;">
   <!-- TODO: 用户头像 -->
@@ -51,22 +50,7 @@
 </view>
 
 <!-- 底部工具栏 -->
-<view style="box-sizing: border-box; padding: 16rpx 48rpx; position: fixed; bottom: 0; height: 120rpx; width: 100%; background-color: white; display: flex; flex-direction: row; align-items: center; justify-content: space-between">
-  <input style="height: 88rpx; width: 70%" placeholder="说点什么..." confirm-type="send" type="text" onInput="talkInput" value="{{talk}}" />
-  <ant-button type="primary" onTap="submit" inline size="small" style="background-color: #FFAE2E; border-radius: 38rpx; box-shadow: inset 0 0 0 0px">发送</ant-button>
+<view style="box-sizing: border-box; padding: 24rpx 24rpx 24rpx 24rpx; position: fixed; bottom: 0; left: 0; right: 0; height: 144rpx; background-color: white; display: flex; flex-direction: row; align-items: center; justify-content: space-between">
+  <input style="height: 96rpx; width: 70%; padding: 8rpx" placeholder="说点什么..." confirm-type="send" type="text" onInput="talkInput" value="{{talk}}" />
+  <ant-button type="primary" onTap="submit" inline size="small" style="background-color: var(--color-primary); border-radius: 38rpx; box-shadow: inset 0 0 0 0px">发送</ant-button>
 </view>
-
-
-
-  <!-- <text>评论</text>
-  <view class="left">
-    <view a:for="{{talkList}}" a:key={{talkList.passageId}} a:for-item="talkItem">
-      <view class="item">
-        {{talkItem.talkcontent}}
-      </view>
-    </view>
-  </view> -->
-  
-  <!-- <input class="input" placeholder="快来发表评论吧" confirm-type="send" type="text" onInput="talkInput" value="{{talk}}" />    
-  <button  class="submit" type="primary" onTap="submit" >确定</button> -->
-
