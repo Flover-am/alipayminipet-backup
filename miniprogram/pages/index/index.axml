@@ -21,8 +21,8 @@
   wx:if="{{index%2==1}}" 这里，用if来辨别是奇数还是偶数，两边加载相反的 -->
 	<view class="content">
       <view class="left">
-        <view a:for="{{firstData}}" a:key={{tuijian.id}} a:for-item="tuijian">
-          <view a:if="{{ tuijian.tuijian.id%2 == 0 }}" class="item"  onTap="passageDetails" data-id={{tuijian.tuijian.id}}>
+        <view a:for="{{firstData}}" a:key="index" a:for-item="tuijian">
+          <view a:if="{{ tuijian.tuijian.id%2 == 0 && (tuijian.tuijian.topic == currentTopic)}}" class="item"  onTap="passageDetails" data-id={{tuijian.tuijian.id}}>
             <view class="li">
               <image class="pic" src="{{tuijian.tuijian.Cover[0].link}}" mode="widthFix"></image>
                   <view class="bottom">
@@ -42,8 +42,8 @@
         </view>
       </view>
       <view class="right">
-        <block a:for="{{firstData}}" a:key={{tuijian.id}} a:for-item="tuijian">
-          <view a:if="{{ tuijian.tuijian.id%2==1 }}" class="item" onTap="passageDetails" data-id={{tuijian.tuijian.id}}>
+        <block a:for="{{firstData}}" a:key={{tuijian.Id}} a:for-item="tuijian">
+          <view a:if="{{ tuijian.tuijian.id%2==1 && (tuijian.tuijian.topic == currentTopic)}}" class="item" onTap="passageDetails" data-id={{tuijian.tuijian.id}}>
             <view class="li">
               <image class="pic" src="{{tuijian.tuijian.Cover[0].link}}" mode="widthFix"></image>
                   <view class="bottom">

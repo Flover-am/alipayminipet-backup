@@ -1,3 +1,5 @@
+const { resolve } = require("path");
+
 Page({
   data:{
     id: 0,
@@ -20,10 +22,6 @@ Page({
       self.setData({
         all: data
       })
-    })
-    var temp = self.data.all.data.length;
-    self.setData({
-      id: temp
     })
     var app = getApp(); 
     var talkuserName = app.globalData.userName;
@@ -66,23 +64,37 @@ Page({
   async submit(event) {
     var self = this;
     var context = await my.getCloudContext();
+    var num = 0;
+    for (var i = 0; i < 4; i++) {
+      if (this.data.topicList[i] == this.data.topic) {
+        break;
+      } else {
+        num += 1;
+      }
+    }
+    var Id = num.toString() + self.data.id.toString() 
     context.callFunction({
       name: 'addPassage',
       data: {
+        Id: Id,
         id: self.data.id,
         title: self.data.title,
         coverList: self.data.CoverList,
         loveNum: 0,
         author: self.data.author,
-        content: self.data.content
+        content: self.data.content,
+        topic: self.data.topic
       },
       success:function(res) {
         console.log(res);
         console.log('成功发布');
         self.setData({
+          coverList: [],
           title: "",
-          content: ""
-        })
+          content: "",
+          topic: ""
+        });
+        resolve("");
       }
     })
   },
@@ -91,6 +103,15 @@ Page({
     console.log('value', value, 'column', column);
     this.setData({
       topic: value
+    });
+    var temp = 0;
+    for (var i = 0; i < this.data.all.data.length; i++ ){
+      if (this.data.all.data[i].tuijian.topic == this.data.topic) {
+        temp += 1;
+      }
+    }
+    this.setData({
+      id: temp
     })
   },
 })

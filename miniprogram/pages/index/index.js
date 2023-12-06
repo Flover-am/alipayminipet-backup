@@ -13,7 +13,8 @@ Page({
     pageSize: 8,
     pageHeight: 0,
     firstData: [],
-    position: null
+    position: null,
+    currentTopic: "交流分享"
   },
   onLoad(){
     this.getTitle();
@@ -23,7 +24,11 @@ Page({
 
     console.log(e);
     var id=e.currentTarget.dataset.id + 1;
-    this.setData({msg:id})
+    this.setData({
+      msg:id,
+      currentTopic: this.data.topBar[id-1]
+    });
+   
     // console.log(e);
     console.log(id);
   },

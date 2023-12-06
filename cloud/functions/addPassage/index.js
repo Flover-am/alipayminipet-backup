@@ -8,13 +8,15 @@ exports.main = async (event, context) => {
   await db.collection("homePage").add({
     data: {
       tuijian: {
+        Id: data.Id,
         id: data.id,
         num: data.loveNum,
         love: "",
         text: data.content,
         Cover: data.coverList,
         title: data.title,
-        author: data.author
+        author: data.author,
+        topic: data.topic
       }
     }
   })
