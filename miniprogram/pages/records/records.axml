@@ -24,42 +24,11 @@
 </view>
 <view class="recordCard">
   <swiper indicator-dots="{{true}}" >
-    <swiper-item>
-      <container title = "日常记录">
-        <view class="grid4">
-          <view class="div1">
-            <container headerInBox="{{ false }}">
-              <view slot="title">
-                <view class="icon">
-                  <icon
-                    type="UnorderedListOutline"
-                    style="margin-right: 8px" />
-                  体重
-                </view>
-              </view>
-              <view class="content" />
-            </container>
-          </view>
-          <view class="div2">
-            22
-          </view>
-          <view class="div3">
-            33
-          </view>
-          <view class="div4">
-            44
-          </view>
-        </view>
-      </container>
-    </swiper-item>
-    <swiper-item>
-      <container title = "洗护记录">
-      </container>
-    </swiper-item>
-    <swiper-item>
-      <container title = "健康记录">
-      </container>
-    </swiper-item>
+    <block a:for="{{topRecords}}">
+      <swiper-item >
+        <card topRecord="{{topRecords[index]}}" title="{{cardTitles[ind]}}" ></card>
+      </swiper-item>
+    </block>
       
   </swiper>
 </view>

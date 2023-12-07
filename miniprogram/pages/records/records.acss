@@ -20,7 +20,9 @@ page{
 
 }
 
-
+.red{
+  background-color: red;
+}
 .imgeavatar{
   background: #d8d8d8;
   width: 168rpx;

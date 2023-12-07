@@ -1,11 +1,11 @@
 {
   "pages": [
+    "pages/records/records",
     "pages/index/index",
     "pages/mypets/mypets",
-    "pages/records/records",
     "pages/todo/todo",
-    "pages/person/person"
-    
+    "pages/person/person",
+    "pages/records/recordSumary/recordSumary"
   ],
   "window": {
     "defaultTitle": "Pet",

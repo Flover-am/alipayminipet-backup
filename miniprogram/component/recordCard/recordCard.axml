@@ -1,0 +1,76 @@
+  <container title = "{{title}}">
+    <view class="grid4">
+      <view class="div1" >
+        <container headerInBox="{{ false }}">
+          <view slot="title">
+            <view class="icon">
+              <icon
+                type="UnorderedListOutline"
+                style="margin-right: 8px" />
+              {{topRecord.item1.name}}
+            </view>
+          </view>
+          <view slot="headerRight">    
+            <icon type="RightOutline"  />        
+          </view>
+          <view >
+          {{topRecord.item1.value}}
+          </view>
+        </container>
+      </view>
+      <view class="div2">
+        <container headerInBox="{{ false }}">
+          <view slot="title">
+            <view class="icon">
+              <icon
+                type="UnorderedListOutline"
+                style="margin-right: 8px" />
+              {{topRecord.item2.name}}
+            </view>
+          </view>
+          <view slot="headerRight">    
+            <icon type="RightOutline"  />        
+          </view>
+          <view >
+          {{topRecord.item2.value}}
+          </view>
+        </container>
+      </view>
+      <view class="div3">
+        <container headerInBox="{{ false }}">
+          <view slot="title">
+            <view class="icon">
+              <icon
+                type="UnorderedListOutline"
+                style="margin-right: 8px" />
+              {{topRecord.item3.name}}
+            </view>
+          </view>
+          <view slot="headerRight">    
+            <icon type="RightOutline"  />        
+          </view>
+          <view >
+          {{topRecord.item3.value}}
+          </view>
+        </container>
+      </view>
+      <view class="div4">
+        <container headerInBox="{{ false }}">
+          <view slot="title">
+            <view class="icon">
+              <icon
+                type="UnorderedListOutline"
+                style="margin-right: 8px" />
+              {{topRecord.item4.name}}
+            </view>
+          </view>
+          <view slot="headerRight">    
+            <icon type="RightOutline"  />        
+          </view>
+          <view >
+          {{topRecord.item4.value}}
+          </view>
+        </container>
+      </view>
+    </view>
+  </container>

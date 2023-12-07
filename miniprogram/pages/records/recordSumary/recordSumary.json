@@ -1,0 +1,7 @@
+{
+  "usingComponents": {
+    "ant-button": "antd-mini/es/Button/index",
+    "steps":"antd-mini/es/Steps/index"
+  },
+  "styleIsolation": "apply-shared"
+}
