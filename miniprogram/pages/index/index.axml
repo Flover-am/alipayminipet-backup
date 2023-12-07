@@ -22,12 +22,9 @@
 	<view class="content">
       <view class="left">
         <view a:for="{{firstData}}" a:key={{tuijian.id}} a:for-item="tuijian">
-          <!-- <view class="item">
+          <view a:if="{{ tuijian.tuijian.id%2 == 0 }}" class="item"  onTap="passageDetails" data-id={{tuijian.tuijian.id}}>
             <view class="li">
-              <image class="pic" src="{{tuijian.tuijian.Cover}}" mode="widthFix"></image>
-                  <view class="title-wrap">
-                    <navigator url="url" class="title">{{tuijian.tuijian.title}}</navigator>
-                  </view>
+              <image class="pic" src="{{tuijian.tuijian.Cover[0].link}}" mode="widthFix"></image>
                   <view class="bottom">
                     <view class="toux-name">
                       <image class="toux" src="{{tuijian.tuijian.title}}"></image>
@@ -39,19 +36,16 @@
                     </view>
                   </view>
             </view>
-          </view> -->
+          </view>
 
-          <template is="{{msg}}" data="{{tuijian}}" a:if="{{tuijian.tuijian.id%2==1}}"></template>
+          <!-- <template is="{{msg}}" data="{{tuijian}}" a:if="{{tuijian.tuijian.id%2==1}}"></template> -->
         </view>
       </view>
       <view class="right">
         <block a:for="{{firstData}}" a:key={{tuijian.id}} a:for-item="tuijian">
-          <!-- <view class="item">
+          <view a:if="{{ tuijian.tuijian.id%2==1 }}" class="item" onTap="passageDetails" data-id={{tuijian.tuijian.id}}>
             <view class="li">
-              <image class="pic" src="{{tuijian.tuijian.Cover}}" mode="widthFix"></image>
-                  <view class="title-wrap">
-                    <navigator url="url" class="title">{{tuijian.tuijian.title}}</navigator>
-                  </view>
+              <image class="pic" src="{{tuijian.tuijian.Cover[0].link}}" mode="widthFix"></image>
                   <view class="bottom">
                     <view class="toux-name">
                       <image class="toux" src="{{tuijian.tuijian.title}}"></image>
@@ -63,9 +57,9 @@
                     </view>
                   </view>
             </view>
-          </view> -->
+          </view>
 
-          <template is="{{msg}}" data="{{tuijian}}" a:if="{{tuijian.tuijian.id%2==1}}"></template>
+          <!-- <template is="{{msg}}" data="{{tuijian}}" a:if="{{tuijian.tuijian.id%2==1}}"></template> -->
         </block>
       </view>
   </view>

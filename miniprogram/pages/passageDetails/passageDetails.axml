@@ -1,0 +1,58 @@
+<!-- <view class="details">
+  <image class="cover" mode="scaleToFill" src="{{passage.data.tuijian.Cover}}" />
+  <text class="title">{{passage.data.tuijian.title}}</text>
+  <text class="content">{{passage.data.tuijian.text}}</text>
+  <view class="love">
+    {{passage.data.tuijian.num}}
+  </view>
+</view> -->
+
+<container style="margin: 0; padding: 0;height: 100%;
+width: 100%;
+position: absolute;
+top: 0;
+left: 0;" title={{passage.data.tuijian.title}}>
+  <view slot="headerRight">右侧内容</view>
+  <!-- <view class="content">
+    <image class="box"  src="{{passage.data.tuijian.Cover}}"/>
+  </view> -->
+  <view class="page-section-demo">
+    <swiper
+        style="height:150px"
+        class="demo-swiper"
+        previousMargin="10px"
+        nextMargin="10px"
+        indicator-dots="{{indicatorDots}}"
+        autoplay="{{autoplay}}"
+        vertical="{{vertical}}"
+        interval="{{interval}}"
+        circular="{{circular}}"
+        duration="{{duration}}"
+    >
+      <swiper-item key="swiper-item-{{index}}" a:for="{{passage.data.tuijian.Cover}}">
+          <!-- <view class="swiper-item bc_{{item.color}}">{{item.text}}</view> -->
+          <image class="swiper-item" src="{{item.link}}" />
+      </swiper-item>
+    </swiper>
+  </view>
+
+
+  <view class="text">
+    <text>{{passage.data.tuijian.text}}</text>
+  </view>
+
+
+
+  <text>评论</text>
+  <view class="left">
+    <view a:for="{{talkList}}" a:key={{talkList.passageId}} a:for-item="talkItem">
+      <view class="item">
+        {{talkItem.talkcontent}}
+      </view>
+    </view>
+  </view>
+  
+  <input class="input" placeholder="快来发表评论吧" confirm-type="send" type="text" onInput="talkInput" value="{{talk}}" />    
+  <button  class="submit" type="primary" onTap="submit" >确定</button>
+
+</container>

@@ -22,6 +22,18 @@
   background-color: white;
   justify-content: center;
   margin: 5%;
+  position: relative;
+}
+
+.done-info{
+  display: flex;
+  flex-wrap: wrap;
+  flex-direction: column;
+  align-content: flex-start;
+  border-radius: 20rpx;
+  background-color: white;
+  justify-content: center;
+  margin: 5%;
 }
 
 .todo {
@@ -39,4 +51,28 @@
   position: relative;
   left: 230px;
   font-size: larger;
+}
+
+.expand {
+  width: 30px;
+  height: 30px;
+  vertical-align: middle;
+}
+
+.edit {
+  width: 30px;
+  height: 30px;
+  vertical-align: middle;
+}
+
+.delete {
+  position: absolute;
+  right: 20px;
+  top: 5px;
+}
+
+.finishEdit{
+  position: absolute;
+  right: 20px;
+  bottom: 5px;
 }

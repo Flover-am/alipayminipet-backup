@@ -1,28 +1,57 @@
-<view class="none">
-  <text>{{num == 0 ? "当前没有代办事项" : ""}}</text>
-</view>
-
 <view class="list">
-  <view a:for="{{ list }}" class="todo-info"  a:if="{{ !item.isDone }}">
+  <view class="unfinished">
+    <text>{{"未完成 " + unfinished}}</text>
+  </view>
+
+  <view a:for="{{ list }}" class="todo-info"  a:if="{{ !item.isDone }}" onLongTap="edit" data-index="{{index}}">
     <view class="todo">
-      <text >{{item.todo}}</text>
+      <text>{{item.todo}}</text>
+      <image class="edit" a:if="{{ item.inEdit }}" onTap="editTodo" data-index="{{index}}" mode="aspectFit" src="/image/expand_arrow.png" />
     </view>
 
-    <view class="finish">
+    <view class="time">
+      <text>{{item.time}}</text>
+      <image class="edit" a:if="{{ item.inEdit }}" onTap="editTime" data-index="{{index}}" mode="aspectFit" src="/image/expand_arrow.png" />
+    </view>
+
+    <view class="finish" a:if="{{ !item.inEdit }}">
       <button size="default" type="ghost" data-index="{{index}}" onTap="finish">
         完成
       </button>
     </view>
-  </view>
 
-  <view a:for="{{ list }}" class="done-info"  a:if="{{ item.isDone }}">
-    <view class="todo">
-      <text >{{item.todo}}</text>
+    <view class="delete" a:if="{{ item.inEdit }}" onTap="delete" data-index="{{index}}">
+      <image class="edit" mode="aspectFit" src="/image/delete.png" />
+      <text>  删除代办</text>
+    </view>
+
+    <view class="finishEdit" a:if="{{ item.inEdit }}" onTap="finishEdit" data-index="{{index}}">
+      <image class="edit" mode="aspectFit" src="/image/done.png" />
+      <text>  完成编辑</text>
     </view>
   </view>
+
+
+  <view class="finished">
+    <image class="expand" mode="aspectFit" src="{{folded? '/image/expand_arrow.png':'/image/fold_arrow.png'}}" onTap="shiftFold"/>
+    <text>{{"已完成 " + finished}}</text>
+  </view>
+
+  <view a:if="{{ !folded }}">
+    <view a:for="{{ list }}" class="done-info"  a:if="{{ item.isDone }}">
+      <view class="todo">
+        <text>{{item.todo}}</text>
+      </view>
+  
+      <view class="time">
+        <text>{{item.time}}</text>
+      </view>
+    </view>
+  </view>
+  
 </view>
 
 <view class="addbutton" onTap="addItem">
-  <image class="icon" mode="scaleToFill" src="/image/addTODO.png"/>
+  <image class="icon" mode="scaleToFill" src="/image/addPen.svg"/>
 </view>
 

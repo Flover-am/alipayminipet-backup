@@ -9,6 +9,6 @@
   "author": "",
   "license": "ISC",
   "dependencies": {
-    "antd-mini": "^2.15.0"
+    "antd-mini": "^2.16.0"
   }
 }
