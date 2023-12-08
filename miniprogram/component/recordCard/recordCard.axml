@@ -1,76 +1,23 @@
   <container title = "{{title}}">
     <view class="grid4">
       <view class="div1" >
-        <container headerInBox="{{ false }}">
-          <view slot="title">
-            <view class="icon">
-              <icon
-                type="UnorderedListOutline"
-                style="margin-right: 8px" />
-              {{topRecord.item1.name}}
-            </view>
-          </view>
-          <view slot="headerRight">    
-            <icon type="RightOutline"  />        
-          </view>
-          <view >
-          {{topRecord.item1.value}}
-          </view>
-        </container>
+        <recorditem name="{{topRecord.item1.name}}" value="{{topRecord.item1.value}}"></recorditem>
       </view>
       <view class="div2">
-        <container headerInBox="{{ false }}">
-          <view slot="title">
-            <view class="icon">
-              <icon
-                type="UnorderedListOutline"
-                style="margin-right: 8px" />
-              {{topRecord.item2.name}}
-            </view>
-          </view>
-          <view slot="headerRight">    
-            <icon type="RightOutline"  />        
-          </view>
-          <view >
-          {{topRecord.item2.value}}
-          </view>
-        </container>
+        <recorditem name="{{topRecord.item2.name}}" value="{{topRecord.item2.value}}"></recorditem>
       </view>
       <view class="div3">
-        <container headerInBox="{{ false }}">
-          <view slot="title">
-            <view class="icon">
-              <icon
-                type="UnorderedListOutline"
-                style="margin-right: 8px" />
-              {{topRecord.item3.name}}
-            </view>
-          </view>
-          <view slot="headerRight">    
-            <icon type="RightOutline"  />        
-          </view>
-          <view >
-          {{topRecord.item3.value}}
-          </view>
-        </container>
+        <recorditem name="{{topRecord.item3.name}}" value="{{topRecord.item3.value}}"></recorditem>
+
       </view>
       <view class="div4">
-        <container headerInBox="{{ false }}">
-          <view slot="title">
-            <view class="icon">
-              <icon
-                type="UnorderedListOutline"
-                style="margin-right: 8px" />
-              {{topRecord.item4.name}}
-            </view>
-          </view>
-          <view slot="headerRight">    
-            <icon type="RightOutline"  />        
-          </view>
-          <view >
-          {{topRecord.item4.value}}
-          </view>
-        </container>
+        <recorditem name="{{topRecord.item4.name}}" value="{{topRecord.item4.value}}"></recorditem>
+      </view>
+      <view class="div5">
+        <recorditem name="{{topRecord.item5.name}}" value="{{topRecord.item5.value}}"></recorditem>
+      </view>
+      <view class="div6">
+        <recorditem name="{{topRecord.item6.name}}" value="{{topRecord.item6.value}}"></recorditem>
       </view>
     </view>
   </container>

@@ -20,6 +20,14 @@ Page({
           name:"消费",
           value:"152RMB"
         },
+        item5:{
+          name:"小龙",
+          value:"152RMB"
+        },
+        item6:{
+          name:"小虎",
+          value:"152RMB"
+        },
       },
       {
         item1:{
@@ -80,5 +88,10 @@ Page({
 
   onPullDownRefresh() {
 
+  },
+  turn2summary(cardId,itemId){
+    my.navigateTo({
+      url: ''
+    });
   }
 });

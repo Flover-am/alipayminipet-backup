@@ -1,11 +1,11 @@
 {
   "pages": [
+    "pages/records/recordSumary/recordSumary",
     "pages/records/records",
     "pages/index/index",
     "pages/mypets/mypets",
     "pages/todo/todo",
     "pages/person/person",
-    "pages/records/recordSumary/recordSumary",
     "pages/passageDetails/passageDetails"
   ],
   "window": {

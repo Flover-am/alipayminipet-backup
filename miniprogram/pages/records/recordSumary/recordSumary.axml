@@ -1,3 +1,7 @@
-<view>
-  New Page
+<view class="chart">
+</view>
+<view class="recordFlow">
+  <scroll-view >
+
+  </scroll-view>
 </view>
