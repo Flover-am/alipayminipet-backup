@@ -11,10 +11,7 @@
 .find {
   position: relative;
 }
-.content {
-  display: flex;
-  
-}
+
 .logo {
   width: 105rpx;
   height: 117rpx;
@@ -177,16 +174,33 @@ input{
   height: 121rpx;
 }
 
-.floating-button{
-  height: 96rpx; 
-  width: 96rpx; 
+/* 右下角浮动按钮 */
+.floating-button {
+  height: 108rpx; 
+  width: 108rpx; 
   position: fixed; 
-  right: 32rpx; 
-  bottom: 32rpx; 
+  right: 36rpx; 
+  bottom: 36rpx; 
   background-color: var(--color-primary); 
   box-shadow: 2px 2px 2px rgba(0, 0, 0, 0.05); 
-  border-radius: 48rpx; 
+  border-radius: 54rpx; 
   display: flex; 
   justify-content: center; 
   align-items: center;
+}
+
+/* 标签栏 */
+.tabs-bar {
+  overflow: hidden;
+  /* height: 80rpx; */
+}
+.tab {
+  font-size: 16px;
+}
+.tab-active {
+  font-size: 16px;
+  color: #FFAE2E !important;
+}
+.tab-active::after {
+  background-color: #FFAE2E !important;
 }

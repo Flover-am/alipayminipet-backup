@@ -13,5 +13,5 @@
     "picker": "antd-mini/es/Picker/index"
   },
   "styleIsolation": "apply-shared",
-  "defaultTitle": "发布帖子"
+  "defaultTitle": "发布"
 }

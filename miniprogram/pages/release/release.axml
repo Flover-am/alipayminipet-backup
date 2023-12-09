@@ -20,7 +20,7 @@
 
 <!-- 选择话题 -->
 <!-- TODO: 选择话题功能 -->
-<list >
+<list>
   <list-item arrow="right" style="color: var(--color-secondary)">
     话题
     <picker slot="extra" onOk="handleOk" placeholder="请选择" title="选择话题" options="{{topicList}}">
