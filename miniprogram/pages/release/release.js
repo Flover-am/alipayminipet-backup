@@ -48,11 +48,48 @@ Page({
       content: text
     })
   },
+  
   async onUpload(file) {
-    console.log(file.path);
-    this.data.CoverList.push({
-      link: file.path
-    })
+    var self = this;
+    my.chooseImage({
+      success: res => {
+        const path = res.apFilePaths[0];
+        console.log(path);
+
+        my.uploadFile({
+          url: 'https://sm.ms/api/v2/upload', // 开发者服务器地址，此 url 仅为示例
+          name: 'smfile',
+          filePath: path,
+          header: {Authorization: "EhZPkR2NdA5j0shwTt1YLVZaNOTuqPwL"},
+          formData: { extra: '其他信息' },
+          success: res => {
+            my.alert({ title: '上传成功' });
+            console.log(res);
+            var resJson = JSON.parse(res.data);
+            console.log(resJson);
+            if (resJson.success){
+              self.data.CoverList.push({link: resJson.data.url});
+            } else {
+              self.data.CoverList.push({link: resJson.images});
+            }
+          },
+        });
+      },
+  });
+    // console.log(file.path);
+    // this.data.CoverList.push({
+    //   link: file.path
+    // })
+    // // my.uploadFile({
+    // //   url: "https://sm.ms/api/v2/upload",
+    // //   filePath: file.path,
+    // //   header: {
+    // //     "Authorization": "EhZPkR2NdA5j0shwTt1YLVZaNOTuqPwL"
+    // //   },
+    // //   success: () => {
+    // //     console.log(`${path} upload success`);
+    // //   },
+    // // })
     return new Promise((resolve) => {
       console.log('上传的图片为：', file);
       setTimeout(() => {

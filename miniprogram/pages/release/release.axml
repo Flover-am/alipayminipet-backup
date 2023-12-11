@@ -1,10 +1,6 @@
 <!-- 图片区域 -->
 <view class="image-container">
-  <uploader
-    onRemove="onRemove"
-    onChange="onChange"
-    onUpload="onUpload"
-    style="padding: 12rpx;" />
+  <button size="default" type="primary" onTap= "onUpload" style="padding: 12rpx;">Button</button>
 </view>
 
 <!-- 文字区域 -->
