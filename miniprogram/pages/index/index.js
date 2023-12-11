@@ -82,8 +82,31 @@ Page({
 
     // console.log(normalData.tuijian);
   },
-  onPullDownRefresh(){
+  async onPullDownRefresh(){
     console.log("进入刷新");
+    var self = this;
+    var context = await my.getCloudContext();
+    context.callFunction({
+      name:'recommend',
+      
+      success:function(res) {
+        my.hideLoading();
+        console.log(res);
+        console.log(res.result);
+        
+        self.setData({
+          normalData:res.result,
+          // normalData:res.result,
+          passageNum:res.result.length,
+          firstData: res.result.slice(0, self.data.pageSize)
+        })
+        console.log(res.result.length);
+        // console.log(res.result[0]);
+        self.setData({
+          item:{}
+        })
+      }
+    })
     setTimeout(() => {
       let newDta = this.data.normalData;
       this.setData({

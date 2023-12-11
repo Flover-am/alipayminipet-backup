@@ -2,6 +2,7 @@ Page({
   data: {
     passageId: 0,
     passage: [],
+    loveNum: 0,
     autoplay: true,
     vertical: false,
     interval: 1000,
@@ -20,6 +21,9 @@ Page({
         passage: data
       })
     })
+    self.setData({
+      loveNum: self.data.passage.data.tuijian.num
+    })
     var context = await my.getCloudContext();
     context.callFunction({
       name: "getTalks",
@@ -32,6 +36,28 @@ Page({
       }
     });
 
+  },
+  async addLove(e) {
+    var self = this;
+    var context = await my.getCloudContext();
+    var newNum = self.data.loveNum + 1;
+    console.log(newNum);
+    context.callFunction({
+      name: "lovePassage",
+      data: {
+        id: self.data.passage.data._id,
+        newNum: newNum
+      },
+      success:function(res){
+        console.log(res);
+        console.log("点赞成功");
+        self.setData({
+          loveNum: self.data.loveNum+1,
+           
+        })
+        self.data.passage.data.tuijian.num  = self.data.loveNum;
+      }
+    })
   },
   async talkInput(event) {
 

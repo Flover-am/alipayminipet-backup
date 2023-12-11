@@ -12,6 +12,7 @@
   <avatar size='x-small' style="margin-right: 24rpx;"/>
   <text>{{passage.data.tuijian.author}}</text>
 </view>
+<button size="default" onTap="addLove" type="primary">Button</button>
 
 <!-- 图片 -->
 <swiper class="demo-swiper" indicator-dots indicator-active-color="#FFAE2E">
