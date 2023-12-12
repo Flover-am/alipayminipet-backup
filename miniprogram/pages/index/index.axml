@@ -26,10 +26,12 @@
             <image class="pic" src="{{tuijian.tuijian.Cover[0].link}}" mode="widthFix"></image>
                 <view class="bottom">
                   <view class="toux-name">
+                    <!-- TODO: 用户头像 -->
                     <image class="toux" src="{{tuijian.tuijian.title}}"></image>
                     <text class="name">{{tuijian.tuijian.title}}</text>
                   </view>
                   <view class="love-num">
+                    <!-- TODO: love -->
                     <text class="love">{{tuijian.tuijian.love}}</text>
                     <text class="num">{{tuijian.tuijian.num}}</text>
                   </view>
@@ -46,10 +48,12 @@
             <image class="pic" src="{{tuijian.tuijian.Cover[0].link}}" mode="widthFix"></image>
                 <view class="bottom">
                   <view class="toux-name">
+                    <!-- TODO: 用户头像 -->
                     <image class="toux" src="{{tuijian.tuijian.title}}"></image>
                     <text class="name">{{tuijian.tuijian.title}}</text>
                   </view>
                   <view class="love-num">
+                    <!-- TODO: love -->
                     <text class="love">{{tuijian.tuijian.love}}</text>
                     <text class="num">{{tuijian.tuijian.num}}</text>
                   </view>

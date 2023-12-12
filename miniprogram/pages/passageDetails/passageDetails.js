@@ -9,7 +9,9 @@ Page({
     circular: false,
     duration: 1500,
     talkList: [],
-    talk: ""
+    talk: "",
+    // TODO: 是否点赞过（默认为false吗，还是说要存一下之前是否点赞过）
+    isLoved: false,
   },
   async onLoad() {
     const eventChannel = this.getOpenerEventChannel();
@@ -37,10 +39,11 @@ Page({
     });
 
   },
+  // 点赞和取消点赞
   async addLove(e) {
     var self = this;
     var context = await my.getCloudContext();
-    var newNum = self.data.loveNum + 1;
+    var newNum = self.data.loveNum + (self.data.isLoved ? -1 : 1);
     console.log(newNum);
     context.callFunction({
       name: "lovePassage",
@@ -52,8 +55,8 @@ Page({
         console.log(res);
         console.log("点赞成功");
         self.setData({
-          loveNum: self.data.loveNum+1,
-           
+          loveNum: newNum,
+          isLoved: !self.data.isLoved,
         })
         self.data.passage.data.tuijian.num  = self.data.loveNum;
       }

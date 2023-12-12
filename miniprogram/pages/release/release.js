@@ -6,7 +6,9 @@ Page({
     userInfo: [],
     title: "",
     content: "",
-    CoverList: [],
+    imageUrls: [], // 图片链接（图床上链接）
+    deleteUrls: [], // 删除链接
+    filePaths: [], // 图片文件路径
     author: "",
     loveNum: 0,
     all: [],
@@ -48,56 +50,76 @@ Page({
       content: text
     })
   },
-  
-  async onUpload(file) {
+
+  // 上传图片: uploader组件用
+  async onUploadImage(file) {
     var self = this;
-    my.chooseImage({
-      success: res => {
-        const path = res.apFilePaths[0];
-        console.log(path);
+    console.log('upload file: ', file);
 
-        my.uploadFile({
-          url: 'https://sm.ms/api/v2/upload', // 开发者服务器地址，此 url 仅为示例
-          name: 'smfile',
-          filePath: path,
-          header: {Authorization: "EhZPkR2NdA5j0shwTt1YLVZaNOTuqPwL"},
-          formData: { extra: '其他信息' },
-          success: res => {
-            my.alert({ title: '上传成功' });
-            console.log(res);
-            var resJson = JSON.parse(res.data);
-            console.log(resJson);
-            if (resJson.success){
-              self.data.CoverList.push({link: resJson.data.url});
-            } else {
-              self.data.CoverList.push({link: resJson.images});
-            }
-          },
-        });
-      },
-  });
-    // console.log(file.path);
-    // this.data.CoverList.push({
-    //   link: file.path
-    // })
-    // // my.uploadFile({
-    // //   url: "https://sm.ms/api/v2/upload",
-    // //   filePath: file.path,
-    // //   header: {
-    // //     "Authorization": "EhZPkR2NdA5j0shwTt1YLVZaNOTuqPwL"
-    // //   },
-    // //   success: () => {
-    // //     console.log(`${path} upload success`);
-    // //   },
-    // // })
+    return new Promise((resolve, reject) => {
+      // 添加文件路径
+      console.log('file path: ', file.path);
+      self.data.filePaths.push(file.path);
+      console.log(self.data.filePaths)
+
+      // 上传图片至图床
+      my.uploadFile({
+        url: 'https://sm.ms/api/v2/upload', // 开发者服务器地址，此 url 仅为示例
+        name: 'smfile',
+        filePath: file.path,
+        header: {Authorization: "EhZPkR2NdA5j0shwTt1YLVZaNOTuqPwL"},
+        formData: { extra: '其他信息' },
+        success: res => {
+          my.alert({ title: '上传成功' });
+          console.log(res);
+          var resJson = JSON.parse(res.data);
+          console.log(resJson);
+          if (resJson.success){
+            // 添加图片URL和删除URL
+            self.data.imageUrls.push({link: resJson.data.url});
+            self.data.deleteUrls.push({link: resJson.data.delete});
+            resolve(resJson.data.url)
+          } else {
+            // 这里是在干什么？
+            self.data.imageUrls.push({link: resJson.images});
+            resolve(resJson.images)
+          }
+        },
+        fail: err => {
+          console.log(err)
+          reject();
+        },
+      });
+    });
+  },
+
+  // 移除图片：uploader组件用
+  async onRemoveImage(file) {
+    var self = this;
+    console.log('remove file: ', file);
+    
     return new Promise((resolve) => {
-      console.log('上传的图片为：', file);
-      setTimeout(() => {
-        resolve(file.path);
-      }, 2000);
-
+      // 确认弹窗
+      my.confirm({
+        title: '是否确认移除图片',
+        confirmButtonText: '确定',
+        cancelButtonText: '取消',
+        success: (e) => {
+          // 通过比较文件路径获取索引，再根据索引获得delete url（好蠢，但是这个方法的参数只有一个file）
+          for(var i = 0; i < self.data.filePaths.length; i++){
+            if(self.data.filePaths[i] == file.path){
+              console.log('delete index:', i);
+              console.log('delete url:', self.data.deleteUrls[i]);
+              // TODO: 访问delete url删除图片（get请求）
+              
+            }
+          }
+          resolve(e.confirm);
+        }
+      });
     })
   },
+
   async submit(event) {
     var self = this;
     var context = await my.getCloudContext();
@@ -116,7 +138,7 @@ Page({
         Id: Id,
         id: self.data.id,
         title: self.data.title,
-        coverList: self.data.CoverList,
+        imageUrls: self.data.imageUrls,
         loveNum: 0,
         author: self.data.author,
         content: self.data.content,
@@ -126,7 +148,7 @@ Page({
         console.log(res);
         console.log('成功发布');
         self.setData({
-          coverList: [],
+          imageUrls: [],
           title: "",
           content: "",
           topic: ""

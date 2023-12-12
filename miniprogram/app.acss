@@ -7,7 +7,7 @@ page {
   background-color: #F7F7F7;
   box-sizing: border-box;
   --color-primary: #FFAE2E;
-  --color-secondary: #BBBBBB;
+  --color-secondary: #DD6572;
 }
 
 .page {

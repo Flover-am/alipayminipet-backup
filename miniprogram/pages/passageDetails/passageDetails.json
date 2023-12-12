@@ -4,7 +4,9 @@
     "container": "antd-mini/es/Container/index",
     "divider": "antd-mini/es/Divider/index",
     "ant-input": "antd-mini/es/Input/index",
-    "ant-button": "antd-mini/es/Button/index"
+    "ant-button": "antd-mini/es/Button/index",
+    "icon": "antd-mini/es/Icon/index"
   },
-  "styleIsolation": "apply-shared"
+  "styleIsolation": "apply-shared",
+  "defaultTitle": "帖子"
 }

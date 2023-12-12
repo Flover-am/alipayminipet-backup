@@ -1,6 +1,9 @@
 <!-- 图片区域 -->
 <view class="image-container">
-  <button size="default" type="primary" onTap= "onUpload" style="padding: 12rpx;">Button</button>
+  <uploader
+    onUpload="onUploadImage"
+    onRemove="onRemoveImage"
+    style="padding: 12rpx;" />
 </view>
 
 <!-- 文字区域 -->
@@ -15,9 +18,8 @@
 </view>
 
 <!-- 选择话题 -->
-<!-- TODO: 选择话题功能 -->
 <list>
-  <list-item arrow="right" style="color: var(--color-secondary)">
+  <list-item arrow="right" style="color: #d2d2d2">
     话题
     <picker slot="extra" onOk="handleOk" placeholder="请选择" title="选择话题" options="{{topicList}}">
     </picker>

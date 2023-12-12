@@ -1,6 +1,7 @@
 .li{
   background: #ffffff;
-  border-radius: 10rpx;
+  border-radius: 8px;
+  margin-bottom: 24rpx;
 }
 .content {
   width: 100%;
@@ -8,7 +9,7 @@
   display: flex;
   flex-direction: row;
   overflow: hidden;
-  padding: 0 12rpx;
+  padding: 12rpx 12rpx;
   background-color: #F7F7F7;
 }
 .left {
@@ -34,8 +35,8 @@
   padding: 12rpx;
 }
 .pic {
-  border-radius: 10rpx 10rpx 0rpx 0rpx;
-  width: 345rpx;
+  border-radius: 8px 8px 0 0;
+  width: 100%;
 }
 .bottom{
   display: flex;
