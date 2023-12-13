@@ -77,10 +77,11 @@ Page({
           if (resJson.success){
             // 添加图片URL和删除URL
             self.data.imageUrls.push({link: resJson.data.url});
-            self.data.deleteUrls.push({link: resJson.data.delete});
+            self.data.deleteUrls.push({link: resJson.data.hash});
             resolve(resJson.data.url)
           } else {
             // 这里是在干什么？
+            // 每张图片只能上传 一次，如果重复上传会上传失败返回图片url
             self.data.imageUrls.push({link: resJson.images});
             resolve(resJson.images)
           }
@@ -109,8 +110,24 @@ Page({
           for(var i = 0; i < self.data.filePaths.length; i++){
             if(self.data.filePaths[i] == file.path){
               console.log('delete index:', i);
-              console.log('delete url:', self.data.deleteUrls[i]);
+              console.log('delete url:', self.data.deleteUrls[i].link);
               // TODO: 访问delete url删除图片（get请求）
+              var needToDelete = self.data.deleteUrls[i].link;
+              var URL = 'https://sm.ms/api/v2/delete/' + needToDelete
+              my.request({
+                url: URL,
+                method: 'GET',
+                headers: {
+                  "Authorization": "EhZPkR2NdA5j0shwTt1YLVZaNOTuqPwL"
+                },
+                
+                success: function(res) {
+                  my.alert('删除成功');
+                  console.log(res);
+                  console.log('删除成功');
+                },
+                
+              })
               
             }
           }
