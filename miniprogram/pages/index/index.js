@@ -182,11 +182,19 @@ Page({
     }, 1000);
   },
   async passageDetails(e) {
+    console.log(e);
     var postId = e.currentTarget.dataset.id;
-    var detail = this.data.firstData[postId]
+    var detail = null;
+    for (var i = 0; i < this.data.firstData.length; i++) {
+      if (this.data.firstData[i].tuijian.Id == postId) {
+        detail = this.data.firstData[i];
+        break;
+      }
+    }
+    
     var talkList = [];
 
-    console.log(e);
+   
     console.log(talkList);
     my.navigateTo({
       url: "/pages/passageDetails/passageDetails",

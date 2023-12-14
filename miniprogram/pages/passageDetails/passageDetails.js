@@ -29,7 +29,7 @@ Page({
     var context = await my.getCloudContext();
     context.callFunction({
       name: "getTalks",
-      data: {"passageId": self.data.passage.data.tuijian.id},
+      data: {"passageId": self.data.passage.data.tuijian.Id},
       success:function(res) {
         console.log(res);
         self.setData({
@@ -84,7 +84,7 @@ Page({
     console.log(time);
     var date = new Date(time).toDateString();
     
-    var passageId = self.data.passage.data.tuijian.id;
+    var passageId = self.data.passage.data.tuijian.Id;
     var tempTalk = self.data.talk;
     console.log(date);
     context.callFunction({
