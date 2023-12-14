@@ -3,3 +3,4 @@
 cloud/functions/*/node_modules
 miniprogram/app.json
 node_modules/
+package-lock.json
