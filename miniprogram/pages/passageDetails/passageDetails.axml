@@ -1,58 +1,54 @@
-<!-- <view class="details">
-  <image class="cover" mode="scaleToFill" src="{{passage.data.tuijian.Cover}}" />
-  <text class="title">{{passage.data.tuijian.title}}</text>
-  <text class="content">{{passage.data.tuijian.text}}</text>
-  <view class="love">
-    {{passage.data.tuijian.num}}
-  </view>
-</view> -->
+<!-- 头像及用户名 -->
+<view class="title-bar">
+  <!-- TODO: 用户头像 -->
+  <avatar size='x-small' style="margin-right: 24rpx;"/>
+  <text>{{passage.data.tuijian.author}}</text>
+</view>
 
-<container style="margin: 0; padding: 0;height: 100%;
-width: 100%;
-position: absolute;
-top: 0;
-left: 0;" title={{passage.data.tuijian.title}}>
-  <view slot="headerRight">右侧内容</view>
-  <!-- <view class="content">
-    <image class="box"  src="{{passage.data.tuijian.Cover}}"/>
-  </view> -->
-  <view class="page-section-demo">
-    <swiper
-        style="height:150px"
-        class="demo-swiper"
-        previousMargin="10px"
-        nextMargin="10px"
-        indicator-dots="{{indicatorDots}}"
-        autoplay="{{autoplay}}"
-        vertical="{{vertical}}"
-        interval="{{interval}}"
-        circular="{{circular}}"
-        duration="{{duration}}"
-    >
-      <swiper-item key="swiper-item-{{index}}" a:for="{{passage.data.tuijian.Cover}}">
-          <!-- <view class="swiper-item bc_{{item.color}}">{{item.text}}</view> -->
-          <image class="swiper-item" src="{{item.link}}" />
-      </swiper-item>
-    </swiper>
-  </view>
+<!-- 图片 -->
+<swiper indicator-dots indicator-active-color="#FFAE2E">
+  <swiper-item key="swiper-item-{{index}}" a:for="{{passage.data.tuijian.Cover}}">
+      <!-- <view class="swiper-item bc_{{item.color}}">{{item.text}}</view> -->
+      <image mode="aspectFit" class="image" src="{{item.link}}" />
+  </swiper-item>
+</swiper>
 
+<!-- 标题及正文 -->
+<view class="content-container">
+  <text style="font-size: 20; font-weight: bold">{{passage.data.tuijian.title}}</text>
+  <view style="height: 24rpx;" />
+  <text>{{passage.data.tuijian.text}}</text>
+  <view style="height: 24rpx;" />
+  <!-- TODO: 数据对象添加时间字段 -->
+  <text style="font-size: 12; color: #BBBBBB;">2023-11-3</text>
+</view>
 
-  <view class="text">
-    <text>{{passage.data.tuijian.text}}</text>
-  </view>
-
-
-
-  <text>评论</text>
-  <view class="left">
-    <view a:for="{{talkList}}" a:key={{talkList.passageId}} a:for-item="talkItem">
-      <view class="item">
-        {{talkItem.talkcontent}}
-      </view>
+<!-- 评论区 -->
+<view class="comment-container">
+  <view style="margin-bottom: 32rpx; display: flex; flex-direction: row; align-items: flex-start" a:for="{{talkList}}" a:key={{talkList.passageId}} a:for-item="talkItem">
+    <!-- TODO: 用户头像 -->
+    <avatar size='x-small' />
+    <view style="width: 16rpx" />
+    <view style="display: flex; flex-direction: column; box-sizing: border-box; padding: 16rpx; background-color: white; border-radius: 4px; flex-grow: 2">
+      <text style="font-size: 12; color: #BBBBBB;">用户{{talkItem.passageId}}</text>
+      <view style="height: 8rpx" />
+      <text style="font-size: 14;">{{talkItem.talkcontent}}</text>
+      <view style="height: 8rpx" />
+      <text style="font-size: 12; color: #BBBBBB;">{{talkItem.time}}</text>
     </view>
   </view>
-  
-  <input class="input" placeholder="快来发表评论吧" confirm-type="send" type="text" onInput="talkInput" value="{{talk}}" />    
-  <button  class="submit" type="primary" onTap="submit" >确定</button>
+  <divider text="没有更多了~" />
+  <view style="height: 144rpx" />
+</view>
 
-</container>
+<!-- 底部工具栏 -->
+<view class="bottom-bar">
+  <view class="icon-button" onTap="addLove">
+    <icon type="{{isLoved?'HeartFill':'HeartOutline'}}" style="font-size: 24px" />
+  </view>
+  <view style="color: var(--color-secondary)">{{loveNum}}</view>
+  <view style="flex-grow: 2"/>
+  <input class="input-bar" placeholder="说点什么..." confirm-type="send" type="text" onInput="talkInput" value="{{talk}}" />
+  <view style="width: 24rpx"/>
+  <ant-button icon="EditSOutline" type="primary" onTap="submit" inline size="small" style="background-color: var(--color-primary); height: 72rpx; border-radius: 36rpx; box-shadow: inset 0 0 0 0px; display: flex; flex-direction: row">发送</ant-button>
+</view>
