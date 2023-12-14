@@ -8,7 +8,10 @@
     "divider": "antd-mini/es/Divider/index",
     "ant-button": "antd-mini/es/Button/index",
     "uploader": "antd-mini/es/ImageUpload/index",
-    "tabs": "antd-mini/es/Tabs/index"
+    "ant-input": "antd-mini/es/Input/index",
+    "ant-textarea": "antd-mini/es/Input/Textarea/index",
+    "picker": "antd-mini/es/Picker/index"
   },
-  "defaultTitle": "社区"
+  "styleIsolation": "apply-shared",
+  "defaultTitle": "发布"
 }
