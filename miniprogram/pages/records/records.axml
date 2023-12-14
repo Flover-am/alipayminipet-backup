@@ -5,20 +5,21 @@
     </view>
     <view class="info">
       <view class="name">
-        从众的阿希
+        {{petData.name}}
       </view>      
       <view class="Attribute">
-        英短金渐层 天蝎座
+         {{petData.birthday}}  小{{petData.gender}}喵
       </view>
     </view>
   </view>
 
   <view class="buttons">
     <view class="period">
-      我们一起生活了17天
+      我们一起生活了356天
     </view>
     <view class="switch">
-      切换宠物
+      <pickers placeholder="切换宠物"  options="{{petsName}}" >
+      </pickers>
     </view>
   </view>
 </view>

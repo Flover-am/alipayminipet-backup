@@ -1,3 +1,35 @@
-<view>
-  New Component
+<view class="part">
+  <view class="time">
+    {{time}}
+  </view>
+  <view class="card">
+    <view class="title">
+      <image class="avatar" mode="scaleToFill" src="/image/addPen.svg" />
+      <view class="petname">
+        <text class="text1">
+          {{name}}
+        </text>
+      </view>
+    </view>
+    <view class="body">
+      <view class="detail">
+        <view class="key">
+          <view class="text2">
+            {{key}}
+          </view>
+        </view>：
+        <view class="value">
+          <text class="text2">
+            {{value}}
+          </text>
+        </view>
+        <view class="vary">
+          <text class="text2">
+            {{vary_dir}}{{vary}}
+          </text>
+        </view>
+      </view>
+    </view>
+  </view>
+
 </view>

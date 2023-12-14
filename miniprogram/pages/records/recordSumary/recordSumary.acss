@@ -1,0 +1,11 @@
+.list{
+  display: flex;
+  flex-direction: row;
+  width: 100%;
+}
+.line{
+  flex:1;
+}
+.data{
+  flex:10;
+}

@@ -1,6 +1,16 @@
 Page({
   data: {
     petsData: [],
+    petsName:["12","23"],
+    selectedPetId:0,
+    // extra
+    petData:{
+      age: "4岁",
+      birthday: "05月20日",
+      gender: "公",
+      name: "从众的阿西",
+      weight: "12kg",
+    },
     userId: 0,
     topRecords: [
       {
@@ -70,7 +80,7 @@ Page({
       "日常记录",
       "健康记录",
       "洗护记录"
-    ]
+    ],
   },
   async onLoad() {
     var self = this;
@@ -79,9 +89,25 @@ Page({
       name: 'getPets',
       success:function(res) {
         my.hideLoading();
+        /// 设置主要数据PetsData
         self.setData({
-          petsData: res.result.data
-        })
+          petsData: res.result.data,
+        });
+        /// 得到宠物名列表
+        self.setData({
+          petsName: self.data.petsData.map((value,index)=>{
+            return {
+              id:index,
+              name:value.name
+            };
+          })
+        });
+        /// 得到当前宠物信息
+        self.setData({
+          petData:self.data.petsData[self.data.selectedPetId]
+        });
+        console.log("records.js: 86 onload--------")
+        console.log(self.data.petsData);
       }
     })
   },

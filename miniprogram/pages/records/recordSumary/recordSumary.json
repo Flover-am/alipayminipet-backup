@@ -1,7 +1,8 @@
 {
   "usingComponents": {
     "ant-button": "antd-mini/es/Button/index",
-    "steps":"antd-mini/es/Steps/index"
+    "steps":"antd-mini/es/Steps/index",
+    "card": "/component/recordSummaryItem/recordSummaryItem"
   },
   "styleIsolation": "apply-shared"
 }
