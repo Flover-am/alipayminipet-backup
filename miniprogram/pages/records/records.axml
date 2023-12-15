@@ -12,13 +12,12 @@
       </view>
     </view>
   </view>
-
   <view class="buttons">
     <view class="period">
       我们一起生活了356天
     </view>
     <view class="switch">
-      <pickers placeholder="切换宠物"  options="{{petsName}}" >
+      <pickers placeholder="切换宠物"  options="{{petsName}}" onOk="onChangePetOk" onFormat="textQH">
       </pickers>
     </view>
   </view>

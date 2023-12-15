@@ -1,14 +1,15 @@
 
 {
   "pages": [
+    "pages/records/records",
+
+    "pages/records/recordSumary/recordSumary",
     "pages/index/index",
     "pages/mypets/mypets",
-    "pages/records/records",
     "pages/todo/todo",
     "pages/person/person",
     "pages/passageDetails/passageDetails",
-    "pages/release/release",
-    "pages/records/recordSumary/recordSumary"
+    "pages/release/release"
   ],
   "window": {
     "defaultTitle": "Pet",

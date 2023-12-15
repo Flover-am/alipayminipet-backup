@@ -3,6 +3,7 @@ Page({
     petsData: [],
     petsName:["12","23"],
     selectedPetId:0,
+    defaultPet:{},
     // extra
     petData:{
       age: "4岁",
@@ -86,29 +87,58 @@ Page({
     var self = this;
     var context = await my.getCloudContext();
     context.callFunction({
-      name: 'getPets',
-      success:function(res) {
-        my.hideLoading();
-        /// 设置主要数据PetsData
+      name: 'getRecordFace',
+      data:{
+        userId: self.data.userId,
+        petId:self.selectedPetId
+      },
+      success:function(res){
+        console.log(res);
         self.setData({
-          petsData: res.result.data,
+          petsData:res.result.petsData,
+          topRecords:res.result.topRecords
         });
-        /// 得到宠物名列表
+        self.setData({
+          petData:self.data.petsData[0],
+        })
         self.setData({
           petsName: self.data.petsData.map((value,index)=>{
             return {
-              id:index,
-              name:value.name
+              value:index,
+              label:value.name
             };
           })
         });
-        /// 得到当前宠物信息
-        self.setData({
-          petData:self.data.petsData[self.data.selectedPetId]
-        });
-        console.log("records.js: 86 onload--------")
-        console.log(self.data.petsData);
       }
+      // success:function(res) {
+      //   my.hideLoading();
+      //   /// 设置主要数据PetsData
+      //   self.setData({
+      //     petsData: res.result.data,
+      //   });
+      //   /// 得到宠物名列表
+      //   self.setData({
+      //     petsName: self.data.petsData.map((value,index)=>{
+      //       return {
+      //         value:index,
+      //         label:value.name
+      //       };
+      //     })
+      //   });
+      //   self.setData({
+      //     defaultPet:{
+      //       value:0,
+      //       label:self.data.petData.name
+      //     }
+      //   })
+      //   console.log("records.js: 86 onload--------")
+
+      //   console.log(self.data.defaultPet);
+      //   /// 得到当前宠物信息
+      //   self.setData({
+      //     petData:self.data.petsData[self.data.selectedPetId]
+      //   });
+      // }
     })
   },
 
@@ -119,5 +149,18 @@ Page({
     my.navigateTo({
       url: ''
     });
+  },
+  onChangePetOk(value, column, e){
+    this.setData({
+      selectedPetId:value
+    });
+    var self = this; 
+    this.setData({
+      petData:self.data.petsData[self.data.selectedPetId]
+    });
+    
+  },
+  textQH(value,column){
+    return "切换宠物";
   }
 });
