@@ -24,6 +24,9 @@ Page({
     position: null,
     currentTopic: "交流分享"
   },
+  async onShow() {
+    my.startPullDownRefresh();
+  },
   onLoad(){
     this.getTitle();
     console.log(this.normalData);
@@ -218,5 +221,8 @@ Page({
         console.log(res);
       }
     })
-  }
+  },
+  async onUnload(e) {
+    
+  },
 })

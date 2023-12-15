@@ -105,6 +105,19 @@ Page({
       passageId: passageId,
       talkcontent: tempTalk
     })
+  },
+  async onUnload(e) {
+    my.navigateBack({
+      success: function(res) {
+
+      }
+    })
+  },
+  events: {
+    onBack() {
+      console.log('Back');
+      
+    }
   }
 
 });
