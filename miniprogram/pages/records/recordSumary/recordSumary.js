@@ -1,6 +1,22 @@
 Page({
   data: {
-
+    records: [
+      {
+        time: '步骤一',
+      },
+      {
+        time: '步骤二',
+      },
+      {
+        time: '步骤三',
+      },
+      {
+        time: '步骤四',
+      },
+      {
+        time: '步骤五',
+      }
+    ]
   },
   onLoad() {},
   onCanvasReady() {

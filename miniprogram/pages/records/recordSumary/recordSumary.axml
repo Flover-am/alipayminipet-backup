@@ -1,8 +1,30 @@
 <scroll-view class="list">
-  <view class="line">
+  <!-- <view class="line">
     <canvas id="line_pic" style="width:100%;height:100% " type="2d" onReady="onCanvasReady"></canvas>
-  </view>
-  <view class="data">
+  </view> -->
+  <timeline
+    items="{{records}}"
+    direction="vertical" >
+
+      <view>
+        <view slot="title1" >
+          dddd
+        </view>
+      </view>
+
+
+    <!-- <view a:for="{{records}}">
+      <view slot="title{{index}}" >
+        {{item.time}}
+      </view>
+      <view slot="des{{index}}">
+        <card/>
+      </view>
+    </view> -->
+    
+  </timeline>
+
+  <!-- <view class="data">
     <card>
     </card>
     <card>
@@ -13,5 +35,6 @@
     </card>
     <card>
     </card>
-  </view>
+  </view> -->
+
 </scroll-view> 

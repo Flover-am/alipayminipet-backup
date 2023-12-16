@@ -167,7 +167,7 @@ Page({
   async addRecord(e) {
     console.log(e)
     my.navigateTo({
-      url: "/pages/records/recordAdd/recordAdd",
+      url: "/pages/records/recordSumary/recordSumary",
       success:function(res) {
         console.log(res);
       }
