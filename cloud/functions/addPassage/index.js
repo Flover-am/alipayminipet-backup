@@ -13,7 +13,7 @@ exports.main = async (event, context) => {
         num: data.loveNum,
         love: "",
         text: data.content,
-        Cover: data.coverList,
+        Cover: data.imageUrls,
         title: data.title,
         author: data.author,
         topic: data.topic

@@ -148,7 +148,7 @@ Page({
         num += 1;
       }
     }
-    var Id = num.toString() + self.data.id.toString() 
+    var Id = parseInt((num + 1).toString() + self.data.id.toString()) ;
     context.callFunction({
       name: 'addPassage',
       data: {
