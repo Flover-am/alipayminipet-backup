@@ -55,6 +55,7 @@ App({
   },
 
   async onLaunch(options) {
+    my.getOpenUserInfo();
     my.getCloudContext = async function(){
       if(my.fncontext){
         return my.fncontext;
@@ -68,5 +69,6 @@ App({
       return my.fncontext;
     }
   },
+
 })
 
