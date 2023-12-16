@@ -1,7 +1,8 @@
 <view class="petCard">
+
   <view class="detail">
     <view class="avatar">
-    <image class="imgeavatar" src="https://s2.loli.net/2023/11/16/ceQubgZ5BlWwO8K.png"/>
+      <image class="imgeavatar" src="https://s2.loli.net/2023/11/16/ceQubgZ5BlWwO8K.png"/>
     </view>
     <view class="info">
       <view class="name">
@@ -12,16 +13,23 @@
       </view>
     </view>
   </view>
+
   <view class="buttons">
-    <view class="period">
-      我们一起生活了356天
+    <view class="bubble">
+        <view class="arrow"></view>
+        <icon type="CalendarOutline" />
+        <view style="text-align: centers">
+          &ensp我们一起生活了99天
+        </view>
     </view>
     <view class="switch">
+      <icon type="LoopOutline"  />&ensp
       <pickers placeholder="切换宠物"  options="{{petsName}}" onOk="onChangePetOk" onFormat="textQH">
       </pickers>
     </view>
   </view>
 </view>
+
 <view class="recordCard">
   <swiper indicator-dots="{{true}}" >
     <block a:for="{{topRecords}}">
@@ -29,6 +37,6 @@
         <card cardId="{{index}}" topRecord="{{topRecords[index]}}" title="{{cardTitles[index]}}" ></card>
       </swiper-item>
     </block>
-      
   </swiper>
+
 </view>

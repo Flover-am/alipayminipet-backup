@@ -6,8 +6,8 @@
     "grid":"antd-mini/es/Grid/index",
     "icon":"antd-mini/es/Icon/index",
     "card":"/component/recordCard/recordCard",
-    "pickers":"antd-mini/es/Picker/index"
-
+    "pickers":"antd-mini/es/Picker/index",
+    "popover":"antd-mini/es/Popover/index"
   },
   "disableScroll":true
 }
