@@ -39,4 +39,8 @@
     </block>
   </swiper>
 
+<view onTap="addRecord" class="floating-button">
+  <icon type="AddOutline" style="font-size: 48rpx; color: white"/>
+</view>  
+
 </view>
