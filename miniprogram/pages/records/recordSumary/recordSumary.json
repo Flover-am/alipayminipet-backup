@@ -1,0 +1,8 @@
+{
+  "usingComponents": {
+    "ant-button": "antd-mini/es/Button/index",
+    "timeline":"/component/Timeline/index",
+    "card": "/component/recordSummaryItem/recordSummaryItem"
+  },
+  "styleIsolation": "apply-shared"
+}

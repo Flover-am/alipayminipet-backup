@@ -1,0 +1,13 @@
+{
+  "usingComponents": {
+    "divider": "antd-mini/es/Divider/index",
+    "ant-button": "antd-mini/es/Button/index",
+    "uploader": "antd-mini/es/ImageUpload/index",
+    "ant-input": "antd-mini/es/Input/index",
+    "ant-textarea": "antd-mini/es/Input/Textarea/index",
+    "list": "antd-mini/es/List/index",
+    "list-item": "antd-mini/es/List/ListItem/index",
+    "picker": "antd-mini/es/Picker/index"
+  },
+  "styleIsolation": "apply-shared"
+}

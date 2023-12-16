@@ -1,65 +1,46 @@
 <view class="petCard">
+
   <view class="detail">
     <view class="avatar">
-    <image class="imgeavatar" src="https://s2.loli.net/2023/11/16/ceQubgZ5BlWwO8K.png"/>
+      <image class="imgeavatar" src="https://s2.loli.net/2023/11/16/ceQubgZ5BlWwO8K.png"/>
     </view>
     <view class="info">
       <view class="name">
-        从众的阿希
+        {{petData.name}}
       </view>      
       <view class="Attribute">
-        英短金渐层 天蝎座
+         {{petData.birthday}}  小{{petData.gender}}喵
       </view>
     </view>
   </view>
 
   <view class="buttons">
-    <view class="period">
-      我们一起生活了17天
+    <view class="bubble">
+        <view class="arrow"></view>
+        <icon type="CalendarOutline" />
+        <view style="text-align: centers">
+          &ensp我们一起生活了99天
+        </view>
     </view>
     <view class="switch">
-      切换宠物
+      <icon type="LoopOutline"  />&ensp
+      <pickers placeholder="切换宠物"  options="{{petsName}}" onOk="onChangePetOk" onFormat="textQH">
+      </pickers>
     </view>
   </view>
 </view>
+
 <view class="recordCard">
   <swiper indicator-dots="{{true}}" >
-    <swiper-item>
-      <container title = "日常记录">
-        <view class="grid4">
-          <view class="div1">
-            <container headerInBox="{{ false }}">
-              <view slot="title">
-                <view class="icon">
-                  <icon
-                    type="UnorderedListOutline"
-                    style="margin-right: 8px" />
-                  体重
-                </view>
-              </view>
-              <view class="content" />
-            </container>
-          </view>
-          <view class="div2">
-            22
-          </view>
-          <view class="div3">
-            33
-          </view>
-          <view class="div4">
-            44
-          </view>
-        </view>
-      </container>
-    </swiper-item>
-    <swiper-item>
-      <container title = "洗护记录">
-      </container>
-    </swiper-item>
-    <swiper-item>
-      <container title = "健康记录">
-      </container>
-    </swiper-item>
-      
+    <block a:for="{{topRecords}}">
+      <swiper-item >
+        <card cardId="{{index}}" topRecord="{{topRecords[index]}}" title="{{cardTitles[index]}}" ></card>
+      </swiper-item>
+    </block>
   </swiper>
+
+<view onTap="addRecord" class="floating-button">
+  <icon type="AddOutline" style="font-size: 48rpx; color: white"/>
+</view>  
+
 </view>

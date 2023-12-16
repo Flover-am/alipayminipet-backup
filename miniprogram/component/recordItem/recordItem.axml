@@ -1,0 +1,16 @@
+<container headerInBox="{{ false }}">
+  <view slot="title">
+    <view class="icon">
+      <icon
+        type="UnorderedListOutline"
+        style="margin-right: 8px" />
+      {{name}}
+    </view>
+  </view>
+  <view slot="headerRight">    
+    <icon type="RightOutline"  />        
+  </view>
+  <view >
+  {{value}}
+  </view>
+</container>

@@ -1,0 +1,5 @@
+<template name="recordCardItem">
+  <view>
+    {{item1}}
+  </view>
+</template>
