@@ -40,22 +40,26 @@
     <text>消息</text>
   </view>
 </view>
-<view class="bar3">
+
+<!-- <view class="bar3">
   <view>
     <image src="" alt="快乐宠友星球 立即入群"/>
   </view>
-</view>
+</view> -->
 
 <view class="bar4">
   <view class="item4" onTap="onTabSettings">
     <text>设置</text>
   </view>
+  <view class="separator"></view>
   <view class="item4" onTap="onTabFeedback">
     <text>反馈</text>
   </view>
+  <view class="separator"></view>
   <view class="item4" onTap="onTabHelp">
     <text>帮助</text>
   </view>
+  <view class="separator"></view>
   <view class="item4" onTap="onTabAbout">
     <text>关于</text>
   </view>
