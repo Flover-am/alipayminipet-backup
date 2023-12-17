@@ -145,7 +145,7 @@ Page({
           topRecords:res.result.topRecords
         });
         self.setData({
-          petData:self.data.petsData[0],
+          petData:self.data.petsData[self.data.selectedPetId],
         })
         self.setData({
           petsName: self.data.petsData.map((value,index)=>{
