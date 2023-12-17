@@ -90,7 +90,7 @@ Page({
       name: 'getRecordFace',
       data:{
         userId: self.data.userId,
-        petId:self.selectedPetId
+        petId: self.data.selectedPetId
       },
       success:function(res){
         console.log(res);
