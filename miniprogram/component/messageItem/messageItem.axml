@@ -1,0 +1,13 @@
+<view class="chat-log-component">
+      <view class="chat-log">
+        <image class="avatar" src="{{avatar}}" />
+        <view class="text">
+          <text class="sender">{{username}}</text>
+          <text class="message">{{message}}</text>
+        </view>
+        <view class="more">
+          <text class="date">{{date}}</text>
+          <text class="view-button" bindtap="handleViewButtonClick">查看</text>
+        </view>
+      </view>
+</view>

@@ -162,5 +162,17 @@ Page({
   },
   textQH(value,column){
     return "切换宠物";
+  },
+
+  async addRecord(e) {
+    console.log(e)
+    my.navigateTo({
+      url: "/pages/records/recordSumary/recordSumary",
+      success:function(res) {
+        console.log(res);
+      }
+    })
   }
 });
+
+

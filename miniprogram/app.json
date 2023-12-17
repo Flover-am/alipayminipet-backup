@@ -1,15 +1,15 @@
-
 {
   "pages": [
     "pages/records/records",
-
     "pages/records/recordSumary/recordSumary",
     "pages/index/index",
     "pages/mypets/mypets",
     "pages/todo/todo",
     "pages/person/person",
     "pages/passageDetails/passageDetails",
-    "pages/release/release"
+    "pages/release/release",
+    "pages/records/recordAdd/recordAdd",
+    "pages/person/message/message"
   ],
   "window": {
     "defaultTitle": "Pet",
@@ -46,5 +46,4 @@
       }
     ]
   }
-
 }

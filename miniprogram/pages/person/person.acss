@@ -107,15 +107,33 @@ page {
   width: 90%;
   border-radius: 20rpx;
   background-color: white;
+  
   justify-content: center;
   margin: 5%;
 }
 
 .item4{
-  margin: 5%;
+  margin-left: 5%;
+  margin-right: 5%;
+  margin-top: 4%;
+  margin-bottom: 4%;
+  width: 90%;
+  height: max-content;
+}
+
+.item4 text {
+  width: 100%;
+  overflow: hidden;
+  white-space: nowrap;
+  text-overflow: ellipsis;
 }
 
 .icon{
   width: 68rpx;
   height: 68rpx;
+}
+
+.separator {
+  height: 1px;
+  background-color: #ccc;
 }
