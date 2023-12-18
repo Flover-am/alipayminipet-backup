@@ -67,6 +67,7 @@ Page({
     });
   },
   getLoginUserInfo(authCode) {
+    
     return new Promise((resolve, reject) => {
       my.httpRequest({
         url: `${URL}/alipay/userinfo/alipayUserInfo`,
