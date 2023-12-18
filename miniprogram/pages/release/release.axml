@@ -8,26 +8,26 @@
 
 <!-- 文字区域 -->
 <view class="content-container">
-  <ant-input style="width: 100%; font-weight: bold;" 
-  placeholder="标题" confirm-type="send" 
+  <ant-input style="width: 100%; font-weight: bold;"
+  placeholder="标题" confirm-type="send"
   type="text" onChange="titleInput" value="{{title}}" allowClear />
   <divider style="margin: 16rpx 0"/>
-  <ant-textarea style="width: 100%;" 
-  placeholder="正文" confirm-type="send" 
+  <ant-textarea style="width: 100%;"
+  placeholder="正文" confirm-type="send"
   type="text" onChange="contentInput" value="{{content}}" autoHeight />
 </view>
 
 <!-- 选择话题 -->
-<list>
+<list class="list">
   <list-item arrow="right" style="color: #d2d2d2">
     话题
-    <picker slot="extra" onOk="handleOk" placeholder="请选择" title="选择话题" options="{{topicList}}">
+    <picker class="picker" slot="extra" onOk="handleOk" placeholder="请选择" title="选择话题" options="{{topicList}}">
     </picker>
   </list-item>
 </list>
 
 <!-- 发布按钮 -->
 <!-- TODO: 发布功能 -->
-<ant-button type="primary" onTap="submit" style="margin: 0 24rpx; background-color: var(--color-primary); border-radius: 48rpx; box-shadow: inset 0 0 0 0px; position: fixed; bottom: 24rpx; left: 0; right: 0;">
+<ant-button  type="primary" onTap="submit" style="margin: 0 24rpx; background-color: var(--color-primary); border-radius: 48rpx; box-shadow: inset 0 0 0 0px; position: fixed; bottom: 24rpx; left: 0; right: 0;">
   发布
 </ant-button>
