@@ -1,0 +1,57 @@
+.chat-log-component {
+  flex: 1;
+  padding: 10px;
+  display: flex;
+  flex-direction: column;
+}
+
+.chat-log {
+  display: flex;
+  align-items: flex-start;
+}
+
+.chat-log-list {
+  height: 100%;
+  overflow-y: auto;
+}
+
+.text {
+  display: flex;
+  flex-direction: column;
+  margin-left: 10px;
+}
+
+.sender {
+  font-weight: bold;
+  order: -1;
+}
+
+.message {
+  margin-top: 4px;
+  order: 1;
+}
+
+.avatar {
+  background: #d8d8d8;
+  width: 98rpx;
+  height: 98rpx;
+  border-radius: 50%;
+}
+
+.more {
+  display: flex;
+  flex-direction: column;
+  justify-content: flex-end;
+  align-items: flex-end;
+  margin-left: auto; 
+}
+
+.view-button {
+  padding: 4px 8px;
+  font-size: small;
+  background-color: #007bff;
+  color: #fff;
+  border: none;
+  border-radius: 4px;
+  margin-top: 10px;
+}

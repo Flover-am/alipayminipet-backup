@@ -8,7 +8,8 @@
     "pages/person/person",
     "pages/passageDetails/passageDetails",
     "pages/release/release",
-    "pages/records/recordAdd/recordAdd"
+    "pages/records/recordAdd/recordAdd",
+    "pages/person/message/message"
   ],
   "window": {
     "defaultTitle": "Pet",
