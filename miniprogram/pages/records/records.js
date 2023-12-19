@@ -1,6 +1,7 @@
 Page({
   data: {
     petsData: [],
+    current:0,
     petsName:["12","23"],
     selectedPetId:0,
     defaultPet:{},
@@ -170,6 +171,11 @@ Page({
         console.log(res);
       }
     })
+  },
+  changeCurrent(current,isChanging){
+    this.setData({
+      current:current.detail.current
+    });
   }
 });
 
