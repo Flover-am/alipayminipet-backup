@@ -24,6 +24,16 @@ Page({
         vary:vary
       })
     }
+    self.setData({
+      vary:self.data.vary.map((value)=>{
+        var sign = (value >0)? "↑":"↓";
+        var num = Math.abs(value);
+        if(value === 0){
+          return "==0";
+        }
+        return sign+String(num);
+      })
+    });
   },
   async onLoad() {
     const eventChannel = this.getOpenerEventChannel();
@@ -41,6 +51,9 @@ Page({
     });
     console.log(self.data);
     var context = await my.getCloudContext();
+    my.showLoading({ 
+      content: '加载中...',
+    }); 
     context.callFunction({
       name: 'getHistoryFace',
       data:{
@@ -63,18 +76,9 @@ Page({
         });
         self.caculateVary();
       }
-    
-      
-
     });
-    // var h2 =  self.data.history.map((value)=>{
-    //   // var res = self.formatDateTime(value.time).;
-    //   console.log("\ntype::::"+typeof value.time )
-    //   if(typeof value.time === 'string'){
-    //     console.log(value.time.split('/'));
+    my.hideLoading();
 
-    //   }
-    // })
   },
   formatDateTime(dateTimeStr) {
     if(typeof dateTimeStr === 'string'){
