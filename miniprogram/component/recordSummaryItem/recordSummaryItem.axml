@@ -25,7 +25,7 @@
         </view>
         <view class="vary">
           <text class="text2">
-            {{vary_dir}}{{vary}}
+            {{vary}}
           </text>
         </view>
       </view>
