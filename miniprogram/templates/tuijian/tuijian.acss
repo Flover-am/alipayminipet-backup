@@ -17,12 +17,6 @@
   width: 50%;
   padding: 12rpx;
 }
-.title-wrap{
-  padding: 10rpx 20rpx 0rpx 20rpx;
-  font-size: 30rpx;
-  font-weight: 600;
-  color: #ffffff;
-}
 /* .title {
   padding: 5rpx 20rpx 0rpx 20rpx;
   font-size: 30rpx;
