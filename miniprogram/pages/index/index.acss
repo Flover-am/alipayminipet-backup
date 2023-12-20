@@ -50,6 +50,12 @@ input{
   border-radius: 37.5rpx;
   padding-left: 100rpx;
 }
+.title {
+  text-align: left; /* 文字居中 */
+  color: #333; /* 更改字体颜色 */
+  font-weight: bold; /* 字体加粗 */
+  margin-bottom: 10rpx; /* 增加下边距 */
+}
 .sub-title {
   color: rgba(255, 255, 255, 0.48);
   font-size: 24rpx;

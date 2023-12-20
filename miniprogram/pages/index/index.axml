@@ -50,7 +50,7 @@
                   <view class="toux-name">
                     <!-- TODO: 用户头像 -->
                     <image class="toux" src="{{tuijian.tuijian.title}}"></image>
-                    <text class="name">{{tuijian.tuijian.title}}</text>
+                    <text class="title">{{tuijian.tuijian.title}}</text>
                   </view>
                   <view class="love-num">
                     <!-- TODO: love -->

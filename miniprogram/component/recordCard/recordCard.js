@@ -31,8 +31,18 @@ Component({
     },
     title:"TITLE"
   },
-  didMount() {},
-  didUpdate() {},
-  didUnmount() {},
-  methods: {},
+  didMount() {
+    this.$page.cardNow = this;  
+    console.log(this.props.cardId+"-1");
+  },
+  didUpdate() {
+    console.log(this.props.cardId+"-2");
+  },
+  didUnmount() {
+    console.log(this.props.cardId+"-3");
+
+  },
+  methods: {
+   
+  },
 });
