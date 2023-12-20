@@ -1,15 +1,15 @@
 <!-- 选择宠物 -->
 
 <list>
-  <list-item arrow="right" style="color: #d2d2d2">
+  <list-item disabled>
     宠物
-    <picker slot="extra" onOk="handleOk" placeholder="请选择" title="选择宠物" options="{{pets}}">
-    </picker>
+    <!-- <view>请选择</view> -->
+    <text slot="extra" >{{petName}}</text>
   </list-item>
+
   <list-item arrow="right" style="color: #d2d2d2">
     时间
-    <picker slot="extra" onOk="handleOk" placeholder="请选择" title="选择时间" options="{{time}}">
-    </picker>
+    <text slot="extra" onTap="datePicker">{{recordTime}}</text>
   </list-item>
 </list>
 
@@ -18,7 +18,13 @@
   <list>
     <list-item arrow="right" style="color: #d2d2d2">
       类别
-      <picker slot="extra" onOk="handleOk" placeholder="请选择" title="选择类别" options="{{sort}}"></picker>
+      <cascader-picker
+      slot="extra"
+      defaultValue="{{['1','11']}}"
+      placeholder="请选择类别"
+      style="color: #d2d2d2"
+      options="{{typeList}}"
+      onOk="handleCityOnOk" />
     </list-item>
   </list>
 </view>
@@ -31,16 +37,17 @@
   <divider style="margin: 16rpx 0"/>
   <ant-textarea style="width: 100%;" 
   placeholder="记录更多内容" confirm-type="send" 
-  type="text" value="{{content}}" autoHeight />
+  type="text" value="{{recordDes}}" bind:change="onChange" autoHeight
+  allowClear />
 </view>
 
 <!-- 增加图片 -->
-<view class="image-container">
+<!-- <view class="image-container">
   <uploader
     onUpload="onUploadImage"
     onRemove="onRemoveImage"
     style="padding: 12rpx;" />
-</view>
+</view> -->
 
 
 <!-- 发布按钮 -->

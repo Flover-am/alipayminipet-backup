@@ -33,13 +33,13 @@ Component({
   },
   didMount() {
     this.$page.cardNow = this;  
-    console.log(this.props.cardId+"-1");
+    // console.log(this.props.cardId+"-1");
   },
   didUpdate() {
-    console.log(this.props.cardId+"-2");
+    // console.log(this.props.cardId+"-2");
   },
   didUnmount() {
-    console.log(this.props.cardId+"-3");
+    // console.log(this.props.cardId+"-3");
 
   },
   methods: {

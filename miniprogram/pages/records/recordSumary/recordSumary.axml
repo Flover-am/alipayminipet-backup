@@ -1,29 +1,5 @@
 <scroll-view class="list">
   <timeline
-<<<<<<< HEAD
-    items="{{records}}"
-    direction="vertical" >
-
-    <!-- <view>
-        <view slot="title1" >
-          dddd
-        </view>
-    </view> -->  
-
-  <!-- 插槽填充不能通过条件渲染方式实现
-    暂时想到的解决办法是在timeline中实现card
-    不再填充插槽
-   -->
-    <view a:for="{{records}}">
-      <view slot="title{{index}}" >
-        {{item.time}}
-      </view>
-      <view slot="des{{index}}">
-        <card/>
-      </view>
-    </view>
-    
-=======
     items="{{history}}" 
     unit="{{unit}}"
     petName="{{petName}}"
@@ -32,10 +8,9 @@
     vary="{{vary}}">
       <view>
         <view slot="title1" >
-          dddd
+          ddddd
         </view>
       </view>
 
->>>>>>> f5b66f36f7481ce8891fbebce031be8b814df8d1
   </timeline>
 </scroll-view> 

@@ -84,6 +84,7 @@ Page({
       "洗护记录"
     ],
   },
+
   async onLoad() {
     var self = this;
     var context = await my.getCloudContext();
@@ -94,7 +95,7 @@ Page({
         petId: self.data.selectedPetId
       },
       success:function(res){
-        console.log(res);
+        // console.log(res);
         self.setData({
           petsData:res.result.petsData,
           topRecords:res.result.topRecords
@@ -117,11 +118,13 @@ Page({
   onPullDownRefresh() {
 
   },
+
   turn2summary(cardId,itemId){
     my.navigateTo({
       url: ''
     });
   },
+
   async onChangePetOk(value, column, e){
     this.setData({
       selectedPetId:value
@@ -159,19 +162,18 @@ Page({
       }
     })
   },
+
   textQH(value,column){
     return "切换宠物";
   },
 
   async addRecord(e) {
-    console.log(e)
+    var self = this
     my.navigateTo({
-      url: "/pages/records/recordAdd/recordAdd",
-      success:function(res) {
-        console.log(res);
-      }
+      url: `/pages/records/recordAdd/recordAdd?petName=${self.data.petData.name}?userid=${self.data.userId}`,
     })
   },
+
   changeCurrent(current,isChanging){
     this.setData({
       current:current.detail.current
