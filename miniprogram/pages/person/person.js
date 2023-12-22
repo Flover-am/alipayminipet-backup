@@ -108,10 +108,9 @@ Page({
     });
   },
   onTabAbout(event){
-    console.log(event);
-    my.showToast({
-      content: 'TODO：跳转关于页',
-      duration: 2000
-    });
+    console.log("测试接口")
+    this.pageRouter.navigateTo({
+      url:"/pages/user/user"
+    })
   }
 });

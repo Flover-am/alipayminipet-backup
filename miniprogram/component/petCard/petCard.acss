@@ -1,0 +1,13 @@
+
+.page-section-control {
+  padding: 12px;
+}
+
+.page-section-control view{
+  margin-bottom: 12px;
+}
+
+
+.margin-t {
+  margin-top: 24px;
+}

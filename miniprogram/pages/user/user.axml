@@ -1,0 +1,13 @@
+<view class="infoCol">
+  <image class="avatar" src="{{avatar}}" />
+  <view class="userInfoCol">
+    <text class="nickname">{{nickname}}</text>
+    <view class="login-status-area">
+      <text>登录状态：</text>
+      <text>{{isLogin ? "已登录" : "未登录"}}</text>
+    </view>
+  </view>
+</view>
+<view>
+  <pet-card petName="Tom" petType="Cat" petAge="3" />
+</view>
