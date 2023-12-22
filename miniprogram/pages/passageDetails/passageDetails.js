@@ -13,6 +13,9 @@ Page({
     // TODO: 是否点赞过（默认为false吗，还是说要存一下之前是否点赞过）
     isLoved: false,
   },
+  onShow() {
+    my.startPullDownRefresh();
+  },
   async onLoad() {
     const eventChannel = this.getOpenerEventChannel();
     var self = this;
@@ -28,6 +31,7 @@ Page({
     })
     var context = await my.getCloudContext();
     context.callFunction({
+
       name: "getTalks",
       data: {"passageId": self.data.passage.data.tuijian.Id},
       success:function(res) {
@@ -99,12 +103,11 @@ Page({
 
       }
     })
-    var tempList = self.data.talkList;
-    tempList.push({
+    self.data.talkList.push({
       time: date,
       passageId: passageId,
       talkcontent: tempTalk
-    })
+    });
   },
   async onUnload(e) {
     my.navigateBack({
@@ -113,11 +116,26 @@ Page({
       }
     })
   },
-  events: {
-    onBack() {
-      console.log('Back');
-      
-    }
+
+  async onPullDownRefresh(){
+    console.log("进入刷新");
+    var self = this;
+    var context = await my.getCloudContext();
+    context.callFunction({
+      name: "getTalks",
+      data: {"passageId": self.data.passage.data.tuijian.Id},
+      success:function(res) {
+        console.log(res);
+        self.setData({
+          talkList: res.result
+        })
+      }
+    });
+    setTimeout(() => {
+      my.stopPullDownRefresh();
+    }, 1000);
+
+  
   }
 
 });

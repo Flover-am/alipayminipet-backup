@@ -9,14 +9,21 @@
     </view>
 
     <view class="ant-steps-item-text">
-      <view class="ant-steps-item-title ant-steps-item-title-active">
+      <!-- <view class="ant-steps-item-title ant-steps-item-title-active">
          <slot name="title{{index}}" value="{{item}}" index="{{index}}">
-          时间 
+          {{item.time}}
         </slot>
-      </view>
+      </view> -->
       <view class="content">
         <slot name="des{{index}}" value="{{item}}" index="{{index}}">
-          内容
+          <itemcard 
+          time="{{item.time}}" 
+          value="{{item.value}}{{unit}}" 
+          name="{{petName}}"
+          key="{{key}}"
+          vary="{{vary[index]}}{{unit}}"
+          >
+          </itemcard>
         </slot>
       </view>
 

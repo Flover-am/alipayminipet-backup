@@ -67,7 +67,7 @@ Page({
         url: 'https://sm.ms/api/v2/upload', // 开发者服务器地址，此 url 仅为示例
         name: 'smfile',
         filePath: file.path,
-        header: {Authorization: "EhZPkR2NdA5j0shwTt1YLVZaNOTuqPwL"},
+        header: {Authorization: "388atCE4xsvuzZHCV1MeyHXZkAY70axz"},
         formData: { extra: '其他信息' },
         success: res => {
           my.alert({ title: '上传成功' });
@@ -147,6 +147,9 @@ Page({
       } else {
         num += 1;
       }
+    }
+    if (this.data.imageUrls.length == 0 || this.data.content == "" || this.data.title == "") {
+      return;
     }
     var Id = parseInt((num + 1).toString() + self.data.id.toString()) ;
     context.callFunction({

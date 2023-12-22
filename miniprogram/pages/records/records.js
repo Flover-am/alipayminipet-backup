@@ -1,6 +1,7 @@
 Page({
   data: {
     petsData: [],
+    current:0,
     petsName:["12","23"],
     selectedPetId:0,
     defaultPet:{},
@@ -83,6 +84,7 @@ Page({
       "洗护记录"
     ],
   },
+
   async onLoad() {
     var self = this;
     var context = await my.getCloudContext();
@@ -90,10 +92,10 @@ Page({
       name: 'getRecordFace',
       data:{
         userId: self.data.userId,
-        petId:self.selectedPetId
+        petId: self.data.selectedPetId
       },
       success:function(res){
-        console.log(res);
+        // console.log(res);
         self.setData({
           petsData:res.result.petsData,
           topRecords:res.result.topRecords
@@ -110,47 +112,20 @@ Page({
           })
         });
       }
-      // success:function(res) {
-      //   my.hideLoading();
-      //   /// 设置主要数据PetsData
-      //   self.setData({
-      //     petsData: res.result.data,
-      //   });
-      //   /// 得到宠物名列表
-      //   self.setData({
-      //     petsName: self.data.petsData.map((value,index)=>{
-      //       return {
-      //         value:index,
-      //         label:value.name
-      //       };
-      //     })
-      //   });
-      //   self.setData({
-      //     defaultPet:{
-      //       value:0,
-      //       label:self.data.petData.name
-      //     }
-      //   })
-      //   console.log("records.js: 86 onload--------")
-
-      //   console.log(self.data.defaultPet);
-      //   /// 得到当前宠物信息
-      //   self.setData({
-      //     petData:self.data.petsData[self.data.selectedPetId]
-      //   });
-      // }
     })
   },
 
   onPullDownRefresh() {
 
   },
+
   turn2summary(cardId,itemId){
     my.navigateTo({
       url: ''
     });
   },
-  onChangePetOk(value, column, e){
+
+  async onChangePetOk(value, column, e){
     this.setData({
       selectedPetId:value
     });
@@ -158,20 +133,51 @@ Page({
     this.setData({
       petData:self.data.petsData[self.data.selectedPetId]
     });
-    
+
+    var self = this;
+    var context = await my.getCloudContext();
+    context.callFunction({
+      name: 'getRecordFace',
+      data:{
+        userId: self.data.userId,
+        petId: self.data.selectedPetId
+      },
+      success:function(res){
+        console.log(res);
+        self.setData({
+          petsData:res.result.petsData,
+          topRecords:res.result.topRecords
+        });
+        self.setData({
+          petData:self.data.petsData[self.data.selectedPetId],
+        })
+        self.setData({
+          petsName: self.data.petsData.map((value,index)=>{
+            return {
+              value:index,
+              label:value.name
+            };
+          })
+        });
+      }
+    })
   },
+
   textQH(value,column){
     return "切换宠物";
   },
 
   async addRecord(e) {
-    console.log(e)
+    var self = this
     my.navigateTo({
-      url: "/pages/records/recordSumary/recordSumary",
-      success:function(res) {
-        console.log(res);
-      }
+      url: `/pages/records/recordAdd/recordAdd?petName=${self.data.petData.name}?userid=${self.data.userId}`,
     })
+  },
+
+  changeCurrent(current,isChanging){
+    this.setData({
+      current:current.detail.current
+    });
   }
 });
 
