@@ -137,3 +137,31 @@ page {
   height: 1px;
   background-color: #ccc;
 }
+
+.infoCol {
+  display: flex;
+  align-items: center;
+}
+
+
+.userInfoCol {
+  display: flex;
+  flex-direction: column;
+}
+
+.nickname {
+  font-weight: bold; /* 设置昵称文字为粗体 */
+
+}
+
+.login-status-area {
+  display: flex;
+  align-items: center;
+}
+
+
+
+.additional-info text {
+  font-size: 14px; /* 调整附加信息文字的大小 */
+  margin-right: 10px; /* 调整附加信息之间的间距 */
+}

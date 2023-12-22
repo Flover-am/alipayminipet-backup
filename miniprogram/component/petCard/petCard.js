@@ -6,13 +6,29 @@ Component({
   didUnmount() {},
   methods: {},
   data: {
-    background: [
-      { color: 'blue', text: '支付宝' },
-      { color: 'red', text: '小程序' },
-      { color: 'yellow', text: 'Swiper' }
-    ],
-    indicatorDots: true,
-    autoplay: true,
+    petsData: [{
+      age: "4岁",
+      birthday: "05月20日",
+      gender: "公",
+      name: "从众的阿西",
+      weight: "12kg",
+    },
+    {
+      age: "3岁",
+      birthday: "06月24日",
+      gender: "公",
+      name: "小八",
+      weight: "5kg",
+    },
+    {
+      age: "2岁",
+      birthday: "05月22日",
+      gender: "公",
+      name: "来福",
+      weight: "2kg",
+    }],
+    indicatorDots: false,
+    autoplay: false,
     vertical: false,
     interval: 1000,
     circular: false,
