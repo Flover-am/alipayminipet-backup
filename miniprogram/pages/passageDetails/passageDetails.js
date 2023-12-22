@@ -6,7 +6,7 @@ Page({
     autoplay: true,
     vertical: false,
     interval: 1000,
-    circular: false,
+    circular: true,
     duration: 1500,
     talkList: [],
     talk: "",
@@ -16,6 +16,7 @@ Page({
   onShow() {
     my.startPullDownRefresh();
   },
+
   async onLoad() {
     const eventChannel = this.getOpenerEventChannel();
     var self = this;
@@ -136,6 +137,9 @@ Page({
     }, 1000);
 
   
-  }
+  },
+  Test(){
+    console.log("成功点击");
+  },
 
 });

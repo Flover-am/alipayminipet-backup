@@ -6,7 +6,17 @@
 </view>
 
 <!-- 图片 -->
-<swiper indicator-dots indicator-active-color="#FFAE2E">
+<swiper 
+style="height:150px"
+            class="demo-swiper"
+            previousMargin="10px"
+            nextMargin="10px"
+            indicator-dots="{{indicatorDots}}"
+            autoplay="{{autoplay}}"
+            vertical="{{vertical}}"
+            interval="{{interval}}"
+            circular="{{circular}}"
+            duration="{{duration}}">
   <swiper-item key="swiper-item-{{index}}" a:for="{{passage.data.tuijian.Cover}}">
       <!-- <view class="swiper-item bc_{{item.color}}">{{item.text}}</view> -->
       <image mode="aspectFit" class="image" src="{{item.link}}" />
@@ -27,7 +37,10 @@
 <view class="comment-container">
   <view class="comment" style="margin-bottom: 32rpx; display: flex; flex-direction: row; align-items: flex-start" a:for="{{talkList}}" a:key={{talkList.passageId}} a:for-item="talkItem">
     <!-- TODO: 用户头像 -->
+    
     <avatar size='x-small' />
+    
+    
     <view style="width: 16rpx" />
     <view style="display: flex; flex-direction: column; box-sizing: border-box; padding: 16rpx; background-color: white; border-radius: 4px; flex-grow: 2">
       <text style="font-size: 12; color: #BBBBBB;">用户{{talkItem.passageId}}</text>
