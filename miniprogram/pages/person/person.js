@@ -1,4 +1,3 @@
-
 const URL = 'https://demo.antcloud-miniprogram.com';
 //需要部署后端并将URL改为后端地址
 Page({
@@ -109,11 +108,9 @@ Page({
     });
   },
   onTabAbout(event){
-    console.log(event);
-    my.showToast({
-      content: 'TODO：跳转关于页',
-      duration: 2000
-    });
+    console.log("测试接口")
+    this.pageRouter.navigateTo({
+      url:"/pages/user/user"
+    })
   }
 });
-

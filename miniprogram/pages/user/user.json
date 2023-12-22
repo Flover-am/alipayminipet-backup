@@ -1,0 +1,6 @@
+{
+  "usingComponents": {
+    "pet-card":"/component/petCard/petCard"
+  },
+  "styleIsolation": "apply-shared"
+}
