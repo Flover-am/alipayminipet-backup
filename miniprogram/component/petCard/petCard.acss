@@ -1,0 +1,139 @@
+.page-section {
+  border-radius: 20px;
+  width: 100%;
+}
+.page-section-control {
+  padding: 12px;
+}
+
+.page-section-control view{
+  margin-bottom: 12px;
+}
+
+
+.margin-t {
+  margin-top: 24px;
+}
+
+page{
+  padding: 5%;
+  background-color: whitesmoke;
+  display: flex;
+  flex-direction: column;
+  justify-content: flex-start;
+}
+
+.petCard{
+  display: flex;
+  flex-flow: column;
+  justify-content: flex-start;
+  /* background-color: white; */
+  border-radius: 20rpx;
+}
+
+.petCard .detail{
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  /* background-color: chocolate; */
+  width: 100%;
+}
+
+.petCard .detail .avatar{
+  margin-right: 50rpx;
+  height: 168rpx;
+}
+
+.imgeavatar{
+  width: 168rpx;
+  height: 168rpx;
+  border-radius: 50%;
+}
+
+.petCard .detail .info{
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  /* background-color: bisque; */
+  height: 120rpx;
+}
+
+.petCard .buttons{
+  display: flex;
+  justify-content: space-between;
+  margin-top: 30rpx;
+}
+
+.petCard .buttons .bubble{
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  position: relative;
+  background-color: wheat;
+  width: 360rpx;
+  height: 70rpx;
+  border-radius: 50rpx;
+  margin-left: 4%;
+
+}
+
+.petCard .buttons .bubble .arrow{
+  position: absolute;
+  top: -14rpx;
+  left: 50rpx;
+  width: 0;
+  height: 0;
+  border-left: 8.5px solid transparent;
+  border-right: 8.5px solid transparent;
+  border-bottom: 8.5px solid wheat
+}
+
+.petCard .buttons .switch{
+  width: 200rpx;
+  background-color: wheat;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  border-radius: 50rpx;
+  margin-right: 20rpx;
+}
+
+.recordCard{
+  width: 100%;
+  margin: auto;
+}
+
+.name{
+  font-weight: 700;
+  font-size: large;
+}
+
+
+
+.grid4 {
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  grid-template-rows: repeat(2, 1fr);
+  grid-column-gap: 20px;
+  grid-row-gap: 0px;
+}
+
+.div1 { grid-area: 1 / 1 / 2 / 2; }
+.div2 { grid-area: 1 / 2 / 2 / 3; }
+.div3 { grid-area: 2 / 1 / 3 / 2; }
+.div4 { grid-area: 2 / 2 / 3 / 3; }
+
+/* 来自社区页的浮动上传按钮 */
+.floating-button {
+  height: 108rpx; 
+  width: 108rpx; 
+  position: fixed; 
+  right: 36rpx; 
+  bottom: 36rpx; 
+  background-color: var(--color-primary); 
+  box-shadow: 2px 2px 2px rgba(0, 0, 0, 0.05); 
+  border-radius: 54rpx; 
+  display: flex; 
+  justify-content: center; 
+  align-items: center;
+}

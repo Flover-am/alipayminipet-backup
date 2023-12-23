@@ -1,0 +1,234 @@
+page {
+  flex: 1;
+  display: flex;
+  flex-direction: column;
+  background: whitesmoke;
+  align-items: center;
+}
+
+.avatar {
+  background: #d8d8d8;
+  width: 168rpx;
+  height: 168rpx;
+  border-radius: 50%;
+}
+
+.infoCol{
+  margin-top: 10px;
+  width: 90%;
+  float:left;
+  display: flex;
+  flex-flow: row wrap;
+  justify-content:baseline; 
+}
+
+.userInfoCol{
+  padding: 32rpx;
+  display: flex;
+  justify-content: space-between;
+}
+
+.nickname{
+  display: flex;
+  margin-top: 20rpx;
+  margin-bottom: 30rpx;
+  margin-right: 10rpx;
+}
+
+.login-status-area {
+  line-height: 36rpx;
+  font-size: 25rpx;
+  color: #8f8f8f;
+  margin-top: 20rpx;
+  margin-bottom: 30rpx;
+}
+
+.card-container {
+  border-radius: 20px;
+  margin-top: 10px;
+  width: 90%;
+  height: 30%;
+}
+
+@import "../../templates/tuijian/tuijian.acss";
+.banner {
+  height: 455rpx;
+  width: 100%;
+  background-image: url('/image/component_bg.jpg');
+  background-size: contain;
+  background-repeat: no-repeat;
+  position: relative;
+  z-index: 2;
+}
+.find {
+  position: relative;
+}
+
+.logo {
+  width: 105rpx;
+  height: 117rpx;
+  position: absolute;
+  top: 122rpx;
+  left: 50%;
+  transform: translate(-50%);
+}
+
+.logo image {
+  width: 100%;
+  height: 100%;
+}
+
+.item-image {
+  height: 100%; /* 图片高度为100%，使其填满父元素 */
+  width: 100%; /* 图片宽度为100%，使其填满父元素 */
+  /* height: auto; 高度自动，保持图片的原始宽高比 */
+  object-fit: cover; /* 图片始终覆盖整个元素，可能会被裁剪 */
+  object-position: center; /* 图片始终位于元素的中心 */
+}
+input{
+  background: #E8E8E8;
+  display: block;
+  width: calc(90% - 100rpx);
+  height: 75rpx;
+  line-height: 75rpx;
+  margin: 0 auto;
+  border-radius: 37.5rpx;
+  padding-left: 100rpx;
+}
+.title {
+  text-align: left; /* 文字居中 */
+  color: #333; /* 更改字体颜色 */
+  font-weight: bold; /* 字体加粗 */
+  margin-bottom: 10rpx; /* 增加下边距 */
+}
+.sub-title {
+  color: rgba(255, 255, 255, 0.48);
+  font-size: 24rpx;
+  position: absolute;
+  top: 330rpx;
+  left: 50%;
+  transform: translate(-50%);
+  width: 80%;
+}
+
+.fake-searchbar {
+  position: absolute;
+  bottom: 0;
+  left: 50%;
+  transform: translate(-50%, 50%);
+  height: 92rpx;
+  width: 91.4%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  background-color: #fff;
+  border-radius: 4rpx;
+  box-shadow: rgba(153, 153, 153, 0.24) 0 2px 7px;
+}
+
+.fake-placeholder {
+  margin-left: 12rpx;
+  color: rgba(153, 153, 153, 0.89);
+  font-size: 28rpx;
+}
+
+.hot {
+  padding-top: 60px;
+  padding-bottom: 30rpx;
+  padding-left: 4.26%;
+  padding-right: 4.26%;
+  box-sizing: border-box;
+}
+.test {
+  position: absolute;
+  top: 100rpx;
+}
+
+.topBar-name{
+  display: inline-block;
+  width: 130rpx;
+  font-size: 32rpx;
+
+  padding: 22rpx;
+}
+.tabs.shadow {
+  box-shadow: rgba(153, 153, 153, 0.24) 0 2px 7px;
+}
+
+.component-name {
+  color: rgb(51, 51, 51);
+  margin-right: 10rpx;
+}
+
+.component-brief {
+  color: #CCC;
+  font-size: 34rpx;
+}
+
+.list {
+  padding: 32rpx;
+  flex-shrink: 0;
+  box-sizing: border-box;
+  width: 100%;
+}
+
+.list-header {
+  width: 100%;
+  box-sizing: border-box;
+  padding-top: 40rpx;
+  padding-bottom: 20rpx;
+  display: flex;
+  align-items: center;
+  background-color: #fff;
+  color: #333;
+  font-weight: bold;
+  font-size: 34rpx;
+  padding-left: 32rpx;
+}
+
+.thumb {
+  height: 60rpx;
+  width: 60rpx;
+  margin-right: 30rpx;
+}
+
+.am-list-header {
+  box-sizing: border-box;
+  padding: 0;
+}
+
+.am-list-body::before {
+  display: none;
+}
+
+.list-item {
+  position: relative;
+  width: 300rpx; /* 设置宽度 */
+  height: auto; /* 设置高度 */
+  margin-bottom: 35rpx;
+  border: 1px solid #e8e8e8;
+  box-shadow: 0 2px 8px rgba(0, 0, 0, 0.1);
+  border-radius: 10rpx;
+  padding: 20rpx;
+  transition: all 0.3s ease;
+}
+
+.list-wrap {
+  overflow: hidden;
+}
+
+.list-container {
+  display: flex;
+  width: 100%;
+  transition-duration: 500ms;
+}
+.list-item:hover {
+  box-shadow: 0 4px 16px rgba(0, 0, 0, 0.2); /* 鼠标悬停时增加阴影 */
+}
+.logo_devCenter {
+  position: fixed;
+  right: 32rpx;
+  bottom: 44rpx;
+  width: 109rpx;
+  height: 121rpx;
+}

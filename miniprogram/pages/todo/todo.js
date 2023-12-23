@@ -179,7 +179,7 @@ Page({
     my.confirm({
       content: '确认要删除吗？',
       confirmButtonText: '删除',
-      confirmColor: '#B22222',
+      confirmColor: '#FF0000',
       success: result => {
         if (result.confirm) {
           let index = e.target.dataset.index

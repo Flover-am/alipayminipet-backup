@@ -6,34 +6,35 @@
   <view a:for="{{ list }}" class="todo-info"  a:if="{{ !item.isDone }}" onLongTap="edit" data-index="{{index}}">
     <view class="todo">
       <text>{{item.todo}}</text>
-      <image class="edit" a:if="{{ item.inEdit }}" onTap="editTodo" data-index="{{index}}" mode="aspectFit" src="/image/expand_arrow.png" />
+      <image class="edit" a:if="{{ item.inEdit }}" onTap="editTodo" data-index="{{index}}" mode="aspectFit" src="/image/expand.svg" />
     </view>
 
     <view class="time">
-      <text>{{item.time}}</text>
-      <image class="edit" a:if="{{ item.inEdit }}" onTap="editTime" data-index="{{index}}" mode="aspectFit" src="/image/expand_arrow.png" />
+      <image class="clock" mode="aspectFit" src="/image/clock.svg" />
+      <text class="time_txt">{{item.time}}</text>
+      <image class="edit" a:if="{{ item.inEdit }}" onTap="editTime" data-index="{{index}}" mode="aspectFit" src="/image/expand.svg" />
     </view>
 
     <view class="finish" a:if="{{ !item.inEdit }}">
-      <button size="default" type="ghost" data-index="{{index}}" onTap="finish">
-        完成
+      <button size="default" type="primary" data-index="{{index}}" onTap="finish">
+        <text>完成</text>
       </button>
     </view>
 
     <view class="delete" a:if="{{ item.inEdit }}" onTap="delete" data-index="{{index}}">
-      <image class="edit" mode="aspectFit" src="/image/delete.png" />
-      <text>  删除代办</text>
+      <image class="edit" mode="aspectFit" src="/image/delete.svg" />
+      <text class="edit_txt">  删除代办</text>
     </view>
 
     <view class="finishEdit" a:if="{{ item.inEdit }}" onTap="finishEdit" data-index="{{index}}">
-      <image class="edit" mode="aspectFit" src="/image/done.png" />
-      <text>  完成编辑</text>
+      <image class="edit" mode="aspectFit" src="/image/done.svg" />
+      <text class="edit_txt">  完成编辑</text>
     </view>
   </view>
 
 
   <view class="finished">
-    <image class="expand" mode="aspectFit" src="{{folded? '/image/expand_arrow.png':'/image/fold_arrow.png'}}" onTap="shiftFold"/>
+    <image class="expand" mode="aspectFit" src="{{folded? '/image/expand.svg':'/image/fold.svg'}}" onTap="shiftFold"/>
     <text>{{"已完成 " + finished}}</text>
   </view>
 
@@ -44,14 +45,18 @@
       </view>
   
       <view class="time">
-        <text>{{item.time}}</text>
+        <image class="clock" mode="aspectFit" src="/image/clock_finished.svg" />
+        <text class="time_txt">{{item.time}}</text>
       </view>
     </view>
   </view>
   
 </view>
 
-<view class="addbutton" onTap="addItem">
+<!-- <view class="addbutton" onTap="addItem">
   <image class="icon" mode="scaleToFill" src="/image/addPen.svg"/>
-</view>
+</view> -->
 
+<view onTap="addItem" class="floating-button">
+  <icon type="EditSOutline" style="font-size: 48rpx; color: white"/>
+</view>  

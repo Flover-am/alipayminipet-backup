@@ -1,0 +1,23 @@
+  <container title = "{{title}}">
+    <view class="grid4">
+      <view class="div1" >
+        <recorditem name="{{topRecord.item1.name}}" value="{{topRecord.item1.value}}" itemId="{{0}}" ></recorditem>
+      </view>
+      <view class="div2">
+        <recorditem name="{{topRecord.item2.name}}" value="{{topRecord.item2.value}}" itemId={{1}}></recorditem>
+      </view>
+      <view class="div3">
+        <recorditem name="{{topRecord.item3.name}}" value="{{topRecord.item3.value}}" itemId={{2}}></recorditem>
+
+      </view>
+      <view class="div4">
+        <recorditem name="{{topRecord.item4.name}}" value="{{topRecord.item4.value}}" itemId={{3}}></recorditem>
+      </view>
+      <view class="div5">
+        <recorditem name="{{topRecord.item5.name}}" value="{{topRecord.item5.value}}" itemId={{4}}></recorditem>
+      </view>
+      <view class="div6">
+        <recorditem name="{{topRecord.item6.name}}" value="{{topRecord.item6.value}}" itemId={{5}}></recorditem>
+      </view>
+    </view>
+  </container>

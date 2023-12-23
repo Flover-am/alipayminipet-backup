@@ -1,0 +1,56 @@
+<!-- 选择宠物 -->
+
+<list>
+  <list-item disabled>
+    宠物
+    <!-- <view>请选择</view> -->
+    <text slot="extra" >{{petName}}</text>
+  </list-item>
+
+  <list-item arrow="right" style="color: #d2d2d2">
+    时间
+    <text slot="extra" onTap="datePicker">{{recordTime}}</text>
+  </list-item>
+</list>
+
+<!-- 记录类别 -->
+<view class="recordSort">
+  <list>
+    <list-item arrow="right" style="color: #d2d2d2">
+      类别
+      <cascader-picker
+      slot="extra"
+      defaultValue="{{['1','11']}}"
+      placeholder="请选择类别"
+      style="color: #d2d2d2"
+      options="{{typeList}}"
+      onOk="handleCityOnOk" />
+    </list-item>
+  </list>
+</view>
+
+<!-- 记录内容 -->
+<view class="content-container">
+  <text style="width: 100%; font-weight: bold; color: #d2d2d2"  value="{{title}}" >
+    描述
+  </text>
+  <divider style="margin: 16rpx 0"/>
+  <ant-textarea style="width: 100%;" 
+  placeholder="记录更多内容" confirm-type="send" 
+  type="text" value="{{recordDes}}" bind:change="onChange" autoHeight
+  allowClear />
+</view>
+
+<!-- 增加图片 -->
+<!-- <view class="image-container">
+  <uploader
+    onUpload="onUploadImage"
+    onRemove="onRemoveImage"
+    style="padding: 12rpx;" />
+</view> -->
+
+
+<!-- 发布按钮 -->
+<ant-button type="primary" onTap="submit" style="margin: 0 24rpx; background-color: var(--color-primary); border-radius: 48rpx; box-shadow: inset 0 0 0 0px; position: fixed; bottom: 24rpx; left: 0; right: 0;">
+  增加
+</ant-button>

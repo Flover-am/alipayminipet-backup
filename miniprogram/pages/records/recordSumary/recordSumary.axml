@@ -1,0 +1,16 @@
+<scroll-view class="list">
+  <timeline
+    items="{{history}}" 
+    unit="{{unit}}"
+    petName="{{petName}}"
+    direction="vertical" 
+    key="{{key}}"
+    vary="{{vary}}">
+      <view>
+        <view slot="title1" >
+          ddddd
+        </view>
+      </view>
+
+  </timeline>
+</scroll-view> 

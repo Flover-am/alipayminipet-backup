@@ -5,9 +5,24 @@
     <view class="login-status-area">
       <text>登录状态：</text>
       <text>{{isLogin ? "已登录" : "未登录"}}</text>
+      <button 
+      a:if="{{ !isLogin }}"
+      class="login-button"
+  open-type="getAuthorize"
+  scope="userInfo"
+  onGetAuthorize="getOpenUserInfo"
+  onError="handleAuthError"
+>
+点击登录
+      </button>
+    </view>
+    <view class="additional-info">
+      <text>{{isLogin ? "养宠n年" : ""}}</text>
+      <text>{{isLogin ? "定位信息" : ""}}</text>  
     </view>
   </view>
 </view>
+
 <view class="bar">
   <view class="unit" id="todo" onTap="onTabTODO">
     <text class="num">{{todoNum}}</text>
@@ -41,22 +56,25 @@
   </view>
 </view>
 
-<view class="bar3">
+<!-- <view class="bar3">
   <view>
     <image src="" alt="快乐宠友星球 立即入群"/>
   </view>
-</view>
+</view> -->
 
 <view class="bar4">
   <view class="item4" onTap="onTabSettings">
     <text>设置</text>
   </view>
+  <view class="separator"></view>
   <view class="item4" onTap="onTabFeedback">
     <text>反馈</text>
   </view>
+  <view class="separator"></view>
   <view class="item4" onTap="onTabHelp">
     <text>帮助</text>
   </view>
+  <view class="separator"></view>
   <view class="item4" onTap="onTabAbout">
     <text>关于</text>
   </view>

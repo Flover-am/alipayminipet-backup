@@ -1,44 +1,49 @@
 {
   "pages": [
+    "pages/records/records",
+    "pages/records/recordSumary/recordSumary",
     "pages/index/index",
     "pages/mypets/mypets",
-    "pages/records/records",
     "pages/todo/todo",
     "pages/person/person",
-    "pages/passageDetails/passageDetails"
+    "pages/passageDetails/passageDetails",
+    "pages/release/release",
+    "pages/records/recordAdd/recordAdd",
+    "pages/person/message/message",
+    "pages/user/user"
   ],
   "window": {
     "defaultTitle": "Pet",
     "pullRefresh": true
   },
   "tabBar": {
-    "textColor": "#dddddd",
-    "selectedColor": "#49a9ee",
-    "backgroundColor": "#ffffff",
+    "textColor": "#333333",
+    "selectedColor": "#FFAE2E",
+    "backgroundColor": "#FFFFFF",
     "items": [
       {
         "pagePath": "pages/index/index",
         "name": "社区",
         "icon": "/image/icon_bar/social.png",
-        "activeIcon": "/image/icon_bar/social.png"
+        "activeIcon": "/image/icon_bar/social_active.png"
       },
       {
         "pagePath": "pages/records/records",
         "name": "记录",
         "icon": "/image/icon_bar/record.png",
-        "activeIcon": "/image/icon_bar/record.png"
+        "activeIcon": "/image/icon_bar/record_active.png"
       },
       {
         "pagePath": "pages/todo/todo",
         "name": "提醒",
         "icon": "/image/icon_bar/todo.png",
-        "activeIcon": "/image/icon_bar/todo.png"
+        "activeIcon": "/image/icon_bar/todo_active.png"
       },
       {
         "pagePath": "pages/person/person",
         "name": "我的",
         "icon": "/image/icon_bar/mine.png",
-        "activeIcon": "/image/icon_bar/mine.png"
+        "activeIcon": "/image/icon_bar/mine_active.png"
       }
     ]
   }

@@ -1,23 +1,21 @@
 .li{
   background: #ffffff;
-  border-radius: 10rpx;
+  border-radius: 8px;
+  margin-bottom: 24rpx;
 }
 .content {
+  width: 100%;
+  box-sizing: border-box;
   display: flex;
   flex-direction: row;
-  margin: 20rpx;
   overflow: hidden;
-  position: absolute;
-  top :200rpx;
+  padding: 12rpx 12rpx;
+  background-color: #F7F7F7;
 }
 .left {
-  width: 345rpx;
-}
-.title-wrap{
-  padding: 10rpx 20rpx 0rpx 20rpx;
-  font-size: 30rpx;
-  font-weight: 600;
-  color: #ffffff;
+  box-sizing: border-box;
+  width: 50%;
+  padding: 12rpx;
 }
 /* .title {
   padding: 5rpx 20rpx 0rpx 20rpx;
@@ -26,12 +24,13 @@
   color: #333;
 } */
 .right{
-  width: 345rpx;
-  margin-left: 10rpx;
+  box-sizing: border-box;
+  width: 50%;
+  padding: 12rpx;
 }
 .pic {
-  border-radius: 10rpx 10rpx 0rpx 0rpx;
-  width: 345rpx;
+  border-radius: 8px 8px 0 0;
+  width: 100%;
 }
 .bottom{
   display: flex;
