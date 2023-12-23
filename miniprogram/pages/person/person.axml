@@ -5,10 +5,20 @@
     <view class="login-status-area">
       <text>登录状态：</text>
       <text>{{isLogin ? "已登录" : "未登录"}}</text>
+      <button 
+      a:if="{{ !isLogin }}"
+      class="login-button"
+  open-type="getAuthorize"
+  scope="userInfo"
+  onGetAuthorize="getOpenUserInfo"
+  onError="handleAuthError"
+>
+点击登录
+      </button>
     </view>
     <view class="additional-info">
       <text>{{isLogin ? "养宠n年" : ""}}</text>
-      <text>{{isLogin ? "定位信息" : ""}}</text>
+      <text>{{isLogin ? "定位信息" : ""}}</text>  
     </view>
   </view>
 </view>
