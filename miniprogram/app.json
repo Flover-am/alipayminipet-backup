@@ -1,8 +1,8 @@
 {
   "pages": [
+    "pages/index/index",
     "pages/records/records",
     "pages/records/recordSumary/recordSumary",
-    "pages/index/index",
     "pages/mypets/mypets",
     "pages/todo/todo",
     "pages/person/person",

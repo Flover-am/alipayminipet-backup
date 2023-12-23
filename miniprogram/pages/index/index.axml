@@ -1,5 +1,4 @@
-<!--pages/homepage/homepage.wxml-->
-<import src="../../templates/tuijian/tuijian" />
+
 
 <!-- 搜索框（拟弃用） -->
 <!-- <view style="position: fixed; top: 0; left: 0; right: 0; height: 300rpx">
