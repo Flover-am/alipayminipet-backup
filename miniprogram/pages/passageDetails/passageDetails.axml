@@ -24,7 +24,7 @@ style="height:150px"
 </swiper>
 
 <!-- 标题及正文 -->
-<view class="content-container">
+<view class="content">
   <text style="font-size: 20; font-weight: bold">{{passage.data.tuijian.title}}</text>
   <view style="height: 24rpx;" />
   <text>{{passage.data.tuijian.text}}</text>
@@ -62,7 +62,7 @@ style="height:150px"
   </view>
   <view style="color: var(--color-secondary)">{{loveNum}}</view>
   <view style="flex-grow: 2"/>
-  <input class="input-bar" placeholder="说点什么..." confirm-type="send" type="text" onInput="talkInput" value="{{talk}}" />
+  <input class="input" placeholder="说点什么..." confirm-type="send" type="text" onInput="talkInput" value="{{talk}}" />
   <view style="width: 24rpx"/>
   <ant-button icon="EditSOutline" type="primary" onTap="submit" inline size="small" style="background-color: var(--color-primary); height: 72rpx; border-radius: 36rpx; box-shadow: inset 0 0 0 0px; display: flex; flex-direction: row">发送</ant-button>
 </view>
