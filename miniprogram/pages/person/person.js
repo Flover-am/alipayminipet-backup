@@ -29,6 +29,7 @@ Page({
                 nickname:this.data.nickname,
                 isLogin:this.data.isLogin,
                 avatar:this.data.avatar
+                
               }
             )
         },
