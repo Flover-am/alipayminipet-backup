@@ -6,7 +6,17 @@
 </view>
 
 <!-- 图片 -->
-<swiper indicator-dots indicator-active-color="#FFAE2E">
+<swiper 
+style="height:150px"
+            class="demo-swiper"
+            previousMargin="10px"
+            nextMargin="10px"
+            indicator-dots="{{indicatorDots}}"
+            autoplay="{{autoplay}}"
+            vertical="{{vertical}}"
+            interval="{{interval}}"
+            circular="{{circular}}"
+            duration="{{duration}}">
   <swiper-item key="swiper-item-{{index}}" a:for="{{passage.data.tuijian.Cover}}">
       <!-- <view class="swiper-item bc_{{item.color}}">{{item.text}}</view> -->
       <image mode="aspectFit" class="image" src="{{item.link}}" />
@@ -14,7 +24,7 @@
 </swiper>
 
 <!-- 标题及正文 -->
-<view class="content-container">
+<view class="content">
   <text style="font-size: 20; font-weight: bold">{{passage.data.tuijian.title}}</text>
   <view style="height: 24rpx;" />
   <text>{{passage.data.tuijian.text}}</text>
@@ -27,8 +37,9 @@
 <view class="comment-container">
   <view class="comment" style="margin-bottom: 32rpx; display: flex; flex-direction: row; align-items: flex-start" a:for="{{talkList}}" a:key={{talkList.passageId}} a:for-item="talkItem">
     <!-- TODO: 用户头像 -->
+
     <view onTap="toUserPage">
-    <avatar size='x-small' />
+      <avatar size='x-small' />
     </view>
     <view style="width: 16rpx" />
     <view style="display: flex; flex-direction: column; box-sizing: border-box; padding: 16rpx; background-color: white; border-radius: 4px; flex-grow: 2">
@@ -50,7 +61,7 @@
   </view>
   <view style="color: var(--color-secondary)">{{loveNum}}</view>
   <view style="flex-grow: 2"/>
-  <input class="input-bar" placeholder="说点什么..." confirm-type="send" type="text" onInput="talkInput" value="{{talk}}" />
+  <input class="input" placeholder="说点什么..." confirm-type="send" type="text" onInput="talkInput" value="{{talk}}" />
   <view style="width: 24rpx"/>
   <ant-button icon="EditSOutline" type="primary" onTap="submit" inline size="small" style="background-color: var(--color-primary); height: 72rpx; border-radius: 36rpx; box-shadow: inset 0 0 0 0px; display: flex; flex-direction: row">发送</ant-button>
 </view>

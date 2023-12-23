@@ -48,6 +48,13 @@
   align-items: center;
   margin: 20rpx 0rpx;
 }
+.image-container {
+  position: relative;
+  width: 100%; /* 或指定宽度 */
+  height: auto; /* 图片高度自适应 */
+  border-radius: 10px; /* 圆角边框 */
+  overflow: hidden; /* 确保内容不超出容器 */
+}
 .name{
   font-size: 25rpx;
   color: #333;
