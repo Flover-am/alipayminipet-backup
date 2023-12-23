@@ -17,8 +17,8 @@
       </button>
     </view>
     <view class="additional-info">
-      <text>{{isLogin ? "养宠n年" : ""}}</text>
-      <text>{{isLogin ? "定位信息" : ""}}</text>  
+      <text>{{isLogin ? "个人简介" : ""}}</text>
+      <text>{{isLogin ? "江苏南京" : ""}}</text>  
     </view>
   </view>
 </view>

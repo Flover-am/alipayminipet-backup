@@ -1,0 +1,51 @@
+<view>
+  New Page
+</view>
+<view class="content">
+  <!-- 瀑布流大概的思路就是，直接定义两列等宽的view，然后两列都加载相同的数据 wx:if="{{index%2==1}}" 这里，用if来辨别是奇数还是偶数，两边加载相反的 -->
+  <view class="left">
+    <view a:for="{{firstData}}" a:key="index" a:for-item="tuijian">
+      <view a:if="{{ tuijian.tuijian.id%2 == 0 && (tuijian.tuijian.topic == currentTopic)}}" class="item"  onTap="passageDetails" data-id={{tuijian.tuijian.Id}}>
+        <view class="list-item">
+          <image class="item-image" src="{{tuijian.tuijian.Cover[0].link}}" mode="widthFix"></image>
+              <view class="bottom">
+                <view class="toux-name">
+                  <!-- TODO: 用户头像 -->
+                  <image class="toux" src="{{tuijian.tuijian.title}}"></image>
+                  <text class="title">{{tuijian.tuijian.title}}</text>
+                </view>
+                <view class="love-num">
+                  <!-- TODO: love -->
+                  <text class="love">{{tuijian.tuijian.love}}</text>
+                  <text class="num">{{tuijian.tuijian.num}}</text>
+                </view>
+              </view>
+        </view>
+      </view>
+      <!-- <template is="{{msg}}" data="{{tuijian}}" a:if="{{tuijian.tuijian.id%2==1}}"></template> -->
+    </view>
+  </view>
+  <view class="right">
+    <block a:for="{{firstData}}" a:key={{tuijian.Id}} a:for-item="tuijian">
+      <view a:if="{{ tuijian.tuijian.id%2==1 && (tuijian.tuijian.topic == currentTopic)}}" class="item" onTap="passageDetails" data-id={{tuijian.tuijian.Id}}>
+        <view class="list-item">
+          <image class="pic" src="{{tuijian.tuijian.Cover[0].link}}" mode="widthFix"></image>
+              <view class="bottom">
+                <view class="toux-name">
+                  <!-- TODO: 用户头像 -->
+                  <image class="toux" src="{{tuijian.tuijian.title}}"></image>
+                  <text class="title">{{tuijian.tuijian.title}}</text>
+                </view>
+                <view class="love-num">
+                  <!-- TODO: love -->
+                  <text class="love">{{tuijian.tuijian.love}}</text>
+                  <text class="num">{{tuijian.tuijian.num}}</text>
+                </view>
+              </view>
+        </view>
+      </view>
+
+      <!-- <template is="{{msg}}" data="{{tuijian}}" a:if="{{tuijian.tuijian.id%2==1}}"></template> -->
+    </block>
+  </view>
+</view>

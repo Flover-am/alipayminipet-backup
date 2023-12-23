@@ -1,0 +1,51 @@
+<view class="container">
+  <view class="title-bar">
+    <text class="title">上传宠物资料</text>
+  </view>
+  
+  <view class="form-group">
+    <text class="label">宠物名字</text>
+    <input class="input" placeholder="请输入宠物名字" bindinput="bindNameInput" />
+  </view>
+  
+  <view class="form-group">
+    <text class="label">宠物品种</text>
+    <input class="input" placeholder="请输入宠物品种" bindinput="bindBreedInput" />
+  </view>
+  
+  <view class="form-group">
+    <text class="label">宠物性别</text>
+    <input class="input" placeholder="请输入宠物性别" bindinput="bindGenderInput" />
+  </view>
+  
+  <view class="form-group">
+    <text class="label">宠物体重</text>
+    <input class="input" placeholder="请输入宠物体重" bindinput="bindWeightInput" />
+  </view>
+  
+  <view class="form-group">
+    <text class="label">出生日期</text>
+    <input class="input" type="date" bindinput="bindBirthdateInput" />
+  </view>
+  
+  <view class="form-group">
+    <text class="label">到家日期</text>
+    <input class="input" type="date" bindinput="bindArrivalDateInput" />
+  </view>
+  
+  <view class="photo-gallery">
+<view class="image-container">
+  <uploader
+    onUpload="onUploadImage"
+    onRemove="onRemoveImage"
+    style="padding: 12rpx;" />
+</view>
+  </view>
+</view>
+
+
+<!-- 发布按钮 -->
+<!-- TODO: 发布功能 -->
+<ant-button  type="primary" onTap="submit" style="margin: 0 24rpx; background-color: var(--color-primary); border-radius: 48rpx; box-shadow: inset 0 0 0 0px; position: fixed; bottom: 24rpx; left: 0; right: 0;">
+ 添加
+</ant-button>

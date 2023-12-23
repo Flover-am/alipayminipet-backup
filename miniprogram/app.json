@@ -10,7 +10,9 @@
     "pages/release/release",
     "pages/records/recordAdd/recordAdd",
     "pages/person/message/message",
-    "pages/user/user"
+    "pages/user/user",
+    "pages/history/history",
+    "pages/mypets/editPet/editPet"
   ],
   "window": {
     "defaultTitle": "Pet",

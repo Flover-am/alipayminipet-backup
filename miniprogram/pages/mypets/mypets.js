@@ -48,10 +48,9 @@ Page({
     })
   },
   editPet(){
-    my.showToast({
-      type:'none',
-      duration:1000,
-      content:"修改宠物//TODO"
+    console.log("测试接口")
+    this.pageRouter.navigateTo({
+      url:"/pages/mypets/editPet/editPet"
     })
   },
   toPetPic(){

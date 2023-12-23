@@ -122,7 +122,7 @@ Page({
   onTabAbout(event){
     console.log("测试接口")
     this.pageRouter.navigateTo({
-      url:"/pages/user/user"
+      url:"/pages/history/history"
     })
   }
 });
