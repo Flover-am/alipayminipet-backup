@@ -8,5 +8,6 @@
     "icon": "antd-mini/es/Icon/index"
   },
   "styleIsolation": "apply-shared",
-  "defaultTitle": "帖子"
+  "defaultTitle": "帖子",
+  "allowsBounceVertical":"NO"
 }

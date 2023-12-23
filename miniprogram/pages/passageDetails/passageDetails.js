@@ -6,7 +6,7 @@ Page({
     autoplay: true,
     vertical: false,
     interval: 1000,
-    circular: false,
+    circular: true,
     duration: 1500,
     talkList: [],
     talk: "",
@@ -16,6 +16,7 @@ Page({
   onShow() {
     my.startPullDownRefresh();
   },
+
   async onLoad() {
     const eventChannel = this.getOpenerEventChannel();
     var self = this;
@@ -137,10 +138,12 @@ Page({
 
   },
   
+
   toUserPage(){
-//TODO:添加携带信息
+    //TODO:添加携带信息
     this.pageRouter.navigateTo({
       url:"/pages/user/user"
     })
   }
+
 });

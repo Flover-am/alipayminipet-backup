@@ -1,5 +1,4 @@
-<!--pages/homepage/homepage.wxml-->
-<import src="../../templates/tuijian/tuijian" />
+
 
 <!-- 搜索框（拟弃用） -->
 <!-- <view style="position: fixed; top: 0; left: 0; right: 0; height: 300rpx">
@@ -16,14 +15,18 @@
 </view> -->
 
 <!-- 标签栏及主体 -->
-<tabs items="{{topics}}" tabsBarClassName="tabs-bar" tabClassName="tab" tabActiveClassName="tab-active" onChange="onChange">
+<tabs  items="{{topics}}" tabsBarClassName="tabs-bar" tabClassName="tab" tabActiveClassName="tab-active" onChange="onChange">
   <view slot-scope="item" class="content">
     <!-- 瀑布流大概的思路就是，直接定义两列等宽的view，然后两列都加载相同的数据 wx:if="{{index%2==1}}" 这里，用if来辨别是奇数还是偶数，两边加载相反的 -->
     <view class="left">
       <view a:for="{{firstData}}" a:key="index" a:for-item="tuijian">
         <view a:if="{{ tuijian.tuijian.id%2 == 0 && (tuijian.tuijian.topic == currentTopic)}}" class="item"  onTap="passageDetails" data-id={{tuijian.tuijian.Id}}>
           <view class="list-item">
-            <image class="item-image" src="{{tuijian.tuijian.Cover[0].link}}" mode="widthFix"></image>
+            
+            <view class="image-container">
+              <image class="item-image" src="{{tuijian.tuijian.Cover[0].link}}" mode="widthFix"></image>
+              <view class="like-count">♥    {{tuijian.tuijian.num}}</view>
+            </view>
                 <view class="bottom">
                   <view class="toux-name">
                     <!-- TODO: 用户头像 -->
@@ -33,7 +36,6 @@
                   <view class="love-num">
                     <!-- TODO: love -->
                     <text class="love">{{tuijian.tuijian.love}}</text>
-                    <text class="num">{{tuijian.tuijian.num}}</text>
                   </view>
                 </view>
           </view>
@@ -44,18 +46,16 @@
     <view class="right">
       <block a:for="{{firstData}}" a:key={{tuijian.Id}} a:for-item="tuijian">
         <view a:if="{{ tuijian.tuijian.id%2==1 && (tuijian.tuijian.topic == currentTopic)}}" class="item" onTap="passageDetails" data-id={{tuijian.tuijian.Id}}>
-          <view class="list-item">
-            <image class="pic" src="{{tuijian.tuijian.Cover[0].link}}" mode="widthFix"></image>
+           <view class="list-item">
+                <view class="image-container">
+                  <image class="item-image" src="{{tuijian.tuijian.Cover[0].link}}" mode="widthFix"></image>
+                  <view class="like-count">♥    {{tuijian.tuijian.num}}</view>
+                </view>
                 <view class="bottom">
-                  <view class="toux-name">
+                  <view class="toux-title">
                     <!-- TODO: 用户头像 -->
-                    <image class="toux" src="{{tuijian.tuijian.title}}"></image>
+                    <image class="toux" src="{{tuijian.tuijian.avatar}}"></image>
                     <text class="title">{{tuijian.tuijian.title}}</text>
-                  </view>
-                  <view class="love-num">
-                    <!-- TODO: love -->
-                    <text class="love">{{tuijian.tuijian.love}}</text>
-                    <text class="num">{{tuijian.tuijian.num}}</text>
                   </view>
                 </view>
           </view>

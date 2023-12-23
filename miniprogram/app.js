@@ -10,7 +10,7 @@ App({
     my.getCloudContext = async function(){
       if(my.fncontext){
         return my.fncontext;
-      }else{
+      } else {
         const context = await my.cloud.createCloudContext({
           env: 'env-00jx4sgexxnr'  // 实际开发需要更换为bigpet的env
        });
