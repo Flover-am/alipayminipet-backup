@@ -1,0 +1,47 @@
+
+<view class="page-section">
+  <view class="page-section-demo">
+    <swiper
+        style="height:150px"
+        class="demo-swiper"
+        previousMargin="10px"
+        nextMargin="10px"
+        indicator-dots="{{indicatorDots}}"
+        autoplay="{{autoplay}}"
+        vertical="{{vertical}}"
+        interval="{{interval}}"
+        circular="{{circular}}"
+        duration="{{duration}}"
+    >
+      <swiper-item a:for="{{petsData}}" a:for-item="pet" a:for-index="index" key="swiper-item-{{index}}">
+          <view class="">
+              <view class="detail">
+                <view class="avatar">
+                  <image class="imgeavatar" src="https://s2.loli.net/2023/11/16/ceQubgZ5BlWwO8K.png"/>
+                </view>
+                <view class="info">
+                  <view class="name">
+                    {{pet.name}}
+                  </view>      
+                  <view class="Attribute">
+                    {{pet.birthday}}  小{{pet.gender}}喵
+                  </view>
+                </view>
+              </view>
+
+              <view class="buttons">
+                <view class="bubble">
+                    <view class="arrow"></view>
+                    <icon type="CalendarOutline" />
+                    <view style="text-align: centers">
+                      &ensp我们一起生活了99天
+                    </view>
+                </view>
+              
+              </view>
+            </view>
+          </view>
+      </swiper-item>
+    </swiper>
+  </view>
+</view>

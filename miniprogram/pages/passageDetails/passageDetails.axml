@@ -38,9 +38,10 @@ style="height:150px"
   <view class="comment" style="margin-bottom: 32rpx; display: flex; flex-direction: row; align-items: flex-start" a:for="{{talkList}}" a:key={{talkList.passageId}} a:for-item="talkItem">
     <!-- TODO: 用户头像 -->
     
-    <avatar size='x-small' />
+    <!-- <avatar size='x-small' /> -->
     
-    
+    <avatar size='x-small' onTab="toUserPage"/>
+
     <view style="width: 16rpx" />
     <view style="display: flex; flex-direction: column; box-sizing: border-box; padding: 16rpx; background-color: white; border-radius: 4px; flex-grow: 2">
       <text style="font-size: 12; color: #BBBBBB;">用户{{talkItem.passageId}}</text>

@@ -136,10 +136,14 @@ Page({
       my.stopPullDownRefresh();
     }, 1000);
 
+  },
   
-  },
-  Test(){
-    console.log("成功点击");
-  },
+
+  toUserPage(){
+    //TODO:添加携带信息
+    this.pageRouter.navigateTo({
+      url:"/pages/user/user"
+    })
+  }
 
 });

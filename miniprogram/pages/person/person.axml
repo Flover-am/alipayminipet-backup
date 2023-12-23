@@ -6,8 +6,13 @@
       <text>登录状态：</text>
       <text>{{isLogin ? "已登录" : "未登录"}}</text>
     </view>
+    <view class="additional-info">
+      <text>{{isLogin ? "养宠n年" : ""}}</text>
+      <text>{{isLogin ? "定位信息" : ""}}</text>
+    </view>
   </view>
 </view>
+
 <view class="bar">
   <view class="unit" id="todo" onTap="onTabTODO">
     <text class="num">{{todoNum}}</text>

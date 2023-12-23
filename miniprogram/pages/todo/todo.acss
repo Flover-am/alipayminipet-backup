@@ -28,10 +28,13 @@
 .done-info{
   display: flex;
   flex-wrap: wrap;
+  position: relative;
+  top: 20px;
   flex-direction: column;
   align-content: flex-start;
   border-radius: 20rpx;
   background-color: white;
+  color: gray;
   justify-content: center;
   margin: 5%;
 }
@@ -39,18 +42,37 @@
 .todo {
   direction: ltr;
   font: 600;
-  font-size: larger;
+  font-size: 120%;
   word-wrap: break-word;
   word-break: break-all;
   white-space: normal;
   margin: 5%;
+  position: relative;
+  left: 15px;
 }
 
 .finish {
-  width: 80px;
-  position: relative;
-  left: 230px;
+  width: 70px;
+  position: absolute;
+  left: 250px;
+  top: 20px;
   font-size: larger;
+  border-color: rgb(255, 174, 46);
+}
+
+button {
+  background-color: rgb(255, 174, 46);
+  padding: 0;
+  margin: 0;
+  border: 0;
+  border-radius: 10%;
+}
+button::after {
+  width: 0;
+  height: 0;
+  -webkit-transform: scale(1);
+  transform: scale(1);
+  background: rgb(255, 174, 46);
 }
 
 .expand {
@@ -63,16 +85,66 @@
   width: 30px;
   height: 30px;
   vertical-align: middle;
+  position: relative;
+  left: 3px;
+  top: -2px;
+}
+
+.edit_txt {
+  font-size: 110%;
+  position: relative;
+  left: 3px;
+}
+
+.clock {
+  width: 30px;
+  height: 30px;
+  vertical-align: middle;
+}
+
+.time_txt {
+  position: relative;
+  left: 5px;
+  font-size: 100%;
 }
 
 .delete {
   position: absolute;
   right: 20px;
-  top: 5px;
+  top: 10px;
+  color: red;
 }
 
 .finishEdit{
   position: absolute;
   right: 20px;
-  bottom: 5px;
+  bottom: 10px;
+  color: rgb(255, 174, 46);
+}
+
+.floating-button {
+  height: 108rpx; 
+  width: 108rpx; 
+  position: fixed; 
+  right: 36rpx; 
+  bottom: 36rpx; 
+  background-color: var(--color-primary); 
+  box-shadow: 2px 2px 2px rgba(0, 0, 0, 0.05); 
+  border-radius: 54rpx; 
+  display: flex; 
+  justify-content: center; 
+  align-items: center;
+}
+
+.unfinished {
+  font-size: larger;
+  position: relative;
+  top: 15px;
+  left: 15px;
+}
+
+.finished {
+  font-size: larger;
+  position: relative;
+  top: 40px;
 }
