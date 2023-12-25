@@ -33,29 +33,32 @@
   background-color: rgb(239, 236, 236);
 
 }
+
 .item-image {
   height: 100%; /* 图片高度为100%，填满父元素 */
   width: 100%; /* 图片宽度为100%，填满父元素 */
   object-fit: cover; /* 图片覆盖整个元素，可能会被裁剪 */
   object-position: center; /* 图片始终位于元素中心 */
-  border-radius: 10px; /* 圆角边框 */
-  box-shadow: 0px 4px 8px rgba(0, 0, 0, 0.1); /* 阴影效果 */
+
+  border-radius: 24rpx 24rpx 0 0;
+  
   transition: transform 0.3s ease; /* 平滑过渡效果 */
 }
 .item-image:hover {
   transform: scale(1.05); /* 悬停时轻微放大 */
 }
+
 .like-count {
   position: absolute;
-  bottom: 10rpx; /* 距离底部的距离 */
-  left: 10rpx; /* 距离左边的距离 */
+  bottom: 20rpx; /* 距离底部的距离 */
+  left: 20rpx; /* 距离左边的距离 */
   color: white;
-  font-size: 25rpx; /* 字体大小，可根据需要调整 */
   background-color: transparent; /* 背景设置为透明 */
-  padding: 2rpx 5rpx;
-  border-radius: 4rpx;
-  /* box-shadow: 0rpx 2rpx 4rpx rgba(0, 0, 0, 0.2); */
+  display: flex;
+  flex-direction: row;
+  align-items: center;
 }
+
 input{
   background: #E8E8E8;
   display: block;
@@ -70,9 +73,9 @@ input{
   text-align: center; /* 文字居中对齐 */
   color: #333; /* 字体颜色 */
   font-weight: bold; /* 字体加粗 */
-  margin-bottom: 10rpx; /* 下边距 */
+  margin-left: 12rpx;
 
-  display: -webkit-box; /* 弹性盒子模型 */
+  display: block;
   -webkit-box-orient: vertical; /* 盒子垂直方向 */
   -webkit-line-clamp: 2; /* 限制在两行 */
   overflow: hidden; /* 隐藏溢出的文本 */
@@ -182,13 +185,13 @@ input{
 
 .list-item {
   position: relative;
-  width: 300rpx; /* 设置宽度 */
+  width: 100%; /* 设置宽度 */
   height: auto; /* 自适应高度 */
-  margin-bottom: 35rpx;
+  margin-bottom: 24rpx;
   border: 1px solid #e8e8e8;
-  box-shadow: 0 2px 8px rgba(0, 0, 0, 0.1);
-  border-radius: 15rpx; /* 圆角边框 */
-  padding: 20rpx; /* 内边距 */
+  box-shadow: 0 1px 4px rgba(0, 0, 0, 0.1);
+  border-radius: 24rpx; /* 圆角边框 */
+  /* padding: 20rpx; 内边距 */
   background-color: #ffffff; /* 背景颜色 */
   transition: all 0.3s ease; /* 平滑过渡效果 */
 }
@@ -203,8 +206,8 @@ input{
   transition-duration: 500ms;
 }
 .list-item:hover {
-  box-shadow: 0 4px 16px rgba(0, 0, 0, 0.2); /* 鼠标悬停时增加阴影 */
-  transform: translateY(-5px); /* 鼠标悬停时轻微上移 */
+  box-shadow: 0 1px 4px rgba(0, 0, 0, 0.2); /* 鼠标悬停时增加阴影 */
+  transform: translateY(-2px); /* 鼠标悬停时轻微上移 */
 }
 
 .list-item-content {
@@ -228,11 +231,16 @@ input{
   right: 36rpx;
   bottom: 36rpx;
   background-color: var(--color-primary);
-  box-shadow: 2px 2px 2px rgba(0, 0, 0, 0.05);
+  box-shadow: 0 2px 8px rgba(0, 0, 0, 0.1);
   border-radius: 54rpx;
   display: flex;
   justify-content: center;
   align-items: center;
+  transition: all 0.3s ease;
+}
+
+.floating-button:hover {
+  box-shadow: 0 2px 8px rgba(0, 0, 0, 0.2); /* 鼠标悬停时增加阴影 */
 }
 
 /* 标签栏 */
