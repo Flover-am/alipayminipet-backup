@@ -12,6 +12,7 @@ Page({
     author: "",
     loveNum: 0,
     all: [],
+    avatar: '',
     // TODO: 获取话题选项数据
     topic: "",
     topicList: ['交流分享', '领养送养', '护理技巧', '新手教学'],
@@ -26,11 +27,13 @@ Page({
       })
     })
     var app = getApp(); 
-    var talkuserName = app.globalData.userName;
-
+    var talkuserName = app.globalData.username;
+    var image = app.globalData.avatar;
+    console.log(app.globalData);
     var self = this;
     this.setData({
-      author: talkuserName
+      author: talkuserName,
+      avatar: image
     })
     console.log(talkuserName); 
   },
@@ -162,7 +165,8 @@ Page({
         loveNum: 0,
         author: self.data.author,
         content: self.data.content,
-        topic: self.data.topic
+        topic: self.data.topic,
+        avatar: self.data.avatar
       },
       success:function(res) {
         console.log(res);

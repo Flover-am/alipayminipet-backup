@@ -188,9 +188,9 @@ Page({
     console.log(e);
     var postId = e.currentTarget.dataset.id;
     var detail = null;
-    for (var i = 0; i < this.data.firstData.length; i++) {
-      if (this.data.firstData[i].tuijian.Id == postId) {
-        detail = this.data.firstData[i];
+    for (var i = 0; i < this.data.normalData.length; i++) {
+      if (this.data.normalData[i].tuijian.Id == postId) {
+        detail = this.data.normalData[i];
         break;
       }
     }

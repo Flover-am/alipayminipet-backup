@@ -14,7 +14,7 @@ Page({
     isLoved: false,
   },
   onShow() {
-    my.startPullDownRefresh();
+    
   },
 
   async onLoad() {

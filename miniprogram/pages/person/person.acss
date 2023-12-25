@@ -8,20 +8,44 @@ page {
 }
 
 .avatar {
-  background: #d8d8d8;
-  width: 168rpx;
-  height: 168rpx;
+  width: 100px;
+  height: 100px;
   border-radius: 50%;
+  border: 2px solid #d1dfe8; /* 抖音蓝 */
+  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
 }
-
+.avatar:hover {
+  transform: scale(1.05);
+}
 .login-button{
   border-radius: 20px;
-  font-size: small;
-  background-color: cornflowerblue;
+  font-size: medium; /* Increased font size for readability */
+  background-color: rgb(226, 229, 236);
+  color: white; /* Text color for contrast */
   height: 50px;
-  width: 80px;
+  width: 150px; /* Increased width for better visual balance */
+  cursor: pointer; /* Indicates interactivity */
+  border: none; /* Removes default border */
+  box-shadow: 0 2px 4px 0 rgba(0,0,0,0.3); /* Subtle shadow for depth */
+  transition: background-color 0.3s ease; /* Smooth transition for hover effect */
 }
 
+.login-button:hover {
+  background-color: darkblue; /* Darker shade on hover */
+}
+
+/* Other styles remain unchanged */
+
+.login-button:focus {
+  outline: none; /* Removes focus border */
+  box-shadow: 0 0 0 2px lightblue; /* Adds focus indicator */
+}
+@media (max-width: 600px) {
+  .login-button {
+    width: 100%; /* Full width on smaller screens */
+  }
+  /* Other responsive adjustments as needed */
+}
 .infoCol{
   width: 100%;
   float:left;
@@ -35,13 +59,11 @@ page {
   justify-content: space-between;
 }
 
-.nickname{
-  display: flex;
-  margin-top: 20rpx;
-  margin-bottom: 30rpx;
-  margin-right: 10rpx;
+.nickname {
+  font-size: 20px;
+  font-weight: bold;
+  color: #333;
 }
-
 .login-status-area {
   line-height: 36rpx;
   font-size: 25rpx;
@@ -155,16 +177,21 @@ page {
 .userInfoCol {
   display: flex;
   flex-direction: column;
+  margin-left: 10rpx;
 }
 
 .nickname {
-  font-weight: bold; /* 设置昵称文字为粗体 */
-
+  font-size: 20px;
+  font-weight: bold;
+  color: #020202; /* B站粉 */
 }
 
 .login-status-area {
-  display: flex;
-  align-items: center;
+  line-height: 36px;
+  font-size: 16px; /* Adjusted font size for clarity */
+  color: #8f8f8f;
+  margin-top: 20px;
+  margin-bottom: 30px;
 }
 
 

@@ -20,16 +20,20 @@ Page({
   getOpenUserInfo() {
     my.getOpenUserInfo({
         success: (res) => {
+            console.log(JSON.parse(res.response));
+            var response = JSON.parse(res.response);
+            
             this.data.userInfo = JSON.parse(res.response).response
             this.data.isLogin = true;
-            this.data.avatar = this.data.userInfo.avatar
-            this.data.nickname = this.data.userInfo.nickName
-            this.setData(
-              {
+            this.data.avatar = res.avatar
+            this.data.nickname = res.nickName
+            var app = getApp();
+            
+            
+            this.setData({
                 nickname:this.data.nickname,
                 isLogin:this.data.isLogin,
                 avatar:this.data.avatar
-                
               }
             )
         },
@@ -39,19 +43,17 @@ Page({
     });
   },
   onLoad(){
-    my.showToast({
-      content: '页',
-      duration: 20000
-    });
+    // my.showToast({
+    //   content: '页',
+    //   duration: 20000
+    // });
+    this.getOpenUserInfo();
   },
   toast(message) {
     my.showToast({
       content: message,
       duration: 3000
     });
-  },
-  onLoad() {
-    this.onOpenAPIHandler();
   },
   toMyPets(){
     console.log("router to mypets")

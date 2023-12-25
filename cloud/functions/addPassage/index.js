@@ -16,7 +16,8 @@ exports.main = async (event, context) => {
         Cover: data.imageUrls,
         title: data.title,
         author: data.author,
-        topic: data.topic
+        topic: data.topic,
+        avatar: data.avatar,
       }
     }
   })

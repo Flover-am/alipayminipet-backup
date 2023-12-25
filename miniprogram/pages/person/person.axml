@@ -8,6 +8,7 @@
       <button 
       a:if="{{ !isLogin }}"
       class="login-button"
+      onTap="getOpenUserInfo"
   open-type="getAuthorize"
   scope="userInfo"
   onGetAuthorize="getOpenUserInfo"
