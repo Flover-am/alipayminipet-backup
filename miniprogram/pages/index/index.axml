@@ -25,19 +25,20 @@
             
             <view class="image-container">
               <image class="item-image" src="{{tuijian.tuijian.Cover[0].link}}" mode="widthFix"></image>
-              <view class="like-count">♥    {{tuijian.tuijian.num}}</view>
+              <view class="like-count">
+                <icon type="HeartOutline"/>
+                <text style="margin-left: 8rpx">{{tuijian.tuijian.num}}</text>
+              </view>
             </view>
-                <view class="bottom">
-                  <view class="toux-name">
-                    <!-- TODO: 用户头像 -->
-                    <image class="toux" src="{{tuijian.tuijian.avatar}}"></image>
-                    <text class="title">{{tuijian.tuijian.title}}</text>
-                  </view>
-                  <view class="love-num">
-                    <!-- TODO: love -->
-                    <text class="love">{{tuijian.tuijian.love}}</text>
-                  </view>
-                </view>
+
+            <view class="bottom">
+              <view class="toux-name">
+                <!-- TODO: 用户头像 -->
+                <image class="toux" src="{{tuijian.tuijian.avatar}}"></image>
+                <text class="title">{{tuijian.tuijian.title}}</text>
+              </view>
+              
+            </view>
           </view>
         </view>
         <!-- <template is="{{msg}}" data="{{tuijian}}" a:if="{{tuijian.tuijian.id%2==1}}"></template> -->
@@ -49,7 +50,10 @@
            <view class="list-item">
                 <view class="image-container">
                   <image class="item-image" src="{{tuijian.tuijian.Cover[0].link}}" mode="widthFix"></image>
-                  <view class="like-count">♥    {{tuijian.tuijian.num}}</view>
+                  <view class="like-count">
+                    <icon type="HeartOutline"/>
+                    <text style="margin-left: 8rpx">{{tuijian.tuijian.num}}</text>
+                  </view>
                 </view>
                 <view class="bottom">
                   <view class="toux-name">
