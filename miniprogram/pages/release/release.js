@@ -152,6 +152,9 @@ Page({
       }
     }
     if (this.data.imageUrls.length == 0 || this.data.content == "" || this.data.title == "") {
+      my.alert({
+        title: "图片，内容，标题均不可为空！"
+      })
       return;
     }
     var Id = parseInt((num + 1).toString() + self.data.id.toString()) ;
