@@ -144,6 +144,8 @@ Page({
     var self = this;
     var context = await my.getCloudContext();
     var num = 0;
+    var time = (await my.getServerTime()).time;
+    var date = new Date(time).toDateString();
     for (var i = 0; i < 4; i++) {
       if (this.data.topicList[i] == this.data.topic) {
         break;
@@ -169,7 +171,8 @@ Page({
         author: self.data.author,
         content: self.data.content,
         topic: self.data.topic,
-        avatar: self.data.avatar
+        avatar: self.data.avatar,
+        time: date,
       },
       success:function(res) {
         console.log(res);

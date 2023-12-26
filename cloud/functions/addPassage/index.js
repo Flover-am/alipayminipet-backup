@@ -18,6 +18,7 @@ exports.main = async (event, context) => {
         author: data.author,
         topic: data.topic,
         avatar: data.avatar,
+        time: data.time,
       }
     }
   })

@@ -29,7 +29,7 @@
   <text>{{passage.data.tuijian.text}}</text>
   <view style="height: 24rpx;" />
   <!-- TODO: 数据对象添加时间字段 -->
-  <text style="font-size: 12; color: #BBBBBB;">2023-11-3</text>
+  <text style="font-size: 12; color: #BBBBBB;">{{passage.data.tuijian.time}}</text>
 </view>
 
 <!-- 评论区 -->
