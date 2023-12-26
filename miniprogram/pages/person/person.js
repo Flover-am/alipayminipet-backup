@@ -20,17 +20,12 @@ Page({
   getOpenUserInfo() {
     my.getOpenUserInfo({
         success: (res) => {
-            console.log(JSON.parse(res.response));
-            var response = JSON.parse(res.response);
-            
             this.data.userInfo = JSON.parse(res.response).response
             this.data.isLogin = true;
-            this.data.avatar = res.avatar
-            this.data.nickname = res.nickName
-            var app = getApp();
-            console.log(app)
-            
-            this.setData({
+            this.data.avatar = this.data.userInfo.avatar
+            this.data.nickname = this.data.userInfo.nickName
+            this.setData(
+              {
                 nickname:this.data.nickname,
                 isLogin:this.data.isLogin,
                 avatar:this.data.avatar
@@ -42,13 +37,6 @@ Page({
             console.log(err)
         }
     });
-  },
-  onLoad(){
-    // my.showToast({
-    //   content: '页',
-    //   duration: 20000
-    // });
-    // this.getOpenUserInfo();
   },
   toast(message) {
     my.showToast({
@@ -75,10 +63,11 @@ Page({
     })
   },
   onTabPostIcon(event){
-    console.log("跳转发布页")
-    this.pageRouter.navigateTo({
-      url:"/pages/release/release"
-    })
+    console.log(event);
+    my.showToast({
+      content: 'TODO：跳转发布页',
+      duration: 2000
+    });
   },
   onTabLikeIcon(event){
     console.log(event);
@@ -88,7 +77,7 @@ Page({
     });
   },
   onTabHistoryIcon(event){
-    console.log("跳转历史页")
+    console.log("router to history")
     this.pageRouter.navigateTo({
       url:"/pages/history/history"
     })
@@ -107,11 +96,10 @@ Page({
     });
   },
   onTabFeedback(event){
-    console.log(event);
-    my.showToast({
-      content: 'TODO：跳转反馈页',
-      duration: 2000
-    });
+    console.log("router to feedback")
+    this.pageRouter.navigateTo({
+      url:"/pages/feedback/feedback"
+    })
   },
   onTabHelp(event){
     console.log(event);
@@ -121,9 +109,9 @@ Page({
     });
   },
   onTabAbout(event){
-    console.log("测试接口")
+    console.log("跳转到关于我们")
     this.pageRouter.navigateTo({
-      url:"/pages/history/history"
+      url:"/pages/about/about"
     })
   }
 });

@@ -1,5 +1,5 @@
 <view class="weekago">
-一周前
+一周内
 </view>
 <view class="no-history-wrapper" a:if="{{ firstData.length == 0 }}">
   <view class="line"></view>

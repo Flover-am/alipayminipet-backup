@@ -1,0 +1,12 @@
+<view class="container">
+  <image class="logo" src="https://s2.loli.net/2023/12/26/Md9x2ynOKb4UYTh.png"></image>
+  <text class="title">关于我们</text>
+  <view class="content">
+    <text class="description">欢迎使用宠物点滴生活，我们致力于提供汇集宠物分享平台、健康管理服务、要事提醒功能的一站式平台。</text>
+    <text class="contact">如有任何问题或建议，请联系我们：</text>
+    <text class="item">
+      <text class="label">邮箱：</text>
+      <text class="value">uchygo@outlook.com</text>
+    </text>
+  </view>
+</view>

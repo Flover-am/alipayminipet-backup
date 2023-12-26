@@ -12,7 +12,10 @@
     "pages/person/message/message",
     "pages/user/user",
     "pages/history/history",
-    "pages/mypets/editPet/editPet"
+    "pages/mypets/editPet/editPet",
+    "pages/about/about",
+    "pages/feedback/feedback",
+    "pages/help/help"
   ],
   "window": {
     "defaultTitle": "Pet",

@@ -1,0 +1,19 @@
+<!-- HTML -->
+<view class="container">
+  <view class="header">
+    <image class="logo" src="https://s2.loli.net/2023/12/26/Md9x2ynOKb4UYTh.png"></image>
+    <text class="title">用户反馈</text>
+  </view>
+  <view class="content">
+    <textarea class="input" placeholder="请输入您的反馈" onInput="handleInput"></textarea>
+
+    <button class="submit-button" onTap="submitFeedback" disabled = {{feedbackContent==null}}>提交反馈</button>
+  </view>
+  <view class="modal" a:if="{{showModal}}">
+    <view class="modal-content">
+      <text class="modal-title">提示</text>
+      <text class="modal-message">反馈提交成功！</text>
+      <button class="modal-button" onTap="closeModal">确定</button>
+    </view>
+  </view>
+</view>
