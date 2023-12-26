@@ -35,8 +35,8 @@
 .bottom{
   display: flex;
   justify-content: space-between;
-  padding: 0 20rpx;
   align-items: center;
+  margin: 12rpx 24rpx 24rpx 24rpx;
 }
 .love-num{
   color: #333;
@@ -46,14 +46,14 @@
 .toux-name {
   display: flex;
   align-items: center;
-  margin: 20rpx 0rpx;
+  width: 100%;
 }
 .image-container {
   position: relative;
   width: 100%; /* 或指定宽度 */
   height: auto; /* 图片高度自适应 */
-  border-radius: 10px; /* 圆角边框 */
   overflow: hidden; /* 确保内容不超出容器 */
+  border-radius: 24rpx 24rpx 0 0;
 }
 .name{
   font-size: 25rpx;
@@ -62,7 +62,7 @@
   margin-left: 20rpx;
 }
 .toux{
-  width: 60rpx;
-  height: 60rpx;
-  border-radius: 30rpx;
+  width: 48rpx;
+  height: 48rpx;
+  border-radius: 24rpx;
 }

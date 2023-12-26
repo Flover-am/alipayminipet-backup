@@ -1,6 +1,6 @@
 .image {
   width: 100%;
-  height: 600rpx;
+  /* height: 600rpx; */
   background-color: #f0f0f0; /* 更改背景颜色 */
   object-fit: cover; /* 图片始终覆盖整个元素，可能会被裁剪 */
   object-position: center; /* 图片始终位于元素的中心 */
@@ -17,43 +17,30 @@
 }
 .content {
   display: block; /* Maintained block for structural integrity */
-  padding: 24px; /* Slightly increased padding for more space */
-  background-color: #f8f9fa; /* A softer shade of white for ease on the eyes */
+  padding: 24rpx; /* Slightly increased padding for more space */
+  background-color: #ffffff; /* A softer shade of white for ease on the eyes */
   color: #333; /* Ensuring text is readable and stands out */
-  border-radius: 12px; /* Increased radius for more pronounced rounded corners */
-  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.08); /* Increased depth with a softer shadow */
-  margin-bottom: 24px; /* Increased space below for better separation */
+  margin-bottom: 48rpx; /* Increased space below for better separation */
   font-size: 16px; /* Ideal for readability */
   line-height: 1.6; /* Improved line spacing for reading comfort */
-  border: 1px solid #e2e8f0; /* Subtle border for definition without overwhelming */
-  transition: all 0.2s ease-in-out; /* Smooth transition for any hover effects */
+  border: 1px solid #dfe1e5; /* Subtle border for definition without overwhelming */
 }
 
-/* Enhance with a hover effect for interactivity */
-.content:hover {
-  box-shadow: 0 6px 12px rgba(0, 0, 0, 0.12); /* Slightly deeper shadow on hover */
-  transform: translateY(-2px); /* Gentle lift effect */
-}
-
-/* Responsive adjustments for better mobile experience */
-@media (max-width: 768px) {
-  .content {
-    padding: 20px; /* Adjust padding for smaller screens */
-    margin-bottom: 20px; /* Adjust margin for smaller screens */
-  }
-}
 .details {
   vertical-align: left;
 }
 .comment {
-  padding: 12px 16px; /* Padding inside each comment */
+  padding: 24rpx;
   border-bottom: 1px solid #eaecef; /* Subtle separator between comments */
+  display: flex;
+  flex-direction: row;
+  align-items: flex-start;
 }
 .comment:last-child {
   border-bottom: none; /* 最后一个评论不添加分割线 */
 }
 .comment-content {
-  margin-top: 10rpx; /* 增加上边距 */
+  margin-top: 0; /* 增加上边距 */
   color: #666; /* 更改字体颜色 */
 }
 
@@ -90,24 +77,31 @@
   border-radius: 10px; /* 增大边框半径 */
 }
 
-.title-bar {
-  box-sizing: border-box;
+.author-tip {
+  /* box-sizing: border-box;
   padding: 24rpx;
   display: flex;
   flex-direction: row;
+  align-items: center; */
+  position: absolute;
+  left: 24rpx;
+  top: 24rpx;
+  display: flex;
+  flex-direction: row;
   align-items: center;
+  color: white;
+  background-color: #333;
+  opacity: 0.7;
+  padding: 16rpx;
+  border-radius: 200rpx;
 }
-
 
 .comment-container {
   box-sizing: border-box;
-  padding: 16px; /* Adjusted padding for a balanced look */
   display: flex;
   flex-direction: column;
   background-color: #ffffff; /* White background to highlight area */
   border: 1px solid #dfe1e5; /* Lighter border for a softer look */
-  border-radius: 8px; /* Smooth, rounded corners */
-  box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1); /* Subtle shadow for depth */
   margin-bottom: 20px; /* Space below the comment section */
   max-width: 800px; /* Max width for better readability on wide screens */
   margin-left: auto; /* Centering the box */
@@ -127,7 +121,7 @@
   flex-direction: row;
   align-items: center;
   justify-content: space-between;
-  border-top: 1rpx solid #eaeaea;
+  border-top: 1rpx solid #dfe1e5;
 }
 
 .input {
@@ -159,7 +153,7 @@
   color: #333;
 }
 .icon-button:hover {
-  background-color: #b30015; /* Darken background on hover */
+  background-color: #f0f0f0; /* Darken background on hover */
 }
 .icon-button {
   padding: 0;
@@ -171,5 +165,4 @@
   display: flex;
   justify-content: center;
   align-items: center;
-  background-color: #f0f0f0; /* 更改背景颜色 */
 }
