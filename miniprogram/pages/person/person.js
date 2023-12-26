@@ -72,11 +72,10 @@ Page({
     })
   },
   onTabPostIcon(event){
-    console.log(event);
-    my.showToast({
-      content: 'TODO：跳转发布页',
-      duration: 2000
-    });
+    console.log("跳转发布页")
+    this.pageRouter.navigateTo({
+      url:"/pages/release/release"
+    })
   },
   onTabLikeIcon(event){
     console.log(event);
@@ -86,11 +85,10 @@ Page({
     });
   },
   onTabHistoryIcon(event){
-    console.log(event);
-    my.showToast({
-      content: 'TODO：跳转历史页',
-      duration: 2000
-    });
+    console.log("跳转历史页")
+    this.pageRouter.navigateTo({
+      url:"/pages/history/history"
+    })
   },
   onTabMessageIcon(event){
     console.log("router to message")

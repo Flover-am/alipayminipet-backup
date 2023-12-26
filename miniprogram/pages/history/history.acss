@@ -1,4 +1,27 @@
 @import "../../templates/tuijian/tuijian.acss";
+.weekago {
+  font-size: 16px;
+  color: #333;
+  font-weight: bold;
+}
+
+.no-history-wrapper {
+  display: flex;
+  align-items: center;
+}
+
+.line {
+  flex: 1;
+  height: 1px;
+  background-color: #999;
+}
+
+.no-history-content {
+  margin: 0 10px;
+  font-size: 14px;
+  color: #999;
+}
+
 .banner {
   height: 455rpx;
   width: 100%;

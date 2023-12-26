@@ -42,10 +42,10 @@
     <image class="icon" mode="scaleToFill" src="/image/post.png" />
     <text>发布</text>
   </view>
-  <view class="item" onTap="onTabLikeIcon">
+  <!-- <view class="item" onTap="onTabLikeIcon">
     <image class="icon" mode="scaleToFill" src="/image/like.png" />
     <text>喜欢</text>
-  </view>
+  </view> -->
   <view class="item" onTap="onTabHistoryIcon">
     <image class="icon" mode="scaleToFill" src="/image/history.png" />
     <text>历史</text>
@@ -63,10 +63,10 @@
 </view> -->
 
 <view class="bar4">
-  <view class="item4" onTap="onTabSettings">
+  <!-- <view class="item4" onTap="onTabSettings">
     <text>设置</text>
-  </view>
-  <view class="separator"></view>
+  </view> -->
+  <!-- <view class="separator"></view> -->
   <view class="item4" onTap="onTabFeedback">
     <text>反馈</text>
   </view>
