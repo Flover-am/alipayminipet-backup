@@ -18,7 +18,7 @@
 </view>
 
 <!-- 选择话题 -->
-<list class="list">
+<list class="list" radius>
   <list-item arrow="right" style="color: #d2d2d2">
     话题
     <picker class="picker" slot="extra" onOk="handleOk" placeholder="请选择" title="选择话题" options="{{topicList}}">

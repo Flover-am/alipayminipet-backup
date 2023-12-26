@@ -60,6 +60,10 @@ Page({
     // TODO：使用云函数上传
     // 可以用的数据：petName，userid，time（格式化后的记录时间），recordType1（大类别），recordType2（小类别），recordDes（描述）
     
+  },
+
+  labelFormat(value, options) {
+    return options.map(option => option['label']).join(' ')
   }
 
 });

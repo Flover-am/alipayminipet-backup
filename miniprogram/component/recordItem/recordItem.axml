@@ -1,4 +1,4 @@
-<view onTap="onToSummary">
+<view onTap="onToSummary" style="padding: 0 16rpx; margin: 12rpx;">
   <container headerInBox="{{ false }}" >
     <view slot="title">
       <view class="icon">

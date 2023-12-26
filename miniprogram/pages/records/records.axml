@@ -24,16 +24,16 @@
     </view>
     <view class="switch">
       <icon type="LoopOutline"  />&ensp
-      <pickers placeholder="切换宠物"  options="{{petsName}}" onOk="onChangePetOk" onFormat="textQH">
+      <pickers placeholder="切换宠物"  options="{{petsName}}" onOk="onChangePetOk" onFormat="textQH" style="color: #ffffff">
       </pickers>
     </view>
   </view>
 </view>
 
 <view class="recordCard">
-  <swiper indicator-dots="{{true}}" onChange="changeCurrent" >
+  <swiper indicator-dots="{{false}}" onChange="changeCurrent" >
     <block a:for="{{topRecords}}">
-      <swiper-item >
+      <swiper-item>
         <card cardId="{{index}}" topRecord="{{topRecords[index]}}" title="{{cardTitles[index]}}" ></card>
       </swiper-item>
     </block>
