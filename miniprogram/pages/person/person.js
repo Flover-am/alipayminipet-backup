@@ -28,7 +28,7 @@ Page({
             this.data.avatar = res.avatar
             this.data.nickname = res.nickName
             var app = getApp();
-            
+            console.log(app)
             
             this.setData({
                 nickname:this.data.nickname,
@@ -47,7 +47,7 @@ Page({
     //   content: '页',
     //   duration: 20000
     // });
-    this.getOpenUserInfo();
+    // this.getOpenUserInfo();
   },
   toast(message) {
     my.showToast({

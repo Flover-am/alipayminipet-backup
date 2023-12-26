@@ -29,7 +29,7 @@
   <text>{{passage.data.tuijian.text}}</text>
   <view style="height: 24rpx;" />
   <!-- TODO: 数据对象添加时间字段 -->
-  <text style="font-size: 12; color: #BBBBBB;">2023-11-3</text>
+  <text style="font-size: 12; color: #BBBBBB;">{{passage.data.tuijian.time}}</text>
 </view>
 
 <!-- 评论区 -->
@@ -39,10 +39,10 @@
     <!-- TODO: 用户头像 -->
 
     <view onTap="toUserPage">
-      <avatar size='x-small' />
+      <avatar src={{talkItem.avatar}} size='x-small'/>
     </view>
     <view style="display: flex; margin-left: 32rpx; flex-direction: column; box-sizing: border-box; background-color: white; border-radius: 4px; flex-grow: 2">
-      <text style="font-size: 12; color: #BBBBBB;" onTap="toUserPage">用户{{talkItem.passageId}}</text>
+      <text style="font-size: 12; color: #BBBBBB;" onTap="toUserPage">{{talkItem.userName}}</text>
       <view style="height: 8rpx" />
       <text style="font-size: 14;" class="comment-content">{{talkItem.talkcontent}}</text>
       <view style="height: 8rpx" />
