@@ -1,6 +1,7 @@
-<!-- 选择宠物 -->
+<view style="height: 24rpx" />
 
-<list>
+<!-- 选择宠物 -->
+<list radius>
   <list-item disabled>
     宠物
     <!-- <view>请选择</view> -->
@@ -15,7 +16,7 @@
 
 <!-- 记录类别 -->
 <view class="recordSort">
-  <list>
+  <list radius>
     <list-item arrow="right" style="color: #d2d2d2">
       类别
       <cascader-picker
@@ -24,20 +25,21 @@
       placeholder="请选择类别"
       style="color: #d2d2d2"
       options="{{typeList}}"
-      onOk="handleCityOnOk" />
+      onOk="handleCityOnOk"
+      onFormat="labelFormat" />
     </list-item>
   </list>
 </view>
 
 <!-- 记录内容 -->
 <view class="content-container">
-  <text style="width: 100%; font-weight: bold; color: #d2d2d2"  value="{{title}}" >
+  <text style="width: 100%; color: #d2d2d2; font-size: 17px">
     描述
   </text>
   <divider style="margin: 16rpx 0"/>
   <ant-textarea style="width: 100%;" 
   placeholder="记录更多内容" confirm-type="send" 
-  type="text" value="{{recordDes}}" bind:change="onChange" autoHeight
+  type="text" value="{{recordDes}}" onChange="onChange" autoHeight
   allowClear />
 </view>
 

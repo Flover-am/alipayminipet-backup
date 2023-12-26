@@ -3,10 +3,25 @@ App({
   globalData:{
     userid:'',
     username:'',
+    avatar: ''
   },
-  
   async onLaunch(options) {
-    my.getOpenUserInfo();
+    var self = this;
+    my.getOpenUserInfo({
+      success: (res) => {
+          console.log(JSON.parse(res.response));
+          console.log(res);
+          var response = JSON.parse(res.response);
+
+          this.globalData.avatar = res.avatar
+          this.globalData.username = res.nickName;
+        
+      },
+      fail: (err) => {
+          console.log(err)
+      }
+  });
+
     my.getCloudContext = async function(){
       if(my.fncontext){
         return my.fncontext;

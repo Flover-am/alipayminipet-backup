@@ -1,27 +1,26 @@
 <!-- 头像及用户名 -->
-<view class="title-bar">
-  <!-- TODO: 用户头像 -->
-  <avatar size='x-small' style="margin-right: 24rpx;"/>
-  <text>{{passage.data.tuijian.author}}</text>
-</view>
+
 
 <!-- 图片 -->
-<swiper 
-style="height:150px"
-            class="demo-swiper"
-            previousMargin="10px"
-            nextMargin="10px"
-            indicator-dots="{{indicatorDots}}"
-            autoplay="{{autoplay}}"
-            vertical="{{vertical}}"
-            interval="{{interval}}"
-            circular="{{circular}}"
-            duration="{{duration}}">
-  <swiper-item key="swiper-item-{{index}}" a:for="{{passage.data.tuijian.Cover}}">
-      <!-- <view class="swiper-item bc_{{item.color}}">{{item.text}}</view> -->
-      <image mode="aspectFit" class="image" src="{{item.link}}" />
-  </swiper-item>
-</swiper>
+<view>
+  <swiper
+    indicator-dots
+    indicator-active-color="#FFAE2E"
+    circular="{{circular}}"
+    duration="{{duration}}">
+    <swiper-item key="swiper-item-{{index}}" a:for="{{passage.data.tuijian.Cover}}">
+        <!-- <view class="swiper-item bc_{{item.color}}">{{item.text}}</view> -->
+        <image mode="widthFix" class="image" src="{{item.link}}" />
+    </swiper-item>
+  </swiper>
+
+  <view class="author-tip">
+    <!-- TODO: 用户头像 -->
+    <image style="width: 48rpx; height: 48rpx; border-radius: 24rpx; margin-right: 16rpx;" src="{{passage.data.tuijian.avatar}}"/>
+    <text>111{{passage.data.tuijian.author}}</text>
+  </view>
+</view>
+
 
 <!-- 标题及正文 -->
 <view class="content">
@@ -30,27 +29,27 @@ style="height:150px"
   <text>{{passage.data.tuijian.text}}</text>
   <view style="height: 24rpx;" />
   <!-- TODO: 数据对象添加时间字段 -->
-  <text style="font-size: 12; color: #BBBBBB;">2023-11-3</text>
+  <text style="font-size: 12; color: #BBBBBB;">{{passage.data.tuijian.time}}</text>
 </view>
 
 <!-- 评论区 -->
+<view style="padding: 0 0 16rpx 24rpx; font-size: 17px; color: #c0c0c0">评论区</view>
 <view class="comment-container">
-  <view class="comment" style="margin-bottom: 32rpx; display: flex; flex-direction: row; align-items: flex-start" a:for="{{talkList}}" a:key={{talkList.passageId}} a:for-item="talkItem">
+  <view class="comment" a:for="{{talkList}}" a:key={{talkList.passageId}} a:for-item="talkItem">
     <!-- TODO: 用户头像 -->
 
     <view onTap="toUserPage">
-      <avatar size='x-small' />
+      <avatar src={{talkItem.avatar}} size='x-small'/>
     </view>
-    <view style="width: 16rpx" />
-    <view style="display: flex; flex-direction: column; box-sizing: border-box; padding: 16rpx; background-color: white; border-radius: 4px; flex-grow: 2">
-      <text style="font-size: 12; color: #BBBBBB;" onTap="toUserPage">用户{{talkItem.passageId}}</text>
+    <view style="display: flex; margin-left: 32rpx; flex-direction: column; box-sizing: border-box; background-color: white; border-radius: 4px; flex-grow: 2">
+      <text style="font-size: 12; color: #BBBBBB;" onTap="toUserPage">{{talkItem.userName}}</text>
       <view style="height: 8rpx" />
       <text style="font-size: 14;" class="comment-content">{{talkItem.talkcontent}}</text>
       <view style="height: 8rpx" />
       <text style="font-size: 12; color: #BBBBBB;">{{talkItem.time}}</text>
     </view>
   </view>
-  <divider text="没有更多了~" />
+  <text style="width: 100%; text-align: center; color: #c0c0c0; margin-top: 24rpx">没有更多了 ~</text>
   <view style="height: 144rpx" />
 </view>
 

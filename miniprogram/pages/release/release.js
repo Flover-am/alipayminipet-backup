@@ -12,6 +12,7 @@ Page({
     author: "",
     loveNum: 0,
     all: [],
+    avatar: '',
     // TODO: 获取话题选项数据
     topic: "",
     topicList: ['交流分享', '领养送养', '护理技巧', '新手教学'],
@@ -26,11 +27,13 @@ Page({
       })
     })
     var app = getApp(); 
-    var talkuserName = app.globalData.userName;
-
+    var talkuserName = app.globalData.username;
+    var image = app.globalData.avatar;
+    console.log(app.globalData);
     var self = this;
     this.setData({
-      author: talkuserName
+      author: talkuserName,
+      avatar: image
     })
     console.log(talkuserName); 
   },
@@ -141,6 +144,8 @@ Page({
     var self = this;
     var context = await my.getCloudContext();
     var num = 0;
+    var time = (await my.getServerTime()).time;
+    var date = new Date(time).toDateString();
     for (var i = 0; i < 4; i++) {
       if (this.data.topicList[i] == this.data.topic) {
         break;
@@ -149,6 +154,9 @@ Page({
       }
     }
     if (this.data.imageUrls.length == 0 || this.data.content == "" || this.data.title == "") {
+      my.alert({
+        title: "图片，内容，标题均不可为空！"
+      })
       return;
     }
     var Id = parseInt((num + 1).toString() + self.data.id.toString()) ;
@@ -162,7 +170,9 @@ Page({
         loveNum: 0,
         author: self.data.author,
         content: self.data.content,
-        topic: self.data.topic
+        topic: self.data.topic,
+        avatar: self.data.avatar,
+        time: date,
       },
       success:function(res) {
         console.log(res);

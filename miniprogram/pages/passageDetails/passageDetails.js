@@ -3,9 +3,6 @@ Page({
     passageId: 0,
     passage: [],
     loveNum: 0,
-    autoplay: true,
-    vertical: false,
-    interval: 1000,
     circular: true,
     duration: 1500,
     talkList: [],
@@ -14,12 +11,14 @@ Page({
     isLoved: false,
   },
   onShow() {
-    my.startPullDownRefresh();
+    
   },
 
   async onLoad() {
     const eventChannel = this.getOpenerEventChannel();
     var self = this;
+
+    
 
     eventChannel.on('PageMain_Data',data => {
       console.log(data);
@@ -79,7 +78,7 @@ Page({
   },
   async submit(e) {
     var app = getApp(); 
-    var talkuserName = app.globalData.userName;
+    var talkuserName = app.globalData.username;
     console.log(app.globalData); 
     var self = this;
     var context = await my.getCloudContext();
@@ -92,9 +91,18 @@ Page({
     var passageId = self.data.passage.data.tuijian.Id;
     var tempTalk = self.data.talk;
     console.log(date);
+    var globalData = app.globalData
+    console.log(globalData.avatar);
+    console.log(globalData.userName);
     context.callFunction({
       name: "talk",
-      data: {"text": self.data.talk, "userName": talkuserName, "passageId": passageId, "timeStamp": date},
+      data: {
+        "text": self.data.talk, 
+        "userName": talkuserName, 
+        "passageId": passageId, 
+        "timeStamp": date,
+        "avatar": globalData.avatar
+      },
       success:function(res){
         console.log(res);
         console.log("成功评论");

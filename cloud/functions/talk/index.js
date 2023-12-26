@@ -10,7 +10,8 @@ exports.main = async (event, context) => {
       passageId: data.passageId,
       talkcontent: data.text,
       userName: data.userName,
-      time: data.timeStamp
+      time: data.timeStamp,
+      avatar: data.avatar,
     }
   });
 

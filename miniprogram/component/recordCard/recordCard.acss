@@ -21,3 +21,11 @@
 .div4 { grid-area: 2 / 2 / 3 / 3; }
 .div5 { grid-area: 3 / 1 / 4 / 2; }
 .div6 { grid-area: 3 / 2 / 4 / 3; }
+
+.grid4 > *:nth-child(odd) {
+  border-right: 1px solid #dfe1e5;
+}
+
+.grid4 > *:nth-child(n+3) {
+  border-top: 1px solid #dfe1e5;
+}
