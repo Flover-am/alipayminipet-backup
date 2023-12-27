@@ -1,0 +1,43 @@
+.container {
+  display: flex;
+  flex-direction: column;
+  height: 100%;
+}
+
+.header {
+  height: 60px;
+  background-color: #ffcc00;
+  align-items: center;
+  justify-content: center;
+  display: flex;
+}
+
+.content {
+  flex: 1;
+  background-color: #fff;
+}
+
+.section {
+  margin: 10px;
+  padding: 10px;
+  background-color: #f2f2f2;
+  border-radius: 5px;
+}
+
+.section-header {
+  font-weight: bold;
+  margin-bottom: 5px;
+}
+
+.section-content text {
+  line-height: 1.6;
+  display: block; /* 使文本独占一行 */
+}
+
+.footer {
+  height: 50px;
+  background-color: #ffcc00;
+  align-items: center;
+  justify-content: center;
+  display: flex;
+}

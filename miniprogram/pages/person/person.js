@@ -105,10 +105,9 @@ Page({
   },
   onTabHelp(event){
     console.log(event);
-    my.showToast({
-      content: 'TODO：跳转帮助页',
-      duration: 2000
-    });
+    this.pageRouter.navigateTo({
+      url:"/pages/help/help"      
+    })
   },
   onTabAbout(event){
     console.log("跳转到关于我们")

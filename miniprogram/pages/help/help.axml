@@ -1,3 +1,35 @@
-<view>
-  New Page
+<view class="container">
+  <view class="header">
+      <text>宠物养护指南</text>
+  </view>
+  <scroll-view class="content">
+      <view class="section">
+          <view class="section-header"><text>基本护理</text></view>
+          <view class="section-content">
+              <text>1. 定期给宠物洗澡，保持清洁。</text>
+              <text>2. 定时剪指甲，避免抓伤或内生指甲。</text>
+              <text>3. 检查耳朵，定期清理耳垢。</text>
+          </view>
+      </view>
+      <view class="section">
+          <view class="section-header"><text>饮食管理</text></view>
+          <view class="section-content">
+              <text>1. 提供营养均衡的食物，根据宠物的年龄和健康状况调整。</text>
+              <text>2. 保持清水常备，确保宠物随时可以饮用。</text>
+              <text>3. 避免喂食对宠物有害的食物，如巧克力、葡萄等。</text>
+          </view>
+      </view>
+      <view class="section">
+          <view class="section-header"><text>运动和娱乐</text></view>
+          <view class="section-content">
+              <text>1. 每天安排时间让宠物进行适量运动。</text>
+              <text>2. 提供适合的玩具，满足宠物的娱乐需求。</text>
+              <text>3. 与宠物互动，增强你们之间的关系。</text>
+          </view>
+      </view>
+      <!-- 更多宠物护理技巧 -->
+  </scroll-view>
+  <view class="footer">
+      <text>更多信息，请联系我们团队:18204563800</text>
+  </view>
 </view>
