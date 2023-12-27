@@ -83,6 +83,7 @@ Page({
       "健康记录",
       "洗护记录"
     ],
+    alongTime:302
   },
 
   async onLoad() {

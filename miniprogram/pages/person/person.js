@@ -1,3 +1,4 @@
+
 const URL = 'https://demo.antcloud-miniprogram.com';
 //需要部署后端并将URL改为后端地址
 Page({
@@ -16,11 +17,12 @@ Page({
     todoNum: 0,
     petNum: 0,
     postNum: 0,
-    allPassage: []
   },
-  getOpenUserInfo() {
+   getOpenUserInfo() {
+    var self = this;
     my.getOpenUserInfo({
-        success: (res) => {
+        success: async (res) => {
+            self.getPetsCount();
             this.data.userInfo = JSON.parse(res.response).response
             this.data.isLogin = true;
             this.data.avatar = this.data.userInfo.avatar
@@ -29,8 +31,7 @@ Page({
               {
                 nickname:this.data.nickname,
                 isLogin:this.data.isLogin,
-                avatar:this.data.avatar
-                
+                avatar:this.data.avatar,
               }
             )
         },
@@ -113,6 +114,22 @@ Page({
     console.log("跳转到关于我们")
     this.pageRouter.navigateTo({
       url:"/pages/about/about"
+    })
+  },
+  async getPetsCount(){
+    var self = this;
+    var context = await my.getCloudContext();
+    context.callFunction({
+      name: 'getPetsCount',
+      data:{
+        userId: self.userId,
+      },
+      success:function(res){
+        console.log(res);
+        self.setData({
+          petNum:res.result
+        })
+      }
     })
   }
 });
