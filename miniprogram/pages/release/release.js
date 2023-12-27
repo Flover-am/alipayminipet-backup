@@ -11,7 +11,9 @@ Page({
     filePaths: [], // 图片文件路径
     author: "",
     loveNum: 0,
-    all: [],
+    all: {
+      data: []
+    },
     avatar: '',
     // TODO: 获取话题选项数据
     topic: "",
@@ -26,6 +28,26 @@ Page({
         all: data
       })
     })
+    if (this.data.all.data.length == 0) {
+      var self = this;
+      console.log("data");
+      var context = await my.getCloudContext(); 
+      context.callFunction({
+        name: 'recommend',
+        success:function(res) {
+          console.log(res.result);
+          self.setData({
+            all: {
+              data:res.result
+            }
+          })
+          
+        }
+      });
+      
+    }
+    // this.data.all.data = self.data.temp;
+    console.log(self.data);
     var app = getApp(); 
     var talkuserName = app.globalData.username;
     var image = app.globalData.avatar;

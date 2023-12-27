@@ -16,6 +16,7 @@ Page({
     todoNum: 0,
     petNum: 0,
     postNum: 0,
+    allPassage: []
   },
   getOpenUserInfo() {
     my.getOpenUserInfo({
@@ -63,11 +64,11 @@ Page({
     })
   },
   onTabPostIcon(event){
+    var self = this;
     console.log(event);
-    my.showToast({
-      content: 'TODO：跳转发布页',
-      duration: 2000
-    });
+    this.pageRouter.navigateTo({
+      url:"/pages/release/release"
+    })
   },
   onTabLikeIcon(event){
     console.log(event);
