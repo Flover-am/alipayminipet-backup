@@ -3,10 +3,15 @@ App({
   globalData:{
     userid:'',
     username:'',
-    avatar: ''
+    avatar: '',
+    isLogin: false,
+    userInfo: [],
+    nickName: ''
   },
+  
   async onLaunch(options) {
     var self = this;
+    this.getOpenUserInfo();
     my.getOpenUserInfo({
       success: (res) => {
           console.log(JSON.parse(res.response));
@@ -15,6 +20,7 @@ App({
 
           this.globalData.avatar = res.avatar
           this.globalData.username = res.nickName;
+
         
       },
       fail: (err) => {
@@ -22,6 +28,7 @@ App({
       }
   });
 
+  
     my.getCloudContext = async function(){
       if(my.fncontext){
         return my.fncontext;
@@ -34,6 +41,21 @@ App({
       }
       return my.fncontext;
     }
+  },
+   getOpenUserInfo() {
+    var self = this;
+    my.getOpenUserInfo({
+        success: async (res) => {
+            // self.getPetsCount();
+            this.globalData.userInfo = JSON.parse(res.response).response
+            this.globalData.isLogin = true;
+            this.globalData.avatar = this.globalData.userInfo.avatar
+            this.globalData.nickname = this.globalData.userInfo.nickName
+        },
+        fail: (err) => {
+            console.log(err)
+        }
+    });
   },
 
 })

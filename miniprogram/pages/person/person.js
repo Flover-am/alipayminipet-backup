@@ -18,6 +18,9 @@ Page({
     petNum: 0,
     postNum: 0,
   },
+  onLoad(){
+    this.getOpenUserInfo();
+  },
    getOpenUserInfo() {
     var self = this;
     my.getOpenUserInfo({
@@ -40,6 +43,7 @@ Page({
         }
     });
   },
+  
   toast(message) {
     my.showToast({
       content: message,
@@ -130,5 +134,6 @@ Page({
         })
       }
     })
-  }
+  },
+  
 });

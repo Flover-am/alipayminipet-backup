@@ -1,11 +1,11 @@
 {
   "pages": [
+    "pages/person/person",
     "pages/index/index",
     "pages/records/records",
     "pages/records/recordSumary/recordSumary",
     "pages/mypets/mypets",
     "pages/todo/todo",
-    "pages/person/person",
     "pages/passageDetails/passageDetails",
     "pages/release/release",
     "pages/records/recordAdd/recordAdd",
@@ -27,6 +27,13 @@
     "backgroundColor": "#FFFFFF",
     "items": [
       {
+        "pagePath": "pages/person/person",
+        "name": "我的",
+        "icon": "/image/icon_bar/mine.png",
+        "activeIcon": "/image/icon_bar/mine_active.png"
+      },
+      {
+
         "pagePath": "pages/index/index",
         "name": "社区",
         "icon": "/image/icon_bar/social.png",
@@ -43,13 +50,8 @@
         "name": "提醒",
         "icon": "/image/icon_bar/todo.png",
         "activeIcon": "/image/icon_bar/todo_active.png"
-      },
-      {
-        "pagePath": "pages/person/person",
-        "name": "我的",
-        "icon": "/image/icon_bar/mine.png",
-        "activeIcon": "/image/icon_bar/mine_active.png"
       }
+      
     ]
   }
 }
