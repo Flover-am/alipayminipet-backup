@@ -1,10 +1,11 @@
-<view class="part">
+<view>
   <view class="time">
     {{time}}
   </view>
   <view class="card">
     <view class="title">
-      <image class="avatar" mode="scaleToFill" src="/image/addPen.svg" />
+      <icon type="EditSOutline" style="font-size: 20px"/>
+      <!-- <image class="avatar" mode="scaleToFill" src="/image/addPen.svg" /> -->
       <view class="petname">
         <text class="text1">
           {{name}}

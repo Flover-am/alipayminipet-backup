@@ -1,37 +1,34 @@
-page{
-  background-color:#d8d8d8 ;
-}
 .time{
   font-weight: bold;
-  margin-left: 20rpx;
-  margin-bottom: 15rpx;
+  margin-left: 16rpx;
+  margin-bottom: 16rpx;
 }
 .card{
   background-color: white;
-  border-radius: 20rpx;
+  box-sizing: border-box;
+  border-radius: 8px;
   width: 100%;
-  height: 250rpx;
+  display: flex;
+  padding: 32rpx;
+  flex-direction: column;
 }
 .detail{
-  background-color:#d8d8d8;
+  background-color:#F7F7F7;
   height: 100rpx;
-  border-radius: 20rpx;
+  border-radius: 8px;
   display: flex;
   flex-direction: row;
-  justify-content:flex-start;
+  justify-content: flex-start;
   align-items: center;
-  margin-right: 60rpx;
-  margin-left: 60rpx;
-  padding-left: 30rpx;
+  padding: 0 24rpx;
 }
 .title{
-
   display: flex;
   flex-direction: row;
   justify-content:flex-start;
   align-items:center;
-  margin-bottom: 30rpx;
-  margin-left: 20rpx;
+  margin-bottom: 16rpx;
+  font-size: 17px;
 }
 .avatar{
   background: #d8d8d8;
@@ -39,6 +36,9 @@ page{
   height: 55rpx;
   border-radius: 50%;
   margin-right: 10rpx;
+}
+.petname {
+  margin-left: 16rpx;
 }
 .body{
 
@@ -48,10 +48,11 @@ page{
 }
 .vary{
   background-color: white;
-  border-radius: 10rpx;
-  width: 150rpx;
-  height: 50rpx;
+  border-radius: 8px;
+  padding: 16rpx;
   align-items: center;
+  margin: 16rpx;
+  color: var(--color-primary);
 }
 .text2{
   margin:auto;
