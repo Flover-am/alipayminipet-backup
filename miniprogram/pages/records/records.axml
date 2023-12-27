@@ -19,7 +19,7 @@
         <view class="arrow"></view>
         <icon type="CalendarOutline" />
         <view style="text-align: centers">
-          &ensp我们一起生活了99天
+          &ensp我们一起生活{{alongTime}}天
         </view>
     </view>
     <view class="switch">
