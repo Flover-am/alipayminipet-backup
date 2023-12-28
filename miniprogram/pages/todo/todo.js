@@ -5,17 +5,50 @@ Page({
     unfinished: 0,
     finished: 0,
     folded: false,
-    inEdit: false
+    inEdit: false,
+    id: null
   },
   
-  onLoad() {
+  async onLoad() {
+    try {
+      const context = await my.getCloudContext();
+      await this.getOpenId(context);
+    } catch (error) {
+      console.error(error);
+    }
     this.update()
     this.cancleEdit()
   },
 
-  onShow(){
+  async onShow(){
+    try {
+      const context = await my.getCloudContext();
+      await this.getOpenId(context);
+    } catch (error) {
+      console.error(error);
+    }
     this.update()
     this.cancleEdit()
+  },
+
+  async getOpenId(context) {
+    return new Promise((resolve, reject) => {
+      context.callFunction({
+        name: 'getOpenId',
+        data: {},
+        success: (res) => {
+          console.log(res);
+          console.log('获取成功1');
+          this.setData({
+            id: res.result.OPENID
+          });
+          resolve();
+        },
+        fail: (error) => {
+          reject(error);
+        }
+      });
+    });
   },
 
   update(){
