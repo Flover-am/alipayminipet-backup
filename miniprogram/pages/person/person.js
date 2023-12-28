@@ -19,7 +19,7 @@ Page({
     postNum: 0,
   },
   onLoad(){
-    this.getOpenUserInfo();
+    
   },
    getOpenUserInfo() {
     var self = this;

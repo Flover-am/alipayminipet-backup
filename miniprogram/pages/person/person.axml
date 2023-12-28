@@ -1,10 +1,9 @@
 <view class="infoCol">
   <image class="avatar" src="{{avatar}}" />
-  <view class="userInfoCol">
-    <text class="nickname">{{nickname}}</text>
+  <text class="nickname">{{nickname}}</text>
+
+    
     <view class="login-status-area">
-      <text>登录状态：</text>
-      <text>{{isLogin ? "已登录" : "未登录"}}</text>
       <button 
       a:if="{{ !isLogin }}"
       class="login-button"
@@ -16,11 +15,6 @@
 >
 点击登录
       </button>
-    </view>
-    <view class="additional-info">
-      <text>{{isLogin ? "个人简介" : ""}}</text>
-      <text>{{isLogin ? "江苏南京" : ""}}</text>  
-    </view>
   </view>
 </view>
 
@@ -35,7 +29,7 @@
   </view>
   <view class="unit" id="post" onTap="onTabPost">
     <text class="num">{{postNum}}</text>
-    <text>发帖</text>
+    <text>记录</text>
   </view>
 </view>
 <view class="bar2">

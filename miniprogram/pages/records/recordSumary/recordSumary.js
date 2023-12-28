@@ -4,10 +4,15 @@ Page({
     petId: 0,
     recordsItem: 0,
     recordItem:0,
-    history:[{},{}],
-    unit:"kg",
+    history:[
+      {
+        time:"",
+        value:""
+      }
+    ],
+    unit:"",
     petName:"",
-    key:"体温",
+    key:"",
     vary:[]
   },
   caculateVary(){
