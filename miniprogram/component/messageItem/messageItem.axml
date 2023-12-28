@@ -7,7 +7,7 @@
         </view>
         <view class="more">
           <text class="date">{{date}}</text>
-          <text class="view-button" onTap="handleViewButtonClick">查看</text>
+          <text class="view-button" onTap="onTap">查看</text>
         </view>
       </view>
 </view>
