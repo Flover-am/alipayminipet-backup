@@ -11,6 +11,16 @@ Page({
   },
   onLoad() {
     this.getPetsData();
+    var app = getApp(); 
+    var nickName = app.globalData.username;
+    var avatar = app.globalData.avatar;
+    var isLogin = app.globalData.isLogin
+    var self = this;
+    this.setData({
+      nickname: nickName,
+      avatar: avatar,
+      isLogin: isLogin
+    })
   },
   async getPetsData(){
     var self = this;
@@ -41,14 +51,13 @@ Page({
     });
   },
   addNewPet(){
-    my.showToast({
-      type:'none',
-      duration:1000,
-      content:"添加//TODO"
+    console.log("添加宠物")
+    this.pageRouter.navigateTo({
+      url:"/pages/mypets/editPet/editPet"
     })
   },
   editPet(){
-    console.log("测试接口")
+    console.log("添加宠物")
     this.pageRouter.navigateTo({
       url:"/pages/mypets/editPet/editPet"
     })

@@ -20,6 +20,7 @@ App({
 
           this.globalData.avatar = res.avatar
           this.globalData.username = res.nickName;
+          this.isLogin = true
 
         
       },

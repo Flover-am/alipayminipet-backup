@@ -1,7 +1,7 @@
 <view>
-  <view a:for="{{array}}">
+  <view a:for="{{array}}" a:for-item="item">
     <view class="container">
-      <message-item avatar="{{item.avatar}}" username="{{item.username}}" message="{{item.message}}" date="{{item.date}}" bind:viewButtonClick="handleViewButtonClick"></message-item>
+      <message-item avatar="{{item.avatar}}" username="{{item.username}}" message="{{item.message}}" date="{{item.date}}" ></message-item>
       <view class="separator"></view>
     </view>  
   </view>
