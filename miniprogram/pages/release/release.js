@@ -231,6 +231,7 @@ Page({
         resolve("");
       }
     })
+    my.navigateBack();
   },
   // TODO: 选择话题
   handleOk(value, column) {

@@ -1,8 +1,31 @@
 <view>
   <view a:for="{{array}}" a:for-item="item">
     <view class="container">
-      <message-item avatar="{{item.avatar}}" username="{{item.username}}" message="{{item.message}}" date="{{item.date}}" ></message-item>
+        <view class="chat-log-component">
+          <view class="chat-log">
+            <image class="avatar" src="{{item.avatar}}" />
+            <view class="text">
+              <text class="sender">{{item.userName}}</text>
+              <text class="message">{{item.talkcontent}}</text>
+            </view>
+            <view class="more">
+              <text class="date">{{item.time}}</text>
+              <text class="view-button" onTap="onTapLook">查看</text>
+            </view>
+          </view>
+        </view>
       <view class="separator"></view>
     </view>  
   </view>
 </view>
+<view class="no-history-wrapper" a:if="{{ array.length != 0 }}">
+  <view class="line"></view>
+  <view class="no-history-content">我也是有底线的</view>
+  <view class="line"></view>
+</view>
+<view class="no-history-wrapper" a:if="{{ array.length == 0 }}">
+  <view class="line"></view>
+  <view class="no-history-content">还没有收到任何消息哦~</view>
+  <view class="line"></view>
+</view>
+

@@ -8,7 +8,7 @@
 
 <!-- 文字区域 -->
 <view class="content-container">
-  <ant-input style="width: 100%; font-weight: bold;"
+  <input style="width: 100%; font-weight: bold;"
   placeholder="标题" confirm-type="send"
   type="text" onChange="titleInput" value="{{title}}" allowClear />
   <divider style="margin: 16rpx 0"/>

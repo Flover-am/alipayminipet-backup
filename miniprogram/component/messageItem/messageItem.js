@@ -19,7 +19,7 @@ Component({
   onInit() {
     
   },
-  handleViewButtonClick(){
+  onTapLook(){
     my.navigateTo({
       url: "/pages/passageDetails/passageDetails",
       success: function(res) {
