@@ -25,10 +25,41 @@ Page({
     currentTopic: "交流分享"
   },
   async onShow() {
-    my.startPullDownRefresh();
+    if (normalData.length != 0) {
+      my.startPullDownRefresh();
+    }
+    // my.startPullDownRefresh();
   },
-  onLoad(){
-    this.getTitle();
+  async onLoad(){
+    var self = this;
+    
+    var context = await my.getCloudContext();
+    my.showLoading({
+      content: '加载中...',
+      delay: '100',
+    });
+    var temp = 0;
+    context.callFunction({
+      name:'recommend',
+      
+      success:function(res) {
+        my.hideLoading();
+        console.log(res);
+        console.log(res.result);
+        
+        self.setData({
+          normalData:res.result,
+          // normalData:res.result,
+          passageNum:res.result.length,
+          firstData: res.result.slice(0, self.data.pageSize)
+        })
+        console.log(res.result.length);
+        // console.log(res.result[0]);
+        self.setData({
+          item:{}
+        })
+      }
+    })
     console.log(this.normalData);
   },
 

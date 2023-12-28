@@ -6,27 +6,22 @@ App({
     avatar: '',
     isLogin: false,
     userInfo: [],
-    nickName: ''
+    nickName: '',
+    canIUseAuthButton: my.canIUse('button.open-type.getAuthorize')
   },
-  
+  getOpenUserInfo() {
+    my.getOpenUserInfo({
+        success: (res) => {
+            let userInfo = JSON.parse(res.response).response
+        },
+        fail: (err) => {
+            console.log(err)
+        }
+    });
+},
   async onLaunch(options) {
     var self = this;
     this.getOpenUserInfo();
-    my.getOpenUserInfo({
-      success: (res) => {
-          console.log(JSON.parse(res.response));
-          console.log(res);
-          var response = JSON.parse(res.response);
-
-          this.globalData.avatar = res.avatar
-          this.globalData.username = res.nickName;
-
-        
-      },
-      fail: (err) => {
-          console.log(err)
-      }
-  });
 
   
     my.getCloudContext = async function(){

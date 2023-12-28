@@ -1,33 +1,37 @@
-page {
-  flex: 1;
+.page {
   display: flex;
   flex-direction: column;
+  align-items: center; /* 确保所有子元素都居中对齐 */
   background: whitesmoke;
-  padding: 32rpx;
-  align-items: center;
+  padding: 32px;
 }
 
 .avatar {
   width: 100px;
   height: 100px;
   border-radius: 50%;
-  border: 2px solid #d1dfe8; /* 抖音蓝 */
+  background-size: cover;
+  border: 2px solid #d1dfe8; /* Soft Blue */
   box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+  transition: transform 0.3s ease;
+  box-shadow: inset 0 0 10px rgba(0,0,0,0.1), 0 2px 4px rgba(0, 0, 0, 0.1);
+  margin-top: 15rpx;
 }
 .avatar:hover {
   transform: scale(1.05);
 }
-.login-button{
+.login-button {
   border-radius: 20px;
-  font-size: medium; /* Increased font size for readability */
-  background-color: rgb(226, 229, 236);
-  color: white; /* Text color for contrast */
-  height: 50px;
-  width: 150px; /* Increased width for better visual balance */
-  cursor: pointer; /* Indicates interactivity */
-  border: none; /* Removes default border */
-  box-shadow: 0 2px 4px 0 rgba(0,0,0,0.3); /* Subtle shadow for depth */
-  transition: background-color 0.3s ease; /* Smooth transition for hover effect */
+  font-size: 16px;
+  background-color: #3498db;
+  color: white;
+  height: 60px; /* Increased height for a larger button */
+  width: 300px; /* Increased width for a larger button */
+
+  cursor: pointer;
+  border: none;
+  box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+  transition: background-color 0.3s ease, transform 0.2s ease;
 }
 
 .login-button:hover {
@@ -46,30 +50,32 @@ page {
   }
   /* Other responsive adjustments as needed */
 }
-.infoCol{
+.infoCol {
   width: 100%;
-  float:left;
+  float: left;
   display: flex;
-  flex-flow: row wrap;
-  justify-content:baseline; 
+  flex-flow: column; /* 将 flex-flow 设置为 column */
+  align-items: center; /* 居中对齐头像和昵称 */
 }
 
-.userInfoCol{
+.userInfoCol {
   display: flex;
-  justify-content: space-between;
+  flex-direction: column;
+  align-items: center;
+  margin: 20px 0;
 }
 
 .nickname {
-  font-size: 20px;
+  margin-top: 30px !important; /* 使用 !important */
+  font-size: 24px;
   font-weight: bold;
   color: #333;
 }
 .login-status-area {
-  line-height: 36rpx;
-  font-size: 25rpx;
+  font-size: 18px;
   color: #8f8f8f;
-  margin-top: 20rpx;
-  margin-bottom: 30rpx;
+  margin-top: 10px;
+  width: 200rpx;
 }
 
 .bar{
@@ -106,6 +112,7 @@ page {
   border-radius: 20rpx;
   background-color: white;
   justify-content: space-between;
+  margin: 5%;
 }
 
 .item{
@@ -168,10 +175,10 @@ page {
   background-color: #ccc;
 }
 
-.infoCol {
+/* .infoCol {
   display: flex;
   align-items: center;
-}
+} */
 
 
 .userInfoCol {
@@ -183,6 +190,9 @@ page {
 .nickname {
   font-size: 20px;
   font-weight: bold;
+  
+  /* margin-left: auto; */
+  margin-top: auto;
   color: #020202; /* B站粉 */
 }
 
