@@ -24,11 +24,11 @@
             {{value}}
           </text>
         </view>
-        <view class="vary">
+        <!-- <view class="vary">
           <text class="text2">
             {{vary}}
           </text>
-        </view>
+        </view> -->
       </view>
     </view>
   </view>

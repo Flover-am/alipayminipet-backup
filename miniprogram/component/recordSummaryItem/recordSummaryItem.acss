@@ -7,7 +7,7 @@
   background-color: white;
   box-sizing: border-box;
   border-radius: 8px;
-  width: 100%;
+  width: 550rpx;
   display: flex;
   padding: 32rpx;
   flex-direction: column;
