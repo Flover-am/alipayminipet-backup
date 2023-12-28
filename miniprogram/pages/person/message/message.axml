@@ -5,11 +5,11 @@
           <view class="chat-log">
             <image class="avatar" src="{{item.avatar}}" />
             <view class="text">
-              <text class="sender">{{item.username}}</text>
-              <text class="message">{{item.message}}</text>
+              <text class="sender">{{item.userName}}</text>
+              <text class="message">{{item.talkcontent}}</text>
             </view>
             <view class="more">
-              <text class="date">{{item.date}}</text>
+              <text class="date">{{item.time}}</text>
               <text class="view-button" onTap="onTapLook">查看</text>
             </view>
           </view>

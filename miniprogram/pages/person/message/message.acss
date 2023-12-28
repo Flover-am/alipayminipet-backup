@@ -34,6 +34,11 @@
 .message {
   margin-top: 4px;
   order: 1;
+  display: -webkit-box;
+  -webkit-box-orient: vertical;
+  -webkit-line-clamp: 2; /* 设置最大行数 */
+  overflow: hidden;
+  text-overflow: ellipsis; /* 设置省略方式 */
 }
 
 .avatar {
@@ -76,4 +81,8 @@
   margin: 0 10px;
   font-size: 14px;
   color: #999;
+}
+
+.date{
+  font-size: x-small;
 }

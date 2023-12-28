@@ -2,37 +2,58 @@ Page({
  data: {
     openid: '0036yRkxnEL9IO7emgpU8Alqas9FERtNMUHCCZ6aVUSPCg5',
     array: [{username:"江南",message:"你好~",avatar:"https://s2.loli.net/2023/12/26/Md9x2ynOKb4UYTh.png",data:"1天前"}],
-  },
+  }
+  ,
   async onLoad() {
-    var self = this;
-    var context = await my.getCloudContext();
-    context.callFunction({
-      name: 'getOpenId',
-      data: {
-      },
-      success:function(res) {
-        console.log(res);
-        console.log('获取成功');
-        self.setData({
-        openid:res.result.OPENID
-        });
-        resolve("");
-      }
+    try {
+      const context = await my.getCloudContext();
+      await this.getOpenId(context);
+      await this.getMessages(context);
+    } catch (error) {
+      console.error(error);
+    }
+  },
+  
+  async getOpenId(context) {
+    return new Promise((resolve, reject) => {
+      context.callFunction({
+        name: 'getOpenId',
+        data: {},
+        success: (res) => {
+          console.log(res);
+          console.log('获取成功1');
+          this.setData({
+            openid: res.result.OPENID
+          });
+          resolve();
+        },
+        fail: (error) => {
+          reject(error);
+        }
+      });
     });
-    console.log(this.data.openid)
-    context.callFunction({
-      name: 'getMessages',
-      data: {
-      },
-      success:function(res) {
-        console.log(res);
-        console.log('获取成功');
-        self.setData({
-          array:res
-        });
-        resolve("");
-      }
-    })
+  },
+  
+  async getMessages(context) {
+    return new Promise((resolve, reject) => {
+      context.callFunction({
+        name: 'getMessages',
+        data: {
+          openid: this.data.openid
+        },
+        success: (res) => {
+          console.log(res);
+          console.log('获取成功2');
+          this.setData({
+            array: res.result
+          });
+          resolve();
+        },
+        fail: (error) => {
+          reject(error);
+        }
+      });
+    });
   },
   onTapLook(){
     my.navigateTo({
