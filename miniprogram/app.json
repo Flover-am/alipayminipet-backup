@@ -1,8 +1,9 @@
 {
   "pages": [
-    "pages/person/person",
+    
     "pages/index/index",
     "pages/records/records",
+    "pages/person/person",
     "pages/records/recordSumary/recordSumary",
     "pages/mypets/mypets",
     "pages/todo/todo",
@@ -27,18 +28,18 @@
     "backgroundColor": "#FFFFFF",
     "items": [
       {
-        "pagePath": "pages/person/person",
-        "name": "我的",
-        "icon": "/image/icon_bar/mine.png",
-        "activeIcon": "/image/icon_bar/mine_active.png"
-      },
-      {
-
         "pagePath": "pages/index/index",
         "name": "社区",
         "icon": "/image/icon_bar/social.png",
         "activeIcon": "/image/icon_bar/social_active.png"
       },
+      {
+        "pagePath": "pages/person/person",
+        "name": "我的",
+        "icon": "/image/icon_bar/mine.png",
+        "activeIcon": "/image/icon_bar/mine_active.png"
+      },
+     
       {
         "pagePath": "pages/records/records",
         "name": "记录",

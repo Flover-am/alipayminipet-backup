@@ -9,16 +9,7 @@ App({
     nickName: '',
     canIUseAuthButton: my.canIUse('button.open-type.getAuthorize')
   },
-  getOpenUserInfo() {
-    my.getOpenUserInfo({
-        success: (res) => {
-            let userInfo = JSON.parse(res.response).response
-        },
-        fail: (err) => {
-            console.log(err)
-        }
-    });
-},
+
   async onLaunch(options) {
     var self = this;
     this.getOpenUserInfo();
@@ -43,9 +34,9 @@ App({
         success: async (res) => {
             // self.getPetsCount();
             this.globalData.userInfo = JSON.parse(res.response).response
-            this.globalData.isLogin = true;
             this.globalData.avatar = this.globalData.userInfo.avatar
-            this.globalData.nickname = this.globalData.userInfo.nickName
+            this.globalData.nickName = this.globalData.userInfo.nickName
+            
         },
         fail: (err) => {
             console.log(err)

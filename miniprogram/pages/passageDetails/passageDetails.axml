@@ -17,7 +17,7 @@
   <view class="author-tip">
     <!-- TODO: 用户头像 -->
     <image style="width: 48rpx; height: 48rpx; border-radius: 24rpx; margin-right: 16rpx;" src="{{passage.data.tuijian.avatar}}"/>
-    <text>111{{passage.data.tuijian.author}}</text>
+    <text>{{passage.data.tuijian.author}}</text>
   </view>
 </view>
 

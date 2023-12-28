@@ -1,6 +1,6 @@
 <view class="infoCol">
   <image class="avatar" src="{{avatar}}" />
-  <text class="nickname">{{nickname}}</text>
+  <text class="nickname">{{nickName}}</text>
 
     
     <view class="login-status-area">
