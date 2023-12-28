@@ -25,7 +25,7 @@ Page({
     currentTopic: "交流分享"
   },
   async onShow() {
-    if (normalData.length != 0) {
+    if (this.data.normalData.length != 0) {
       my.startPullDownRefresh();
     }
     // my.startPullDownRefresh();

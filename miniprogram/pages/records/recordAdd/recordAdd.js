@@ -13,7 +13,8 @@ Page({
 
 
   onLoad(query) {
-    // console.log(query)
+    console.log('add: ')
+    console.log(query)
     this.setData({
       petName: query.petName,
       userid: query.userid
