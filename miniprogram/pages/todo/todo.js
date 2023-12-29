@@ -94,9 +94,10 @@ Page({
         inEdit: false,
         userid: item.uesrid
       },
-      success: function(res) {
+      success: (res) => {
         console.log(res);
         console.log('成功发布');
+        this.getTodoList(this.data.uesrid)
         resolve();
       }
     })
@@ -113,6 +114,25 @@ Page({
         this.setData({
           list: res.result
         });
+        this.update()
+        resolve();
+      }
+    })
+  },
+
+  async updateTodoList(id, operation, item) {
+    var context = await my.getCloudContext()
+    console.log('此事项编号：'+id)
+    context.callFunction({
+      name: 'updateTODOList',
+      data: {
+        id: id,
+        operation: operation,
+        todo: item.todo,
+        time: item.time
+      },
+      success: (res) => {
+        this.getTodoList(this.data.userid)
         this.update()
         resolve();
       }
@@ -190,10 +210,12 @@ Page({
     let index = e.target.dataset.index
     let newList = this.data.list
     newList[index].isDone = true
-    this.setData({
-      list: newList
-    })
-    this.update()
+    var item = newList[index]
+    this.updateTodoList(item._id, 'finish', item)
+    // this.setData({
+    //   list: newList
+    // })
+    // this.update()
     my.showToast({
       content: '已完成',
       type: 'success',
@@ -257,10 +279,6 @@ Page({
     })
   },
 
-  editPet(){
-
-  },
-
   delete(e){
     my.confirm({
       content: '确认要删除吗？',
@@ -270,12 +288,13 @@ Page({
         if (result.confirm) {
           let index = e.target.dataset.index
           let newList = this.data.list
-          newList.splice(index, 1)
+          var item = newList[index]
+          this.updateTodoList(item._id, 'delete', item)
+          // newList.splice(index, 1)
           this.setData({
-            list: newList,
             inEdit: false
           })
-          this.update()
+          // this.update()
         }
       }
     })
@@ -285,8 +304,9 @@ Page({
     let index = e.target.dataset.index
     let newList = this.data.list
     newList[index].inEdit = false
+    var item = newList[index]
+    this.updateTodoList(item._id, 'edit', item)
     this.setData({
-      list: newList,
       inEdit: false
     })
   },
