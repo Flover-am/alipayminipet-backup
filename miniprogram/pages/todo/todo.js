@@ -122,7 +122,6 @@ Page({
 
   async updateTodoList(id, operation, item) {
     var context = await my.getCloudContext()
-    console.log('此事项编号：'+id)
     context.callFunction({
       name: 'updateTODOList',
       data: {
