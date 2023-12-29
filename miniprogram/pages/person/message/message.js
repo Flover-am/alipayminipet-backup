@@ -65,7 +65,7 @@ Page({
       success: (res) => {
         console.log(res);
         console.log('获取details成功');
-        details = res.result;
+        details = res.result[0];
         console.log(details)
 
         my.navigateTo({
