@@ -1,3 +1,5 @@
+const { resolve } = require("path");
+
 Page({
   data: {
     list: [],
@@ -5,17 +7,62 @@ Page({
     unfinished: 0,
     finished: 0,
     folded: false,
-    inEdit: false
+    inEdit: false,
+    userid: null
   },
   
-  onLoad() {
+  async onLoad() {
+    my.showLoading({
+      content: '加载中...',
+      success: function(res) {
+        console.log(res);
+        setTimeout(() => {
+          my.hideLoading();
+        }, 1000);
+      },
+      fail: function(err) {
+        console.log(err);
+      }
+    });
+    try {
+      const context = await my.getCloudContext();
+      await this.getOpenId(context);
+    } catch (error) {
+      console.error(error);
+    }
+    this.getTodoList(this.data.userid)
     this.update()
     this.cancleEdit()
   },
 
-  onShow(){
+  async onShow(){
+    try {
+      const context = await my.getCloudContext();
+      await this.getOpenId(context);
+    } catch (error) {
+      console.error(error);
+    }
+    this.getTodoList(this.data.userid)
     this.update()
     this.cancleEdit()
+  },
+
+  async getOpenId(context) {
+    return new Promise((resolve, reject) => {
+      context.callFunction({
+        name: 'getOpenId',
+        data: {},
+        success: (res) => {
+          this.setData({
+            userid: res.result.OPENID
+          });
+          resolve();
+        },
+        fail: (error) => {
+          reject(error);
+        }
+      });
+    });
   },
 
   update(){
@@ -36,6 +83,61 @@ Page({
     })
   },
 
+  async addTodo(item) {
+    var context = await my.getCloudContext()
+    context.callFunction({
+      name: 'addTODOList',
+      data: {
+        isDone: false,
+        time: item.time,
+        todo: item.todo,
+        inEdit: false,
+        userid: item.uesrid
+      },
+      success: (res) => {
+        console.log(res);
+        console.log('成功发布');
+        this.getTodoList(this.data.userid)
+        resolve();
+      }
+    })
+  },
+
+  async getTodoList(id) {
+    var context = await my.getCloudContext()
+    context.callFunction({
+      name: 'getTODOList',
+      data: {
+        userid: id
+      },
+      success: (res) => {
+        this.setData({
+          list: res.result
+        });
+        this.update()
+        resolve();
+      }
+    })
+  },
+
+  async updateTodoList(id, operation, item) {
+    var context = await my.getCloudContext()
+    context.callFunction({
+      name: 'updateTODOList',
+      data: {
+        id: id,
+        operation: operation,
+        todo: item.todo,
+        time: item.time
+      },
+      success: (res) => {
+        this.getTodoList(this.data.userid)
+        this.update()
+        resolve();
+      }
+    })
+  },
+
   addItem(){
     if (this.data.inEdit) {
       my.showToast({
@@ -49,8 +151,8 @@ Page({
       isDone: false,
       time: null,
       todo: 'TODO',
-      pet: null,
-      inEdit: false
+      inEdit: false,
+      uesrid: this.data.userid
     };
 
     my.prompt({
@@ -63,15 +165,18 @@ Page({
             my.datePicker({
               format: 'yyyy-MM-dd HH:mm',
               success: (res) => {
-                let newList = this.data.list
-                item.time = res.date
+                // let newList = this.data.list;
+                item.time = res.date;
                 item.todo = result.inputValue;
-                newList.push(item)
-                this.setData({
-                  list: newList,
-                  num: newList.length
-                })
-                this.update()
+                this.addTodo(item);
+                // newList.push(item)
+                // this.setData({
+                //   list: newList,
+                //   num: newList.length
+                // })
+                this.getTodoList(this.data.userid);
+                console.log('添加')
+                this.update();
                 my.showToast({
                   content: '添加成功',
                   type: 'success',
@@ -104,10 +209,12 @@ Page({
     let index = e.target.dataset.index
     let newList = this.data.list
     newList[index].isDone = true
-    this.setData({
-      list: newList
-    })
-    this.update()
+    var item = newList[index]
+    this.updateTodoList(item._id, 'finish', item)
+    // this.setData({
+    //   list: newList
+    // })
+    // this.update()
     my.showToast({
       content: '已完成',
       type: 'success',
@@ -171,10 +278,6 @@ Page({
     })
   },
 
-  editPet(){
-
-  },
-
   delete(e){
     my.confirm({
       content: '确认要删除吗？',
@@ -184,12 +287,13 @@ Page({
         if (result.confirm) {
           let index = e.target.dataset.index
           let newList = this.data.list
-          newList.splice(index, 1)
+          var item = newList[index]
+          this.updateTodoList(item._id, 'delete', item)
+          // newList.splice(index, 1)
           this.setData({
-            list: newList,
             inEdit: false
           })
-          this.update()
+          // this.update()
         }
       }
     })
@@ -199,8 +303,9 @@ Page({
     let index = e.target.dataset.index
     let newList = this.data.list
     newList[index].inEdit = false
+    var item = newList[index]
+    this.updateTodoList(item._id, 'edit', item)
     this.setData({
-      list: newList,
       inEdit: false
     })
   },

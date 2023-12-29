@@ -44,12 +44,35 @@ Page({
           
         }
       });
-      
     }
     // this.data.all.data = self.data.temp;
     console.log(self.data);
     var app = getApp(); 
-    var talkuserName = app.globalData.username;
+    console.log(app);
+    var talkuserName = app.globalData.nickName;
+    console.log(app);
+    console.log(talkuserName);
+    if (app.globalData.userInfo.code == '40003') {
+      my.navigateBack();
+      my.alert({
+        title: '请先登录认证'
+      })
+      return;
+    }
+    if (app.globalData.isLogin == false && (talkuserName.length != 0  || talkuserName != '未登录')) {
+      my.alert({
+        title: '登录信息失效，请重新登录'
+      })
+      my.navigateBack();
+      return;
+    }
+    if (talkuserName == '' || talkuserName == '未登录') {
+      my.alert({
+        title: '请先在“我的”界面点击登录'
+      })
+      my.navigateBack();
+      return;
+    }
     var image = app.globalData.avatar;
     console.log(app.globalData);
     var self = this;
@@ -208,6 +231,7 @@ Page({
         resolve("");
       }
     })
+    my.navigateBack();
   },
   // TODO: 选择话题
   handleOk(value, column) {

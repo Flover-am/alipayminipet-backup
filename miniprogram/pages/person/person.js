@@ -3,7 +3,7 @@ const URL = 'https://demo.antcloud-miniprogram.com';
 //需要部署后端并将URL改为后端地址
 Page({
   data: {
-    nickname: '未登录', //用户昵称
+    nickName: '未登录', //用户昵称
     avatar: '', //用户头像
     userInfo: null,
     isLogin: false, //是否登录
@@ -29,14 +29,18 @@ Page({
             this.data.userInfo = JSON.parse(res.response).response
             this.data.isLogin = true;
             this.data.avatar = this.data.userInfo.avatar
-            this.data.nickname = this.data.userInfo.nickName
+            this.data.nickName = this.data.userInfo.nickName
             this.setData(
               {
-                nickname:this.data.nickname,
+                nickName:this.data.nickName,
                 isLogin:this.data.isLogin,
                 avatar:this.data.avatar,
               }
-            )
+            );
+            getApp().globalData.userInfo = JSON.parse(res.response).response;
+            getApp().globalData.avatar = this.data.avatar;
+            getApp().globalData.nickName = this.data.nickName;
+            getApp().globalData.isLogin = true;
         },
         fail: (err) => {
             console.log(err)

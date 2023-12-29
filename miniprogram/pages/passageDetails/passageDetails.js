@@ -18,6 +18,8 @@ Page({
     const eventChannel = this.getOpenerEventChannel();
     var self = this;
 
+    var app =getApp();
+    console.log(app);
     
 
     eventChannel.on('PageMain_Data',data => {
@@ -78,7 +80,14 @@ Page({
   },
   async submit(e) {
     var app = getApp(); 
-    var talkuserName = app.globalData.username;
+    var talkuserName = app.globalData.nickName;
+    console.log(app);
+    if (talkuserName == '') {
+      my.alert({
+        title: '请先在“我的”界面点击登录'
+      })
+      return;
+    }
     console.log(app.globalData); 
     var self = this;
     var context = await my.getCloudContext();
@@ -93,7 +102,20 @@ Page({
     console.log(date);
     var globalData = app.globalData
     console.log(globalData.avatar);
-    console.log(globalData.userName);
+
+    if (globalData.userInfo.code == "40003") {
+      my.alert({
+        title: "请先登录授权"
+      })
+      return;
+    }
+    if (this.data.talk == ''){
+      my.alert({
+        title: '评论内容不能为空'
+      })
+      return;
+    }
+    
     context.callFunction({
       name: "talk",
       data: {
