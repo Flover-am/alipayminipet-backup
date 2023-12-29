@@ -97,7 +97,7 @@ Page({
       success: (res) => {
         console.log(res);
         console.log('成功发布');
-        this.getTodoList(this.data.uesrid)
+        this.getTodoList(this.data.userid)
         resolve();
       }
     })
