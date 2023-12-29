@@ -12,6 +12,18 @@ Page({
   },
   
   async onLoad() {
+    my.showLoading({
+      content: '加载中...',
+      success: function(res) {
+        console.log(res);
+        setTimeout(() => {
+          my.hideLoading();
+        }, 1000);
+      },
+      fail: function(err) {
+        console.log(err);
+      }
+    });
     try {
       const context = await my.getCloudContext();
       await this.getOpenId(context);
@@ -95,12 +107,13 @@ Page({
     context.callFunction({
       name: 'getTODOList',
       data: {
-        uesrid: id
+        userid: id
       },
       success: (res) => {
         this.setData({
           list: res.result
         });
+        this.update()
         resolve();
       }
     })
@@ -133,16 +146,18 @@ Page({
             my.datePicker({
               format: 'yyyy-MM-dd HH:mm',
               success: (res) => {
-                let newList = this.data.list
-                item.time = res.date
+                // let newList = this.data.list;
+                item.time = res.date;
                 item.todo = result.inputValue;
-                this.addTodo(item)
-                newList.push(item)
-                this.setData({
-                  list: newList,
-                  num: newList.length
-                })
-                this.update()
+                this.addTodo(item);
+                // newList.push(item)
+                // this.setData({
+                //   list: newList,
+                //   num: newList.length
+                // })
+                this.getTodoList(this.data.userid);
+                console.log('添加')
+                this.update();
                 my.showToast({
                   content: '添加成功',
                   type: 'success',
