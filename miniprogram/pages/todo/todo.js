@@ -41,6 +41,7 @@ Page({
         name: 'getOpenId',
         data: {},
         success: (res) => {
+          console.log(res.result.OPENID);
           this.setData({
             userid: res.result.OPENID
           });

@@ -32,14 +32,7 @@
         "name": "社区",
         "icon": "/image/icon_bar/social.png",
         "activeIcon": "/image/icon_bar/social_active.png"
-      },
-      {
-        "pagePath": "pages/person/person",
-        "name": "我的",
-        "icon": "/image/icon_bar/mine.png",
-        "activeIcon": "/image/icon_bar/mine_active.png"
-      },
-     
+      }, 
       {
         "pagePath": "pages/records/records",
         "name": "记录",
@@ -51,6 +44,12 @@
         "name": "提醒",
         "icon": "/image/icon_bar/todo.png",
         "activeIcon": "/image/icon_bar/todo_active.png"
+      },
+      {
+        "pagePath": "pages/person/person",
+        "name": "我的",
+        "icon": "/image/icon_bar/mine.png",
+        "activeIcon": "/image/icon_bar/mine_active.png"
       }
       
     ]
