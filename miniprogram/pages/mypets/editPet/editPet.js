@@ -42,5 +42,12 @@ Page({
     this.setData({
       petArrivalDate: e.detail.value
     });
+  },
+  async submit() {
+    var context = await my.getCloudContext();
+    context.callFunction({
+      name: 'getOpenId'
+    })
   }
+
 });
