@@ -1,3 +1,5 @@
+const { resolve } = require("path");
+
 Page({
   data: {
     list: [],
@@ -6,7 +8,7 @@ Page({
     finished: 0,
     folded: false,
     inEdit: false,
-    id: null
+    userid: null
   },
   
   async onLoad() {
@@ -16,6 +18,7 @@ Page({
     } catch (error) {
       console.error(error);
     }
+    this.getTodoList(this.data.userid)
     this.update()
     this.cancleEdit()
   },
@@ -27,6 +30,7 @@ Page({
     } catch (error) {
       console.error(error);
     }
+    this.getTodoList(this.data.userid)
     this.update()
     this.cancleEdit()
   },
@@ -37,10 +41,8 @@ Page({
         name: 'getOpenId',
         data: {},
         success: (res) => {
-          console.log(res);
-          console.log('获取成功1');
           this.setData({
-            id: res.result.OPENID
+            userid: res.result.OPENID
           });
           resolve();
         },
@@ -69,6 +71,41 @@ Page({
     })
   },
 
+  async addTodo(item) {
+    var context = await my.getCloudContext()
+    context.callFunction({
+      name: 'addTODOList',
+      data: {
+        isDone: false,
+        time: item.time,
+        todo: item.todo,
+        inEdit: false,
+        userid: item.uesrid
+      },
+      success: function(res) {
+        console.log(res);
+        console.log('成功发布');
+        resolve();
+      }
+    })
+  },
+
+  async getTodoList(id) {
+    var context = await my.getCloudContext()
+    context.callFunction({
+      name: 'getTODOList',
+      data: {
+        uesrid: id
+      },
+      success: (res) => {
+        this.setData({
+          list: res.result
+        });
+        resolve();
+      }
+    })
+  },
+
   addItem(){
     if (this.data.inEdit) {
       my.showToast({
@@ -82,8 +119,8 @@ Page({
       isDone: false,
       time: null,
       todo: 'TODO',
-      pet: null,
-      inEdit: false
+      inEdit: false,
+      uesrid: this.data.userid
     };
 
     my.prompt({
@@ -99,6 +136,7 @@ Page({
                 let newList = this.data.list
                 item.time = res.date
                 item.todo = result.inputValue;
+                this.addTodo(item)
                 newList.push(item)
                 this.setData({
                   list: newList,
