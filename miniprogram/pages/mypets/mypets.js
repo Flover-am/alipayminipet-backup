@@ -10,6 +10,9 @@ Page({
     isLoginLoading: false ,//
     pets: []
   },
+  async onShow(){
+    this.getPetsData();
+  },
   async onLoad() {
     var app = getApp();
     var context = await my.getCloudContext();

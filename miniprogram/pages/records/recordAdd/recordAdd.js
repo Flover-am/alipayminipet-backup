@@ -86,9 +86,9 @@ Page({
 
   },
 
-  labelFormat(value, options) {
-    return options.map(option => option['label']).join(' ')
-  },
+  // labelFormat(value, options) {
+  //   return options.map(option => option['label']).join(' ')
+  // },
   
   async getOpenId(context) {
     return new Promise((resolve, reject) => {
