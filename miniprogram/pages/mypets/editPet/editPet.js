@@ -18,7 +18,24 @@ Page({
       petName: e.detail.value
     });
   },
-  
+  datePicker1() {
+    var self = this
+    console.log("选择时间");
+    my.datePicker({
+      format: 'yyyy-MM-dd HH:mm',
+      currentDate: '2023-06-15 12:30',
+      startDate: '2023-01-01 00:00',
+      endDate: '2028-01-01 00:00',
+      success: (res) => {
+        // my.alert({
+        //   content: '您选择的日期为: ' + res.date
+        // });
+        self.setData({
+          petsBirthDate: res.date
+        })
+      },
+    });
+  },
   bindBreedInput(e) {
     this.setData({
       petBreed: e.detail.value
@@ -43,9 +60,22 @@ Page({
     });
   },
   
-  bindArrivalDateInput(e) {
-    this.setData({
-      petArrivalDate: e.detail.value
+  datePicker2() {
+    var self = this
+    console.log("选择时间");
+    my.datePicker({
+      format: 'yyyy-MM-dd HH:mm',
+      currentDate: '2023-06-15 12:30',
+      startDate: '2023-01-01 00:00',
+      endDate: '2028-01-01 00:00',
+      success: (res) => {
+        // my.alert({
+        //   content: '您选择的日期为: ' + res.date
+        // });
+        self.setData({
+          petArrivalDate: res.date
+        })
+      },
     });
   },
   async getOpenId(context) {
@@ -85,6 +115,7 @@ Page({
             "gender":self.data.petGender,
             "weight":self.data.petWeight,
             "birthday":self.data.petBirthdate,
+            "petAvatar": self.data.filePaths[0]
         },
 
         //假数据测试
