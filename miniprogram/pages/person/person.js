@@ -17,15 +17,16 @@ Page({
     todoNum: 0,
     petNum: 0,
     postNum: 0,
+    userid:""
   },
   onLoad(){
     
   },
-   getOpenUserInfo() {
+  async getOpenUserInfo() {
     var self = this;
     my.getOpenUserInfo({
         success: async (res) => {
-            self.getPetsCount();
+            await self.getPetsCount();
             this.data.userInfo = JSON.parse(res.response).response
             this.data.isLogin = true;
             this.data.avatar = this.data.userInfo.avatar
@@ -124,12 +125,14 @@ Page({
     })
   },
   async getPetsCount(){
+    var context = await my.getCloudContext();
+    await this.getOpenId(context);
     var self = this;
     var context = await my.getCloudContext();
     context.callFunction({
       name: 'getPetsCount',
       data:{
-        userId: self.userId,
+        userId: self.userid,
       },
       success:function(res){
         console.log(res);
@@ -138,6 +141,24 @@ Page({
         })
       }
     })
+  },
+  async getOpenId(context) {
+    return new Promise((resolve, reject) => {
+
+      context.callFunction({
+        name: 'getOpenId',
+        data: {},
+        success: (res) => {
+          this.setData({
+            userid: res.result.OPENID
+          });
+          resolve();
+        },
+        fail: (error) => {
+          reject(error);
+        }
+      });
+    });
   },
   
 });
