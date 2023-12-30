@@ -55,24 +55,57 @@ Page({
     })
   },
 
-  submit(){
+  async submit(){
     var self = this
     let tmp = self.data.recordTime.split(/-| |\:/)
     let time = tmp.join("/")
-    // TODO：使用云函数上传
-    // 可以用的数据：petId，userid，time（格式化后的记录时间），recordType1（大类别），recordType2（小类别），recordDes（描述）
-    /* 
-        petId: self.petId (来源于record页面的selectedPetId)
-        userid: self.userid (来源于record页面获取到的userid)
-        time: time  (格式：xxxx/xx/xx/xx/xx)
-        recordType1: self.recordType1 (number类型)
-        recordType2: self.recordType2 (number类型)
-        recordDes: self.recordDes 
-    */
+    var context = await my.getCloudContext();
+    context.callFunction({
+      name: 'addRecord',
+      data:{
+        userid: self.data.userid,
+        petId: self.data.petId,
+        recordType1: self.data.recordType1,
+        recordType2: self.data.recordType2,
+        time: time,
+        recordDes: self.data.recordDes
+      },
+      success: function(res) {
+        console.log(res);
+        my.showToast({
+          content: '发布成功',
+          duration: 2000,
+          success: () => {
+            setTimeout(() => {
+              my.navigateBack();
+            }, 2000);
+          }
+        }); 
+      }
+    });
+
   },
 
   labelFormat(value, options) {
     return options.map(option => option['label']).join(' ')
-  }
+  },
+  
+  async getOpenId(context) {
+    return new Promise((resolve, reject) => {
+      context.callFunction({
+        name: 'getOpenId',
+        data: {},
+        success: (res) => {
+          this.setData({
+            userId: res.result.OPENID
+          });
+          resolve();
+        },
+        fail: (error) => {
+          reject(error);
+        }
+      });
+    });
+  },
 
 });

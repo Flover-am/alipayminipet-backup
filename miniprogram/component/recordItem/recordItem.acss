@@ -1,0 +1,11 @@
+/* 这是一个文本的css，我想让他只有一行，最多8个字符，用用省略号省略后面的东西 */
+.texts{
+    overflow: hidden;
+    text-overflow: ellipsis;
+    white-space: nowrap;
+    width: 220rpx;
+    display: inline-block;
+    text-align: left;
+    font-size: 14px;
+    color: #333333;
+}

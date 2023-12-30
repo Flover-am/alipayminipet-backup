@@ -75,7 +75,7 @@ Page({
               value:value.value
             };
           }),
-          unit:res.result.unit,
+          unit:"",
           petName:res.result.petName,
           key:res.result.key
         });

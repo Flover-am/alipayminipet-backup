@@ -11,7 +11,7 @@
     <view slot="headerRight">    
       <icon type="RightOutline"  />        
     </view>
-    <view >
+    <view  class = "texts">
     {{value}}
     </view>
   </container>
