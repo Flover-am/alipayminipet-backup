@@ -26,12 +26,20 @@
   
   <view class="form-group">
     <text class="label">出生日期</text>
-    <input class="input" type="date" onInput="bindBirthdateInput" />
+    <view>
+      <label class="input">
+        <text class="date" onTap="datePicker1">{{petBirthdate}}</text>
+      </label>
+    </view>
+    <!-- <input class="input" type="date" onInput="bindBirthdateInput" /> -->
   </view>
   
   <view class="form-group">
     <text class="label">到家日期</text>
-    <input class="input" type="date" onInput="bindArrivalDateInput" />
+    <label class="input">
+      <text class="date" onTap="datePicker2">{{petArrivalDate}}</text>
+    </label>
+    <!-- <input class="input" type="date" onInput="bindArrivalDateInput" /> -->
   </view>
   
   <view class="photo-gallery">

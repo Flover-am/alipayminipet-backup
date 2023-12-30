@@ -7,8 +7,8 @@ Page({
     petAge: '',
     petGender: '',
     petWeight: '',
-    petBirthdate: '',
-    petArrivalDate: '',
+    petBirthdate: '请选择日期',
+    petArrivalDate: '请选择日期',
     filePaths: [],
     imageUrls: [],
     deleteUrls: []
@@ -18,20 +18,37 @@ Page({
       petName: e.detail.value
     });
   },
+  onLoad() {
+
+  },
   datePicker1() {
     var self = this
     console.log("选择时间");
     my.datePicker({
-      format: 'yyyy-MM-dd HH:mm',
-      currentDate: '2023-06-15 12:30',
-      startDate: '2023-01-01 00:00',
-      endDate: '2028-01-01 00:00',
+      format: 'yyyy-MM-dd',
+      startDate: '2000-1-1',
       success: (res) => {
         // my.alert({
         //   content: '您选择的日期为: ' + res.date
         // });
         self.setData({
-          petsBirthDate: res.date
+          petBirthdate: res.date
+        })
+      },
+    });
+  },
+  datePicker2() {
+    var self = this
+    console.log("选择时间");
+    my.datePicker({
+      format: 'yyyy-MM-dd',
+      startDate: '2000-1-1',
+      success: (res) => {
+        // my.alert({
+        //   content: '您选择的日期为: ' + res.date
+        // });
+        self.setData({
+          petArrivalDate: res.date
         })
       },
     });
@@ -60,24 +77,6 @@ Page({
     });
   },
   
-  datePicker2() {
-    var self = this
-    console.log("选择时间");
-    my.datePicker({
-      format: 'yyyy-MM-dd HH:mm',
-      currentDate: '2023-06-15 12:30',
-      startDate: '2023-01-01 00:00',
-      endDate: '2028-01-01 00:00',
-      success: (res) => {
-        // my.alert({
-        //   content: '您选择的日期为: ' + res.date
-        // });
-        self.setData({
-          petArrivalDate: res.date
-        })
-      },
-    });
-  },
   async getOpenId(context) {
     return new Promise((resolve, reject) => {
       context.callFunction({
@@ -115,6 +114,7 @@ Page({
             "gender":self.data.petGender,
             "weight":self.data.petWeight,
             "birthday":self.data.petBirthdate,
+            "arrivalDate": self.data.petArrivalDate,
             "petAvatar": self.data.filePaths[0]
         },
 
