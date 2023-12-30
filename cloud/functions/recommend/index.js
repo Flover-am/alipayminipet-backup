@@ -1,6 +1,5 @@
 const crypto = require('node:crypto');
 const cloud = require('@alipay/faas-server-sdk');
-
 // const getCollectionName = () => {
 //   return 'cl-' + crypto.randomBytes(5).toString('hex');
 // };

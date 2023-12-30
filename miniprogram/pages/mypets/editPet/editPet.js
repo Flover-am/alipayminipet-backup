@@ -74,22 +74,22 @@ Page({
     context.callFunction({
       name: 'addPets',
       data: {
-        petData:{
-            "name":self.data.petName,
-            "age":self.data.petBreed,
-            "gender":self.data.petGender,
-            "weight":self.data.petWeight,
-            "birthday":self.data.petBirthdate,
-        },
+        // petData:{
+        //     "name":self.data.petName,
+        //     "age":self.data.petBreed,
+        //     "gender":self.data.petGender,
+        //     "weight":self.data.petWeight,
+        //     "birthday":self.data.petBirthdate,
+        // },
 
         //假数据测试
-        // petData:{
-        //     "name":"小白",
-        //     "age":"3岁",
-        //     "gender":"公",
-        //     "weight":"15kg",
-        //     "birthday":"05月26日",
-        // }
+        petData:{
+            "name":"小白",
+            "age":"3岁",
+            "gender":"公",
+            "weight":"15kg",
+            "birthday":"05月26日",
+        }
       },
       success: (res) => {
         console.log(res);
