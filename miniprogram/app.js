@@ -20,8 +20,7 @@ App({
 
           this.globalData.avatar = res.avatar
           this.globalData.username = res.nickName;
-
-        
+      
       },
       fail: (err) => {
           console.log(err)

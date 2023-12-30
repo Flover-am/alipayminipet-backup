@@ -1,3 +1,4 @@
+
 <view class="container">
   <view class="title-bar">
     <text class="title">上传宠物资料</text>
@@ -5,32 +6,32 @@
   
   <view class="form-group">
     <text class="label">宠物名字</text>
-    <input class="input" placeholder="请输入宠物名字" bindinput="bindNameInput" />
+    <input class="input" placeholder="请输入宠物名字" onInput="bindNameInput" />
   </view>
   
   <view class="form-group">
     <text class="label">宠物品种</text>
-    <input class="input" placeholder="请输入宠物品种" bindinput="bindBreedInput" />
+    <input class="input" placeholder="请输入宠物品种" onInput="bindBreedInput" />
   </view>
   
   <view class="form-group">
     <text class="label">宠物性别</text>
-    <input class="input" placeholder="请输入宠物性别" bindinput="bindGenderInput" />
+    <input class="input" placeholder="请输入宠物性别" onInput="bindGenderInput" />
   </view>
   
   <view class="form-group">
     <text class="label">宠物体重</text>
-    <input class="input" placeholder="请输入宠物体重" bindinput="bindWeightInput" />
+    <input class="input" placeholder="请输入宠物体重" onInput="bindWeightInput" />
   </view>
   
   <view class="form-group">
     <text class="label">出生日期</text>
-    <input class="input" type="date" bindinput="bindBirthdateInput" />
+    <input class="input" type="date" onInput="bindBirthdateInput" />
   </view>
   
   <view class="form-group">
     <text class="label">到家日期</text>
-    <input class="input" type="date" bindinput="bindArrivalDateInput" />
+    <input class="input" type="date" onInput="bindArrivalDateInput" />
   </view>
   
   <view class="photo-gallery">

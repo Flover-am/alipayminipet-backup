@@ -156,7 +156,7 @@ Page({
       name: "getTalks",
       data: {"passageId": self.data.passage.data.tuijian.Id},
       success:function(res) {
-        console.log(res);
+        console.log(res.result);
         self.setData({
           talkList: res.result
         })
