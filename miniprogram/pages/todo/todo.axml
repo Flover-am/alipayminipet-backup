@@ -39,7 +39,7 @@
   </view>
 
   <view a:if="{{ !folded }}">
-    <view a:for="{{ list }}" class="done-info"  a:if="{{ item.isDone }}">
+    <view a:for="{{ list }}" class="done-info"  a:if="{{ item.isDone }}" onLongTap="edit" data-index="{{index}}">
       <view class="todo">
         <text>{{item.todo}}</text>
       </view>
@@ -47,6 +47,16 @@
       <view class="time">
         <image class="clock" mode="aspectFit" src="/image/clock_finished.svg" />
         <text class="time_txt">{{item.time}}</text>
+      </view>
+
+      <view class="delete" a:if="{{ item.inEdit }}" onTap="delete" data-index="{{index}}">
+        <image class="edit" mode="aspectFit" src="/image/delete.svg" />
+        <text class="edit_txt"> 删除代办</text>
+      </view>
+
+      <view class="cencelEdit" a:if="{{ item.inEdit }}" onTap="finishEdit" data-index="{{index}}">
+        <image class="edit" mode="aspectFit" src="/image/cancel.svg" />
+        <text class="edit_txt"> 取消</text>
       </view>
     </view>
   </view>

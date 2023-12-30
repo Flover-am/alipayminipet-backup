@@ -37,15 +37,7 @@ body {
 }
 
 /* 待办事项和已完成事项列表样式，更清晰且易于阅读 */
-.list, .done-info {
-  margin: 20px;
-  padding: 10px;
-  border-radius: 10px;
-  background-color: white;
-  box-shadow: 0 2px 4px rgba(0,0,0,0.15);
-}
-
-.todo-info {
+.list, .done-info, .todo-info {
   position: relative;
   margin: 20px;
   padding: 10px;
@@ -81,6 +73,14 @@ body {
   border: none;
   /* left: 10px; */
   /* bottom: 10px; */
+}
+
+.cencelEdit {
+  color: gray;
+  position: absolute;
+  border: none;
+  right: 10px;
+  bottom: 10px;
 }
 
 .edit {
