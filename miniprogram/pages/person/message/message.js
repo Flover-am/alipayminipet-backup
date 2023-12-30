@@ -1,7 +1,7 @@
 Page({
  data: {
     openid: '0036yRkxnEL9IO7emgpU8Alqas9FERtNMUHCCZ6aVUSPCg5',
-    array: [{username:"江南",message:"你好~",avatar:"https://s2.loli.net/2023/12/26/Md9x2ynOKb4UYTh.png",data:"1天前"}],
+    array: [],
   }
   ,
   async onLoad() {
@@ -55,16 +55,34 @@ Page({
       });
     });
   },
-  onTapLook(){
-    my.navigateTo({
-      url: "/pages/passageDetails/passageDetails",
-      success: function(res) {
-        res.eventChannel.emit('PageMain_Data',{
-          data: detail
-        }),
+  async onTapLook(event){
+    const context = await my.getCloudContext();
+    const item = event.currentTarget.dataset.item;
+    let details = null;
+    context.callFunction({
+      name: 'getDetailsByPassageId',
+      data: {},
+      success: (res) => {
         console.log(res);
+        console.log('获取details成功');
+        details = res.result[0];
+        console.log(details)
+
+        my.navigateTo({
+          url: "/pages/passageDetails/passageDetails",
+          success: function(res) {
+            res.eventChannel.emit('PageMain_Data',{
+              data: details
+            }),
+            console.log(res);
+          }
+        })
+        resolve();
+      },
+      fail: (error) => {
+        reject(error);
       }
-    })
+    });
   }
 });
 
