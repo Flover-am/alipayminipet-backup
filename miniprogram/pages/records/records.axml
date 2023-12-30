@@ -2,7 +2,7 @@
 
   <view class="detail">
     <view class="avatar">
-      <image class="imgeavatar" src="https://s2.loli.net/2023/11/16/ceQubgZ5BlWwO8K.png"/>
+      <image class="imgeavatar" src="{{petData.avatar}}"/>
     </view>
     <view class="info">
       <view class="name">

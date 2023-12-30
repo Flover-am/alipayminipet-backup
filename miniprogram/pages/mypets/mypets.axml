@@ -59,9 +59,9 @@
             </view>
           </view>
         </view>
-        <view class="like">
+        <!-- <view class="like">
           ♡ 114
-        </view>
+        </view> -->
         <!-- <view class="pic" onTap="toPetPic">
           宠物相册
         </view> -->

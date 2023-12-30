@@ -12,6 +12,7 @@ Page({
       gender: "",
       name: "请您先登录",
       weight: "",
+      avatar: ""
     },
     userId: 0,
     topRecords: [
@@ -86,7 +87,15 @@ Page({
     alongTime:302
   },
 
+  async onShow() {
+    this.getRecord();
+  },
+
   async onLoad() {
+    this.getRecord();
+  },
+
+  async getRecord() {
     var self = this;
     var context = await my.getCloudContext();
     await this.getOpenId(context);
@@ -116,7 +125,6 @@ Page({
       }
     })
   },
-
   onPullDownRefresh() {
 
   },

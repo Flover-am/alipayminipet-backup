@@ -41,6 +41,7 @@ exports.main = async (event, context) => {
       gender: value.gender,
       name: value.name,
       weight: value.weight,
+      avatar: value.petAvatar
     });
     console.log("\nindex------:"+index);
     if (index===petId) {
