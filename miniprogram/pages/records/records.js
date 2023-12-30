@@ -89,14 +89,15 @@ Page({
   async onLoad() {
     var self = this;
     var context = await my.getCloudContext();
+    await this.getOpenId(context);
     context.callFunction({
       name: 'getRecordFace',
       data:{
         userId: self.data.userId,
         petId: self.data.selectedPetId
       },
-      success:function(res){
-        // console.log(res);
+      success:function(res){  
+        console.log(res);
         self.setData({
           petsData:res.result.petsData,
           topRecords:res.result.topRecords
@@ -179,7 +180,24 @@ Page({
     this.setData({
       current:current.detail.current
     });
-  }
+  },
+  async getOpenId(context) {
+    return new Promise((resolve, reject) => {
+      context.callFunction({
+        name: 'getOpenId',
+        data: {},
+        success: (res) => {
+          this.setData({
+            userId: res.result.OPENID
+          });
+          resolve();
+        },
+        fail: (error) => {
+          reject(error);
+        }
+      });
+    });
+  },
 });
 
 

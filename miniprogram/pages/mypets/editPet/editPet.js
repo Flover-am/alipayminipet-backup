@@ -1,20 +1,15 @@
+
 Page({
   data: {
+    userid:'',
     petName: '',
     petBreed: '',
     petGender: '',
     petWeight: '',
     petBirthdate: '',
     petArrivalDate: '',
-    userId: '',
-    petsData: {},
-    newUser: {
-
-    }
   },
-  
   bindNameInput(e) {
-    console.log(e);
     this.setData({
       petName: e.detail.value
     });
@@ -49,54 +44,62 @@ Page({
       petArrivalDate: e.detail.value
     });
   },
-  async submit() {
-
-    var context = await my.getCloudContext();
-    context.callFunction({
-      name: 'getOpenId',
-      success: (res) => {
-        this.setData({
-          userId: res.result.OPENID
-        });
-      },
+  async getOpenId(context) {
+    return new Promise((resolve, reject) => {
+      context.callFunction({
+        name: 'getOpenId',
+        data: {},
+        success: (res) => {
+          this.setData({
+            userid: res.result.OPENID
+          });
+          resolve();
+        },
+        fail: (error) => {
+          reject(error);
+        }
+      });
     });
-
-
-    this.setData({
-      petsData: {
-        name: this.data.petName,
-        gender: this.data.petGender
-      }
-    })
-    context.callFunction({
-      name: 'checkUserPetExistOrNot',
-      data: {
-        userId: this.data.userId
-      },
-      success: (res)=> {
-        console.log(res.result);
-        this.setData({
-          newUser: res.result
-        })
-      }
-    });
-
-    if (this.data.newUser != []){
-      var _id = this.data.newUser[0]._id;
-    }
-      
+  },
+  async addPet(){
+    var self = this;
+    var context;
+    try {
+      context = await my.getCloudContext();
+      await this.getOpenId(context);
+    } catch (error) {
+      console.error(error);
+      return;
+    };
+    console.log(self.data);
     context.callFunction({
       name: 'addPets',
       data: {
-        _id: _id,
-        userId: this.data.userId,
-        petsData: this.data.petsData
+        petData:{
+            "name":self.data.petName,
+            "age":self.data.petBreed,
+            "gender":self.data.petGender,
+            "weight":self.data.petWeight,
+            "birthday":self.data.petBirthdate,
+        },
+
+        //假数据测试
+        // petData:{
+        //     "name":"小白",
+        //     "age":"3岁",
+        //     "gender":"公",
+        //     "weight":"15kg",
+        //     "birthday":"05月26日",
+        // }
       },
-      success: (res) =>{
-        console.log('成功');
+      success: (res) => {
+        console.log(res);
+        console.log('成功发布');
+        //返回上一页面
+        my.navigateBack();
       }
     })
 
-  }
 
+  }
 });

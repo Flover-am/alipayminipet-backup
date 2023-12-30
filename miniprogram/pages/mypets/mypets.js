@@ -1,5 +1,6 @@
 Page({
   data: {
+    userid:'',//用户id
     nickname: '账户名', //用户昵称
     avatar: '', //用户头像
     petTime:0,// 养宠时间
@@ -9,9 +10,10 @@ Page({
     isLoginLoading: false ,//
     pets: []
   },
-  onLoad() {
-    this.getPetsData();
-    var app = getApp(); 
+  async onLoad() {
+    var app = getApp();
+    var context = await my.getCloudContext();
+    await this.getOpenId(context);
     var nickName = app.globalData.username;
     var avatar = app.globalData.avatar;
     var isLogin = app.globalData.isLogin
@@ -21,23 +23,26 @@ Page({
       avatar: avatar,
       isLogin: isLogin
     })
+    this.getPetsData();
+
   },
   async getPetsData(){
-    var self = this;
     var context = await my.getCloudContext();
+    var self = this;
+    console.log("userid:"+ self.data.userid);
     my.showLoading({ 
       content: '加载中...',
       delay: '100',
     }); 
     context.callFunction({
       name:'getPets',
-      data:{"userid":0},
+      data:{"userid":self.data.userid},
       success:function(res){
          my.hideLoading();
          console.log(res);
          console.log("success getPets")
          self.setData({
-           pets:res.result.data
+           pets:res.result
          });
       },
       fail:function(erro){
@@ -68,6 +73,24 @@ Page({
       duration:1000,
       content:"跳转到宠物相册//TODO"
     })
-  }
+  },
+  async getOpenId(context) {
+    var self = this
+    return new Promise((resolve, reject) => {
+      context.callFunction({
+        name: 'getOpenId',
+        data: {},
+            success: (res) => {
+              self.setData({
+                userid: res.result.OPENID
+              });
+            resolve();
+            },
+        fail: (error) => {
+          reject(error);
+        }
+      });
+    });
+  },
 
 });
