@@ -5,10 +5,16 @@ Page({
     petGender: '',
     petWeight: '',
     petBirthdate: '',
-    petArrivalDate: ''
+    petArrivalDate: '',
+    userId: '',
+    petsData: {},
+    newUser: {
+
+    }
   },
   
   bindNameInput(e) {
+    console.log(e);
     this.setData({
       petName: e.detail.value
     });
@@ -44,10 +50,53 @@ Page({
     });
   },
   async submit() {
+
     var context = await my.getCloudContext();
     context.callFunction({
-      name: 'getOpenId'
+      name: 'getOpenId',
+      success: (res) => {
+        this.setData({
+          userId: res.result.OPENID
+        });
+      },
+    });
+
+
+    this.setData({
+      petsData: {
+        name: this.data.petName,
+        gender: this.data.petGender
+      }
     })
+    context.callFunction({
+      name: 'checkUserPetExistOrNot',
+      data: {
+        userId: this.data.userId
+      },
+      success: (res)=> {
+        console.log(res.result);
+        this.setData({
+          newUser: res.result
+        })
+      }
+    });
+
+    if (this.data.newUser != []){
+      var _id = this.data.newUser[0]._id;
+    }
+      
+    context.callFunction({
+      name: 'addPets',
+      data: {
+        _id: _id,
+        userId: this.data.userId,
+        petsData: this.data.petsData
+      },
+      success: (res) =>{
+        console.log('成功');
+      }
+    })
+
   }
 
 });
