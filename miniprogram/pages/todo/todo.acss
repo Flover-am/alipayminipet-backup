@@ -26,14 +26,23 @@ body {
 }
 
 /* 图标样式优化，更符合现代设计 */
-.icon, .clock, .edit, .expand {
+.icon, .edit, .expand {
   width: 30px;
   height: 30px;
   vertical-align: middle;
 }
 
+.clock {
+  width: 25px;
+  height: 25px;
+  vertical-align: middle;
+  position: relative;
+  top: -3px;
+  left: 5px;
+}
+
 /* 待办事项和已完成事项列表样式，更清晰且易于阅读 */
-.list, .todo-info, .done-info {
+.list, .done-info {
   margin: 20px;
   padding: 10px;
   border-radius: 10px;
@@ -41,45 +50,57 @@ body {
   box-shadow: 0 2px 4px rgba(0,0,0,0.15);
 }
 
-.todo, .time {
-  font-family: Tahoma, Geneva, Verdana; /* A common, aesthetically pleasing system font stack */
-  font-size: 18px;
+
+.todo-info {
+  position: relative;
+  margin: 20px;
+  padding: 10px;
+  border-radius: 10px;
+  background-color: white;
+  box-shadow: 0 2px 4px rgba(0,0,0,0.15);
+}
+
+.time {
+  font-size: 10px;
+
   margin-bottom: 10px;
+}
+
+.todo {
+  font-size: 20px;
+  margin-bottom: 10px;
+  position: relative;
+  left: 5px;
 }
 
 /* 按钮和文字样式，提升交互体验 */
 .finishEdit {
-  background-color: #2196F3; /* 蓝色背景 */
-  color: white;
-  padding: 10px 20px;
+  color: rgb(255, 174, 46);
+  position: absolute;
   border: none;
-  border-radius: 4px;
-  cursor: pointer;
-  transition: background-color 0.3s ease;
-}
-
-.finish button {
-  background-color: #1557e5; /* 翠绿色背景，表示完成 */
-  color: white;
-  padding: 10px 20px;
-  font-size: 16px;
-  border: none;
-  border-radius: 5px; /* 圆角设计 */
-  cursor: pointer;
-  transition: background-color 0.3s, box-shadow 0.3s, transform 0.3s; /* 平滑过渡效果 */
-  box-shadow: 0 2px 4px rgba(0,0,0,0.2); /* 轻微阴影 */
-}
-
-/* 完成按钮悬停效果 */
-.finish button:hover {
-  background-color: #14156e; /* 深绿色背景，增加深度 */
-  box-shadow: 0 4px 8px rgba(0,0,0,0.3); /* 更明显的阴影 */
-  transform: scale(1.05); /* 稍微放大 */
+  right: 10px;
+  bottom: 10px;
 }
 
 .delete {
   color: red;
-  cursor: pointer;
+  /* position: absolute; */
+  border: none;
+  /* left: 10px; */
+  /* bottom: 10px; */
+}
+
+.edit {
+  position: relative;
+  left: 5px;
+}
+
+.finish button {
+  background-color: rgb(255, 174, 46); 
+  color: white;
+  font-size: 16px;
+  border: none;
+  border-radius: 5px; /* 圆角设计 */
 }
 
 /* 浮动按钮样式，更加引人注目且现代 */
@@ -106,7 +127,7 @@ body {
 
 /* 优化编辑和完成编辑区域的布局和样式 */
 .edit_txt, .time_txt {
-  margin-left: 8px;
+  margin-left: 3px;
   font-size: 16px;
 }
 
