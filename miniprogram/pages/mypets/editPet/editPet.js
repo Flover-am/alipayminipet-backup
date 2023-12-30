@@ -9,6 +9,9 @@ Page({
     petWeight: '',
     petBirthdate: '',
     petArrivalDate: '',
+    filePaths: [],
+    imageUrls: [],
+    deleteUrls: []
   },
   bindNameInput(e) {
     this.setData({
@@ -100,7 +103,46 @@ Page({
         my.navigateBack();
       }
     })
+  },
+  async onUploadImage(file) {
+    var self = this;
+    console.log('upload file: ', file);
 
+    return new Promise((resolve, reject) => {
+      // 添加文件路径
+      console.log('file path: ', file.path);
+      self.data.filePaths.push(file.path);
+      console.log(self.data.filePaths)
 
-  }
+      // 上传图片至图床
+      my.uploadFile({
+        url: 'https://sm.ms/api/v2/upload', // 开发者服务器地址，此 url 仅为示例
+        name: 'smfile',
+        filePath: file.path,
+        header: {Authorization: "388atCE4xsvuzZHCV1MeyHXZkAY70axz"},
+        formData: { extra: '其他信息' },
+        success: res => {
+          my.alert({ title: '上传成功' });
+          console.log(res);
+          var resJson = JSON.parse(res.data);
+          console.log(resJson);
+          if (resJson.success){
+            // 添加图片URL和删除URL
+            self.data.imageUrls.push({link: resJson.data.url});
+            self.data.deleteUrls.push({link: resJson.data.hash});
+            resolve(resJson.data.url)
+          } else {
+            // 这里是在干什么？
+            // 每张图片只能上传 一次，如果重复上传会上传失败返回图片url
+            self.data.imageUrls.push({link: resJson.images});
+            resolve(resJson.images)
+          }
+        },
+        fail: err => {
+          console.log(err)
+          reject();
+        },
+      });
+    });
+  },
 })
