@@ -43,6 +43,7 @@
 .body{
 
 }
+
 .value{
   margin-right: 30rpx;
 }
@@ -56,4 +57,15 @@
 }
 .text2{
   margin:auto;
+}
+/* 文本不换行，省略后面 */
+.key{
+  width: 50rpx;
+  overflow: hidden;
+  text-overflow: ellipsis;
+  white-space: nowrap;
+  display: inline-block;
+  text-align: left;
+  font-size: 14px;
+  color: #333333;
 }
