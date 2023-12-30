@@ -1,4 +1,3 @@
-
 const URL = 'https://demo.antcloud-miniprogram.com';
 //需要部署后端并将URL改为后端地址
 Page({
@@ -19,14 +18,24 @@ Page({
     postNum: 0,
     userid:""
   },
+
   onLoad(){
     
   },
+
+  onShow() {
+    if (this.data.isLogin) {
+      this.getTodoNum();
+      this.getPetsCount();
+    }
+  },
+
   async getOpenUserInfo() {
     var self = this;
     my.getOpenUserInfo({
         success: async (res) => {
             await self.getPetsCount();
+            await self.getTodoNum();
             this.data.userInfo = JSON.parse(res.response).response
             this.data.isLogin = true;
             this.data.avatar = this.data.userInfo.avatar
@@ -138,6 +147,21 @@ Page({
         console.log(res);
         self.setData({
           petNum:res.result
+        })
+      }
+    })
+  },
+  async getTodoNum() {
+    var context = await my.getCloudContext();
+    await this.getOpenId(context);
+    context.callFunction({
+      name: 'getTodoNum',
+      data: {
+        userid: this.data.userid
+      },
+      success: (res) => {
+        this.setData({
+          todoNum: res.result
         })
       }
     })
