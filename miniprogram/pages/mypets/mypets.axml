@@ -14,11 +14,10 @@
     <view onTap="addNewPet">
       <text>+ 添加</text>
     </view>
-  
   </view>
   <scroll-view class="pets-scroll" scroll-y="{{true}}" >
     <view class="pet" a:for="{{pets}}" a:for-item="pet" a:key="*this">
-      <image mode="scaleToFill" src="" class="pet-avatar" />
+      <image mode="scaleToFill" src={{pet.petAvatar}} class="pet-avatar" />
       <view class="pet-info">
         <view class="name">
           {{pet.name}}
