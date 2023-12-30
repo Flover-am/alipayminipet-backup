@@ -11,7 +11,7 @@ exports.main = async (event, context) => {
       talkcontent: data.text,
       userName: data.userName,
       time: data.timeStamp,
-      avatar: data.avatar,
+      "avatar": data.avatar,
     }
   });
 

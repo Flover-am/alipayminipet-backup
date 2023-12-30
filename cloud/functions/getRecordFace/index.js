@@ -6,23 +6,29 @@ const getCollectionName = () => {
 };
 
 exports.main = async (event, context) => {
-  console.log("\nevent:"+event);
-  console.log("\ncontex:"+context);
   var userId = event.userId;
-  var petId = 0;
+  var petId = event.petId;
+  // userId = "0356yRkxnEL9IO7emgpU8AlqQMr_4_NNTXR0pBvzq5KPSk4";
+  // petId = 0;
   // 初始化
   cloud.init();
   const db = cloud.database();
   // 生成 collection 名称
-  const collectionName = "petsDataAll";
+  const collectionName = "petsV2";
   // 新建 collection
   const collection = await db.getCollection(collectionName);
   console.log('连接成功： collection id:', collection.coll_id);
 
   // 查询 collection 中的 doc 列表，默认返回 100 条
-  const docList = await db.collection(collectionName).where({userId:0}).get();
+  const docList = await db.collection(collectionName).where({_openid:userId}).get();
   console.log('当前 collection 中的 doc 列表:', docList);
-  var  data = docList.at(0); 
+  var  data = docList;
+  // 把data中的元素的pet属性拿出来组成pets数组
+  var pets = data.map((value,index)=>{
+    return value.pet;
+  });
+  data.pets = pets;
+  // return data.pets;
   // console.log('\n----data.userId:', data.pets);
   var face = {};
   var petsData =[];
@@ -36,7 +42,7 @@ exports.main = async (event, context) => {
       name: value.name,
       weight: value.weight,
     });
-    console.log("index------:"+index);
+    console.log("\nindex------:"+index);
     if (index===petId) {
       value.records.map((value,index)=>{
         var one ={
@@ -48,7 +54,7 @@ exports.main = async (event, context) => {
           item6:{name:"",value:""}
         };
         value.value.map((value,index)=>{
-          index = index -1;
+          index = index +1;
           one["item"+index] = {name: "", value: ""}; // 初始化对象
           one["item"+index]["name"]=value.key;
           one["item"+index]["value"]=value.current+value.unit;
