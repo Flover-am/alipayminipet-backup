@@ -9,6 +9,7 @@ Page({
     petData:{
       age: "0",
       birthday: "2024.1.1",
+      arrivalDate:'',
       gender: "",
       name: "请您先登录",
       weight: "",
