@@ -172,7 +172,8 @@ Page({
   async addRecord(e) {
     var self = this
     my.navigateTo({
-      url: `/pages/records/recordAdd/recordAdd?petName=${self.data.petData.name}&userid=${self.data.userId}`,
+      // url: `/pages/records/recordAdd/recordAdd?petid=5&userid=fff`,
+      url: `/pages/records/recordAdd/recordAdd?petId=${self.data.selectedPetId}&userid=${self.data.userId}`,
     })
   },
 

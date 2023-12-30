@@ -4,89 +4,89 @@ export default [
     children: [
       {
         label: '体重',
-        value: '11',
+        value: '2',
       },
       {
         label: '体温',
-        value: '12',
+        value: '0',
       },
       {
         label: '饮食',
-        value: '13',
+        value: '3',
       },
       {
         label: '记账',
-        value: '14',
+        value: '1',
       },
       {
         label: '消毒',
-        value: '15',
+        value: '4',
       },
       {
         label: '清洁',
-        value: '16',
+        value: '5',
       },
     ],
-    value: '1',
+    value: '0',
   },
   {
     label: '健康记录',
     children: [
       {
         label: '驱虫',
-        value: '21',
+        value: '0',
       },
       {
         label: '疫苗',
-        value: '22',
+        value: '1',
       },
       {
         label: '体检',
-        value: '23',
+        value: '2',
       },
       {
         label: '用药',
-        value: '24',
+        value: '3',
       },
       {
         label: '问诊',
-        value: '25',
+        value: '4',
       },
       {
         label: '住院',
-        value: '26',
+        value: '5',
       },
     ],
-    value: '2',
+    value: '1',
   },
   {
     label: '洗护记录',
     children: [
       {
         label: '洗澡',
-        value: '31',
+        value: '0',
       },
       {
         label: '剪指甲',
-        value: '32',
+        value: '1',
       },
       {
         label: '洗耳朵',
-        value: '33',
+        value: '2',
       },
       {
         label: '刷牙',
-        value: '34',
+        value: '3',
       },
       {
         label: '梳毛',
-        value: '35',
+        value: '4',
       },
       {
         label: '美容',
-        value: '36',
+        value: '5',
       },
     ],
-    value: '3',
+    value: '2',
   },
 ]

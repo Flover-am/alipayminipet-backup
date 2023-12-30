@@ -4,7 +4,7 @@ Page({
   data: {
     typeList,
     userid: "",
-    petName: "",
+    petId: 0,
     recordTime: "请选择时间",
     recordType1: "",
     recordType2: "",
@@ -13,10 +13,10 @@ Page({
 
 
   onLoad(query) {
-    console.log('add: ')
-    console.log(query)
+    // console.log('add: ')
+    // console.log(query)
     this.setData({
-      petName: query.petName,
+      petId: query.petId,
       userid: query.userid
     })
   },
@@ -44,8 +44,8 @@ Page({
     console.log(selectedOption);
     var self = this
     self.setData({
-      recordType1: selectedOption[0]['label'],
-      recordType2: selectedOption[1]['label']
+      recordType1: selectedOption[0]['value'],
+      recordType2: selectedOption[1]['value']
     })
   },
 
@@ -56,11 +56,19 @@ Page({
   },
 
   submit(){
-    let tmp = this.data.recordTime.split(/-| |\:/)
+    var self = this
+    let tmp = self.data.recordTime.split(/-| |\:/)
     let time = tmp.join("/")
     // TODO：使用云函数上传
-    // 可以用的数据：petName，userid，time（格式化后的记录时间），recordType1（大类别），recordType2（小类别），recordDes（描述）
-    
+    // 可以用的数据：petId，userid，time（格式化后的记录时间），recordType1（大类别），recordType2（小类别），recordDes（描述）
+    /* 
+        petId: self.petId (来源于record页面的selectedPetId)
+        userid: self.userid (来源于record页面获取到的userid)
+        time: time  (格式：xxxx/xx/xx/xx/xx)
+        recordType1: self.recordType1 (number类型)
+        recordType2: self.recordType2 (number类型)
+        recordDes: self.recordDes 
+    */
   },
 
   labelFormat(value, options) {
