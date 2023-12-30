@@ -38,6 +38,7 @@ exports.main = async (event, context) => {
     petsData.push({
       age: value.age,
       birthday: value.birthday,
+      arrivalDate: value.arrivalDate,
       gender: value.gender,
       name: value.name,
       weight: value.weight,

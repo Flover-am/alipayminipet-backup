@@ -1,127 +1,82 @@
+/* 全局样式设置，提升整体美观 */
+body {
+  font-family: 'Arial', sans-serif;
+  background-color: #f4f4f4;
+  color: #333;
+}
+
+/* 添加按钮样式，更现代且引人注目 */
 .addbutton {
   position: fixed;
   bottom: 15px;
   right: 30px;
+  background-color: #4CAF50; /* 绿色背景 */
+  color: white;
+  border: none;
+  border-radius: 50%;
+  box-shadow: 0 4px 8px 0 rgba(0,0,0,0.2);
+  padding: 15px;
+  font-size: 16px;
+  z-index: 1;
 }
 
-.icon {
-  width: 70px;
-  height: 70px;
+/* 图标样式优化，更符合现代设计 */
+.icon, .clock, .edit, .expand {
+  width: 30px;
+  height: 30px;
+  vertical-align: middle;
 }
 
-.list {
-  margin-bottom: 100px;
-}
-
-.todo-info{
-  display: flex;
-  flex-wrap: wrap;
-  flex-direction: column;
-  align-content: flex-start;
-  border-radius: 20rpx;
+/* 待办事项和已完成事项列表样式，更清晰且易于阅读 */
+.list, .todo-info, .done-info {
+  margin: 20px;
+  padding: 10px;
+  border-radius: 10px;
   background-color: white;
-  justify-content: center;
-  margin: 5%;
-  position: relative;
+  box-shadow: 0 2px 4px rgba(0,0,0,0.15);
 }
 
-.done-info{
-  display: flex;
-  flex-wrap: wrap;
-  position: relative;
-  top: 20px;
-  flex-direction: column;
-  align-content: flex-start;
-  border-radius: 20rpx;
-  background-color: white;
-  color: gray;
-  justify-content: center;
-  margin: 5%;
+.todo, .time {
+  font-size: 18px;
+  margin-bottom: 10px;
 }
 
-.todo {
-  direction: ltr;
-  font: 600;
-  font-size: 120%;
-  word-wrap: break-word;
-  word-break: break-all;
-  white-space: normal;
-  margin: 5%;
-  position: relative;
-  left: 15px;
+/* 按钮和文字样式，提升交互体验 */
+.finishEdit {
+  background-color: #2196F3; /* 蓝色背景 */
+  color: white;
+  padding: 10px 20px;
+  border: none;
+  border-radius: 4px;
+  cursor: pointer;
+  transition: background-color 0.3s ease;
 }
 
-.finish {
-  width: 70px;
-  position: absolute;
-  left: 250px;
-  top: 20px;
-  font-size: larger;
-  border-color: rgb(255, 174, 46);
+.finish button {
+  background-color: #1557e5; /* 翠绿色背景，表示完成 */
+  color: white;
+  padding: 10px 20px;
+  font-size: 16px;
+  border: none;
+  border-radius: 5px; /* 圆角设计 */
+  cursor: pointer;
+  transition: background-color 0.3s, box-shadow 0.3s, transform 0.3s; /* 平滑过渡效果 */
+  box-shadow: 0 2px 4px rgba(0,0,0,0.2); /* 轻微阴影 */
 }
 
-button {
-  background-color: rgb(255, 174, 46);
-  padding: 0;
-  margin: 0;
-  border: 0;
-  border-radius: 10%;
-}
-button::after {
-  width: 0;
-  height: 0;
-  -webkit-transform: scale(1);
-  transform: scale(1);
-  background: rgb(255, 174, 46);
-}
-
-.expand {
-  width: 30px;
-  height: 30px;
-  vertical-align: middle;
-}
-
-.edit {
-  width: 30px;
-  height: 30px;
-  vertical-align: middle;
-  position: relative;
-  left: 3px;
-  top: -2px;
-}
-
-.edit_txt {
-  font-size: 110%;
-  position: relative;
-  left: 3px;
-}
-
-.clock {
-  width: 30px;
-  height: 30px;
-  vertical-align: middle;
-}
-
-.time_txt {
-  position: relative;
-  left: 5px;
-  font-size: 100%;
+/* 完成按钮悬停效果 */
+.finish button:hover {
+  background-color: #14156e; /* 深绿色背景，增加深度 */
+  box-shadow: 0 4px 8px rgba(0,0,0,0.3); /* 更明显的阴影 */
+  transform: scale(1.05); /* 稍微放大 */
 }
 
 .delete {
-  position: absolute;
-  right: 20px;
-  top: 10px;
   color: red;
+  cursor: pointer;
 }
 
-.finishEdit{
-  position: absolute;
-  right: 20px;
-  bottom: 10px;
-  color: rgb(255, 174, 46);
-}
-
+/* 浮动按钮样式，更加引人注目且现代 */
 .floating-button {
   height: 108rpx; 
   width: 108rpx; 
@@ -136,15 +91,25 @@ button::after {
   align-items: center;
 }
 
-.unfinished {
-  font-size: larger;
-  position: relative;
-  top: 15px;
-  left: 15px;
+/* 未完成和已完成标签样式，增加视觉区分 */
+.unfinished, .finished {
+  font-size: 20px;
+  font-weight: bold;
+  margin-bottom: 15px;
 }
 
-.finished {
-  font-size: larger;
-  position: relative;
-  top: 40px;
+/* 优化编辑和完成编辑区域的布局和样式 */
+.edit_txt, .time_txt {
+  margin-left: 8px;
+  font-size: 16px;
+}
+
+/* 优化各个视觉元素的对齐和间距 */
+[class*="icon"], [class*="edit"], [class*="clock"], [class*="expand"] {
+  margin-right: 10px;
+}
+
+/* 增加过渡效果，提升用户体验 */
+[class*="icon"]:hover, [class*="edit"]:hover, [class*="clock"]:hover, [class*="expand"]:hover {
+  opacity: 0.8;
 }
