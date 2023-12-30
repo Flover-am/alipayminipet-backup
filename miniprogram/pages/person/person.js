@@ -132,7 +132,7 @@ Page({
     context.callFunction({
       name: 'getPetsCount',
       data:{
-        userId: self.userid,
+        userId: self.data.userid,
       },
       success:function(res){
         console.log(res);
