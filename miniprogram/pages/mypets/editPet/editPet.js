@@ -4,7 +4,7 @@ Page({
   data: {
     userid:'',
     petName: '',
-    petBreed: '',
+    petAge: '',
     petGender: '',
     petWeight: '',
     petBirthdate: '',
@@ -36,9 +36,9 @@ Page({
       },
     });
   },
-  bindBreedInput(e) {
+  bindAgeInput(e) {
     this.setData({
-      petBreed: e.detail.value
+      petAge: e.detail.value
     });
   },
   
@@ -111,7 +111,7 @@ Page({
       data: {
         petData:{
             "name":self.data.petName,
-            "age":self.data.petBreed,
+            "age":self.data.petAge,
             "gender":self.data.petGender,
             "weight":self.data.petWeight,
             "birthday":self.data.petBirthdate,

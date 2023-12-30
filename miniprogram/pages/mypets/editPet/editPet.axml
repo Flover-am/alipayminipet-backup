@@ -10,8 +10,8 @@
   </view>
   
   <view class="form-group">
-    <text class="label">宠物品种</text>
-    <input class="input" placeholder="请输入宠物品种" onInput="bindBreedInput" />
+    <text class="label">宠物年龄</text>
+    <input class="input" placeholder="请输入宠物年龄" onInput="bindBreedInput" />
   </view>
   
   <view class="form-group">

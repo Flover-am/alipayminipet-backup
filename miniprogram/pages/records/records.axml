@@ -34,7 +34,7 @@
   <swiper indicator-dots="{{false}}" onChange="changeCurrent" >
     <block a:for="{{topRecords}}">
       <swiper-item>
-        <card cardId="{{index}}" topRecord="{{topRecords[index]}}" title="{{cardTitles[index]}}" ></card>
+        <card  cardId="{{index}}" topRecord="{{topRecords[index]}}" title="{{cardTitles[index]}}" ></card>
       </swiper-item>
     </block>
   </swiper>

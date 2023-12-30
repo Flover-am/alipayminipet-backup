@@ -7,11 +7,11 @@ Page({
     defaultPet:{},
     // extra
     petData:{
-      age: "4岁",
-      birthday: "05月20日",
-      gender: "公",
-      name: "从众的阿西",
-      weight: "12kg",
+      age: "0",
+      birthday: "2024.1.1",
+      gender: "",
+      name: "请您先登录",
+      weight: "",
     },
     userId: 0,
     topRecords: [
