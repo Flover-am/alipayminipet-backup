@@ -85,46 +85,81 @@ Page({
       "健康记录",
       "洗护记录"
     ],
-    alongTime:302
+    alongTime:"···"
   },
 
   async onShow() {
-    this.getRecord();
+    await this.getRecord();
+    await this.calculateWithDate();
   },
-
+  
   async onLoad() {
-    this.getRecord();
+    await this.getRecord();
+    await this.calculateWithDate();
   },
-
+  
   async getRecord() {
     var self = this;
     var context = await my.getCloudContext();
     await this.getOpenId(context);
-    context.callFunction({
-      name: 'getRecordFace',
-      data:{
-        userId: self.data.userId,
-        petId: self.data.selectedPetId
-      },
-      success:function(res){  
-        console.log(res);
-        self.setData({
-          petsData:res.result.petsData,
-          topRecords:res.result.topRecords
-        });
-        self.setData({
-          petData:self.data.petsData[0],
-        })
-        self.setData({
-          petsName: self.data.petsData.map((value,index)=>{
-            return {
-              value:index,
-              label:value.name
-            };
+  
+    return new Promise((resolve, reject) => {
+      context.callFunction({
+        name: 'getRecordFace',
+        data:{
+          userId: self.data.userId,
+          petId: self.data.selectedPetId
+        },
+        success:function(res){  
+          console.log(res);
+          self.setData({
+            petsData:res.result.petsData,
+            topRecords:res.result.topRecords
+          });
+          self.setData({
+            petData:self.data.petsData[0],
           })
-        });
-      }
-    })
+          self.setData({
+            petsName: self.data.petsData.map((value,index)=>{
+              return {
+                value:index,
+                label:value.name
+              };
+            })
+          });
+          resolve();
+        },
+        fail: function(error) {
+          reject(error);
+        }
+      });
+    });
+  },
+  
+  async calculateWithDate(){
+    var self = this;
+    var context = await my.getCloudContext();
+    console.log("qqq")
+    console.log(this.data.petData)
+  
+    return new Promise((resolve, reject) => {
+      context.callFunction({
+        name: 'calculateWithDate',
+        data:{
+          arriveDate: this.data.petData.arrivalDate
+        },
+        success:function(res){  
+          console.log(res);
+          self.setData({
+            alongTime:res.result
+          });
+          resolve();
+        },
+        fail: function(error) {
+          reject(error);
+        }
+      });
+    });
   },
   onPullDownRefresh() {
 
