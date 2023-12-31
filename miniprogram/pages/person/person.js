@@ -27,6 +27,7 @@ Page({
     if (this.data.isLogin) {
       this.getTodoNum();
       this.getPetsCount();
+      this.getPostNum();
     }
   },
 
@@ -150,6 +151,25 @@ Page({
         })
       }
     })
+  },
+  async getPostNum() {
+    var context = await my.getCloudContext();
+    await this.getOpenId(context);
+    var self = this;
+    var context = await my.getCloudContext();
+    context.callFunction({
+      name: '',
+      data: {
+        userId: self.data.userid,
+      },
+      success: function(res) {
+        console.log(res);
+        self.setData({
+          postNum:res.result
+        })
+      }
+    })
+    
   },
   async getTodoNum() {
     var context = await my.getCloudContext();

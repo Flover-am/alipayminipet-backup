@@ -8,9 +8,10 @@
 
 <!-- 文字区域 -->
 <view class="content-container">
-  <input style="width: 100%; font-weight: bold;"
+  <ant-input style="width: 100%; font-weight: bold;"
   placeholder="标题" confirm-type="send"
   type="text" onChange="titleInput" value="{{title}}" allowClear />
+
   <divider style="margin: 16rpx 0"/>
   <ant-textarea style="width: 100%;"
   placeholder="正文" confirm-type="send"

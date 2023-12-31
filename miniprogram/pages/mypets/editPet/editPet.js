@@ -5,13 +5,14 @@ Page({
     userid:'',
     petName: '',
     petAge: '',
-    petGender: '',
+    petGender: '请选择性别',
     petWeight: '',
     petBirthdate: '请选择日期',
     petArrivalDate: '请选择日期',
     filePaths: [],
     imageUrls: [],
-    deleteUrls: []
+    deleteUrls: [],
+    genderList: ['公','母']
   },
   bindNameInput(e) {
     this.setData({
@@ -98,12 +99,13 @@ Page({
     var self = this;
     var context;
 
-    if (this.data.petName == '') {
-      my.alert("宠物姓名不能为空");
+    console.log(this.data.petName);
+    if (self.data.petName == '') {
+      my.alert({title:"宠物姓名不能为空"});
       return;
     }
     if (this.data.petAge == '') {
-      my.alert("宠物年龄不能为空");
+      my.alert({title:"宠物年龄不能为空"});
       return;
     }
     try {
@@ -184,5 +186,12 @@ Page({
         },
       });
     });
+  },  
+  handleOk(value, column) {
+    console.log('value', value, 'column', column);
+    this.setData({
+      petGender: value
+    });
+    
   },
 })

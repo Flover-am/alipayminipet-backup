@@ -35,9 +35,6 @@
             </view>
           </view>
           <view class="birthday">
-            <view class="item">
-              生日:
-            </view>
             <view class="number">
               {{pet.birthday}}
             </view>

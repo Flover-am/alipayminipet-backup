@@ -16,8 +16,13 @@
   
   <view class="form-group">
     <text class="label">宠物性别</text>
-    <input class="input" placeholder="请输入宠物性别" onInput="bindGenderInput" />
+    <view class="input">
+      <picker class="picker" slot="extra" onOk="handleOk" placeholder="请选择宠物性别" title="选择性别" options="{{genderList}}">
+      </picker>
+    </view>
+    <!-- <input class="input" placeholder="请输入宠物性别" onInput="bindGenderInput" /> -->
   </view>
+
   
   <view class="form-group">
     <text class="label">宠物体重</text>
