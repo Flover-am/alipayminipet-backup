@@ -11,7 +11,7 @@ Page({
       birthday: "2024.1.1",
       arrivalDate:'',
       gender: "",
-      name: "请您先登录",
+      name: "请在“我的”页面宠物中进行添加小动物",
       weight: "",
       avatar: ""
     },

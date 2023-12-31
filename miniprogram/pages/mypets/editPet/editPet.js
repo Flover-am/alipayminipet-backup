@@ -97,6 +97,15 @@ Page({
   async addPet(){
     var self = this;
     var context;
+
+    if (this.data.petName == '') {
+      my.alert("宠物姓名不能为空");
+      return;
+    }
+    if (this.data.petAge == '') {
+      my.alert("宠物年龄不能为空");
+      return;
+    }
     try {
       context = await my.getCloudContext();
       await this.getOpenId(context);
@@ -115,7 +124,7 @@ Page({
             "weight":self.data.petWeight,
             "birthday":self.data.petBirthdate,
             "arrivalDate": self.data.petArrivalDate,
-            "petAvatar": self.data.filePaths[0]
+            "petAvatar": self.data.imageUrls[0].link
         },
 
         //假数据测试
